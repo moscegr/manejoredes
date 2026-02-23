@@ -36,6 +36,17 @@
             background-position: center;
             background-attachment: fixed;
         }
+        
+        /* Animación para el Modelo OSI */
+        @keyframes movePacket {
+            0% { left: -10%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { left: 100%; opacity: 0; }
+        }
+        .animate-packet {
+            animation: movePacket 2.5s infinite linear;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased font-sans selection:bg-conalep-light selection:text-white">
@@ -51,12 +62,13 @@
                         <span class="text-xs text-gray-500 font-semibold tracking-wider">CHILPANCINGO</span>
                     </div>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8 text-sm lg:text-base">
                     <a href="#inicio" class="text-gray-600 hover:text-conalep-green transition font-medium">Inicio</a>
                     <a href="#introduccion" class="text-gray-600 hover:text-conalep-green transition font-medium">Introducción</a>
                     <a href="#evaluacion" class="text-gray-600 hover:text-conalep-green transition font-medium">Evaluación</a>
                     <a href="#temario" class="text-gray-600 hover:text-conalep-green transition font-medium">Temario</a>
-                    <a href="#examen" class="bg-conalep-green text-white px-5 py-2 rounded-full hover:bg-conalep-dark transition font-medium shadow-lg hover:shadow-xl">Examen Diagnóstico</a>
+                    <a href="#aplicacion" class="text-gray-600 hover:text-conalep-green transition font-medium">Aplicación</a>
+                    <a href="#actividad" class="bg-conalep-green text-white px-5 py-2 rounded-full hover:bg-conalep-dark transition font-medium shadow-lg hover:shadow-xl">Actividad Inicial</a>
                 </div>
             </div>
         </div>
@@ -171,7 +183,7 @@
             <div class="text-center mb-16">
                 <h3 class="text-sm font-bold text-conalep-green uppercase tracking-wider mb-2">Plan de Estudios</h3>
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Temario del Semestre</h2>
-                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">El contenido está estructurado en tres unidades de aprendizaje o parciales para desarrollar tus habilidades de forma progresiva.</p>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">El contenido está estructurado en tres unidades de aprendizaje o parciales para desarrollar tus habilidades de forma progresiva a detalle.</p>
             </div>
 
             <div class="space-y-12">
@@ -188,22 +200,36 @@
                         </div>
                     </div>
                     <div class="md:w-2/3 p-8">
-                        <ul class="space-y-4">
+                        <ul class="space-y-6">
                             <li class="flex items-start">
-                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-conalep-green text-white flex items-center justify-center font-bold mr-4">1.1</span>
+                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-conalep-green text-white flex items-center justify-center font-bold mr-4 mt-1">1.1</span>
                                 <div>
                                     <h4 class="text-lg font-bold text-gray-800">Acceso a recursos inalámbricos</h4>
-                                    <p class="text-gray-600 text-sm mt-1">Configuración del acceso a los recursos de la red inalámbrica a través de las herramientas que proveen los dispositivos de red (Puntos de Acceso, SSID, Canales).</p>
+                                    <p class="text-gray-600 text-sm mt-1">Configuración del acceso a los recursos de la red inalámbrica a través de las herramientas que proveen los dispositivos de red.</p>
+                                    <ul class="list-disc ml-5 mt-3 text-sm text-gray-500 space-y-1">
+                                        <li><strong>A. Identificación de infraestructura WLAN:</strong> Estándares vigentes (Wi-Fi), componentes (NICs, antenas, AP, routers y bridges inalámbricos), topologías Ad-hoc e Infraestructura.</li>
+                                        <li><strong>B. Configuración de acceso WLAN:</strong> Configuración del Punto de Acceso (básica, SSID, canales), configuración de NICs inalámbricas en hosts y clientes inalámbricos (Ad-hoc e Infraestructura).</li>
+                                    </ul>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-conalep-green text-white flex items-center justify-center font-bold mr-4">1.2</span>
+                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-conalep-green text-white flex items-center justify-center font-bold mr-4 mt-1">1.2</span>
                                 <div>
                                     <h4 class="text-lg font-bold text-gray-800">Seguridad Inalámbrica</h4>
-                                    <p class="text-gray-600 text-sm mt-1">Configuración de parámetros de seguridad (Filtrado MAC, Encriptación, Firmware) para proteger la información y mitigar amenazas comunes.</p>
+                                    <p class="text-gray-600 text-sm mt-1">Configuración de parámetros de seguridad en dispositivos inalámbricos para mitigar amenazas y administrar problemas.</p>
+                                    <ul class="list-disc ml-5 mt-3 text-sm text-gray-500 space-y-1">
+                                        <li><strong>A. Identificación de amenazas:</strong> Acceso no autorizado, puntos de acceso no autorizados, ataques Man-in-the-middle y Denegación de servicio (DoS).</li>
+                                        <li><strong>B. Configuración de parámetros de seguridad:</strong> Protocolos de seguridad inalámbricos, autenticación, encriptación y control de acceso.</li>
+                                        <li><strong>C. Resolución de problemas:</strong> Conflictos de radio de acceso, firmware del AP, autenticación y encriptación.</li>
+                                    </ul>
                                 </div>
                             </li>
                         </ul>
+                        <div class="mt-8 text-right">
+                            <a href="parcial1.html" class="inline-flex items-center bg-conalep-green text-white font-bold py-2 px-6 rounded-lg hover:bg-conalep-dark transition shadow-md">
+                                Ir al Parcial 1 <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -220,22 +246,38 @@
                         </div>
                     </div>
                     <div class="md:w-2/3 p-8">
-                        <ul class="space-y-4">
+                        <ul class="space-y-6">
                             <li class="flex items-start">
-                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold mr-4">2.1</span>
+                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold mr-4 mt-1">2.1</span>
                                 <div>
                                     <h4 class="text-lg font-bold text-gray-800">Servicios de conectividad</h4>
-                                    <p class="text-gray-600 text-sm mt-1">Uso de comandos del Sistema Operativo Internetwork (IOS) mediante la CLI para la configuración global de routers y switches en una LAN Ethernet.</p>
+                                    <p class="text-gray-600 text-sm mt-1">Configuración en LAN Ethernet utilizando el Sistema Operativo Internetwork (IOS).</p>
+                                    <ul class="list-disc ml-5 mt-3 text-sm text-gray-500 space-y-1">
+                                        <li><strong>A. Comandos IOS:</strong> Funciones, métodos de acceso (Consola, Telnet/SSH, Aux), modos de operación (EXEC usuario/privilegiado, config global), estructura de comandos y ayuda.</li>
+                                        <li><strong>B. Configuración básica:</strong> Nombres a dispositivos, contraseñas (consola, enable, vty), administración de archivos de configuración y configuración de interfaces (Ethernet y seriales).</li>
+                                        <li><strong>C. Verificación de conectividad:</strong> Comandos ping, pruebas de loopback, revisión de interfaces en routers y switches, Gateway y rastreo.</li>
+                                        <li><strong>D. Líneas de base:</strong> Captura de host y captura de IOS.</li>
+                                    </ul>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold mr-4">2.2</span>
+                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold mr-4 mt-1">2.2</span>
                                 <div>
                                     <h4 class="text-lg font-bold text-gray-800">Servicios integrados</h4>
-                                    <p class="text-gray-600 text-sm mt-1">Configuración de servicios como DHCP, NAT estática y dinámica en dispositivos ISR (Integrated Services Router) usando CLI o SDM.</p>
+                                    <p class="text-gray-600 text-sm mt-1">Configuración de servicios en routers (ISR) y switches basados en los programas del IOS.</p>
+                                    <ul class="list-disc ml-5 mt-3 text-sm text-gray-500 space-y-1">
+                                        <li><strong>A. Router de servicios Integrados (ISR) con SDM:</strong> Configuración física, CLI y SDM, acceso WAN, Internet y NAT dinámica.</li>
+                                        <li><strong>B. Configuración de Switch:</strong> Inicialización física, conexión en red LAN al router y uso del Protocolo CDP.</li>
+                                        <li><strong>C. Configuración por CLI:</strong> Modos y métodos abreviados, comandos show, interfaces, ruteo default, servicios DHCP, NAT estático y respaldos TFTP.</li>
+                                    </ul>
                                 </div>
                             </li>
                         </ul>
+                        <div class="mt-8 text-left md:text-right">
+                            <a href="parcial2.html" class="inline-flex items-center bg-blue-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-blue-600 transition shadow-md">
+                                Ir al Parcial 2 <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -252,62 +294,259 @@
                         </div>
                     </div>
                     <div class="md:w-2/3 p-8">
-                        <ul class="space-y-4">
+                        <ul class="space-y-6">
                             <li class="flex items-start">
-                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold mr-4">3.1</span>
+                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold mr-4 mt-1">3.1</span>
                                 <div>
                                     <h4 class="text-lg font-bold text-gray-800">Creación de VLANs y Troncales</h4>
-                                    <p class="text-gray-600 text-sm mt-1">Agrupación lógica de estaciones de trabajo, asignación de puertos y configuración de enlaces troncales IEEE 802.1Q.</p>
+                                    <p class="text-gray-600 text-sm mt-1">Agrupación lógica de estaciones y configuración de enlaces en conmutadores.</p>
+                                    <ul class="list-disc ml-5 mt-3 text-sm text-gray-500 space-y-1">
+                                        <li><strong>A. Identificación de VLAN:</strong> Beneficios, rangos de ID, tipos (datos, predeterminada, nativa, administración, voz), etiquetado 802.1Q y puertos de acceso/enlace troncal.</li>
+                                        <li><strong>B, C & D. Configuración y Admón.:</strong> Crear/asignar puertos, verificar vinculaciones, administrar pertenencias, eliminación y administración de enlaces troncales.</li>
+                                        <li><strong>E & F. Enrutamiento y problemas:</strong> Configurar interconexiones y resolver faltas de concordancia (VLAN nativa, enlaces y subredes IP).</li>
+                                    </ul>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold mr-4">3.2</span>
+                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold mr-4 mt-1">3.2</span>
                                 <div>
                                     <h4 class="text-lg font-bold text-gray-800">Protocolo VTP</h4>
-                                    <p class="text-gray-600 text-sm mt-1">Administración de dominios VTP, configuración de switches en modo Servidor, Cliente o Transparente para propagar las VLAN.</p>
+                                    <p class="text-gray-600 text-sm mt-1">Administración y propagación de VLANs en múltiples dispositivos.</p>
+                                    <ul class="list-disc ml-5 mt-3 text-sm text-gray-500 space-y-1">
+                                        <li><strong>A. Conceptos del VTP:</strong> Beneficios, dominios VTP, publicaciones y modos de operación (Servidor, Cliente, Transparente).</li>
+                                        <li><strong>B. Configuración del VTP:</strong> Estado, creación/prueba de dominio, agregar switches y guías de configuración.</li>
+                                        <li><strong>C. Resolución de problemas:</strong> Incompatibilidades de versiones, contraseñas, nombres de dominio y números de revisión.</li>
+                                    </ul>
                                 </div>
                             </li>
                             <li class="flex items-start">
-                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold mr-4">3.3</span>
+                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold mr-4 mt-1">3.3</span>
                                 <div>
                                     <h4 class="text-lg font-bold text-gray-800">Enrutamiento inter-VLAN</h4>
-                                    <p class="text-gray-600 text-sm mt-1">Establecimiento de comunicación entre VLANs distintas usando la técnica "Router-on-a-stick" y subinterfaces.</p>
+                                    <p class="text-gray-600 text-sm mt-1">Establecimiento de conectividad total entre las diferentes redes virtuales.</p>
+                                    <ul class="list-disc ml-5 mt-3 text-sm text-gray-500 space-y-1">
+                                        <li><strong>A & B. Identificación y Configuración:</strong> Concepto, tipos de enrutamiento, uso de routers como Gateway, configuración de interfaces y subinterfaces.</li>
+                                        <li><strong>C & D. Enrutamiento Router-on-a-stick:</strong> Implementación del concepto "router-on-a-stick", tablas de ruteo y verificación de estado.</li>
+                                        <li><strong>E. Solución de Fallas:</strong> Detección y solución en configuración de switch, router y esquema de direccionamiento IP.</li>
+                                    </ul>
                                 </div>
                             </li>
                         </ul>
+                        <div class="mt-8 text-right">
+                            <a href="parcial3.html" class="inline-flex items-center bg-purple-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-purple-600 transition shadow-md">
+                                Ir al Parcial 3 <i class="fa-solid fa-arrow-right ml-2"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Examen Diagnóstico -->
-    <section id="examen" class="py-20 bg-gray-900 text-white">
+    <!-- Aplicación en la Vida Cotidiana y Herramientas -->
+    <section id="aplicacion" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-sm font-bold text-conalep-green uppercase tracking-wider mb-2">Conectando el mundo real</h3>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Aplicación en la Vida Cotidiana</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Todo lo que aprenderás tiene un impacto directo en cómo interactuamos, trabajamos y nos entretenemos hoy en día. Descubre cómo se aplica este conocimiento:</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <!-- Ejemplo 1 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1558089687-f282ffcbc126?auto=format&fit=crop&w=600&q=80" alt="Hogar Inteligente" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
+                        <i class="fa-solid fa-house-signal absolute bottom-4 right-4 text-white text-3xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Hogares Inteligentes (Smart Homes)</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">Desde conectar tu Smart TV para ver Netflix hasta asegurar cámaras de vigilancia o asistentes de voz (Alexa/Google). Aprenderás a configurar Puntos de Acceso (Access Points) y redes inalámbricas (WLAN) seguras, evitando que intrusos vulneren tu privacidad.</p>
+                    </div>
+                </div>
+
+                <!-- Ejemplo 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" alt="Empresa" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
+                        <i class="fa-solid fa-building-shield absolute bottom-4 right-4 text-white text-3xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Redes Corporativas y Seguridad</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">¿Cómo separan las empresas la red de sus directivos de la de invitados usando los mismos cables? Usarás VLANs (Redes Virtuales) y Switches para segmentar el tráfico. Esto garantiza el orden, el rendimiento y la ciberseguridad a nivel corporativo.</p>
+                    </div>
+                </div>
+
+                <!-- Ejemplo 3 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-2xl transition duration-300 transform hover:-translate-y-2 border border-gray-100">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="Gaming" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
+                        <i class="fa-solid fa-gamepad absolute bottom-4 right-4 text-white text-3xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold text-gray-800 mb-2">Gaming y Streaming sin Lag</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed">El enrutamiento correcto y la gestión de IPs determinan si tienes ping alto o bajo al jugar online. Entenderás cómo viajan los paquetes de datos por el mundo a través de Routers de Servicios Integrados y cómo la traducción de redes (NAT) hace posible la conexión global.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Laboratorio Virtual -->
+            <div class="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl flex flex-col lg:flex-row border-l-4 border-conalep-light relative">
+                <div class="lg:w-1/2 p-8 md:p-12 flex flex-col justify-center z-10">
+                    <span class="inline-block py-1 px-3 rounded-full bg-blue-900/50 text-blue-300 text-xs font-bold uppercase tracking-wider mb-4 border border-blue-700 w-max">Entorno de Simulación</span>
+                    <h3 class="text-3xl font-bold text-white mb-4">Aprende con Cisco Packet Tracer</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Durante el semestre no solo veremos teoría. Llevaremos el conocimiento a la práctica utilizando <strong>Cisco Packet Tracer</strong>, un potente simulador profesional que nos permite experimentar en un laboratorio virtual seguro. ¿Qué haremos aquí?
+                    </p>
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-server text-conalep-light mt-1 mr-4"></i> 
+                            <span>Configuraremos <strong>Routers, Switches y Access Points</strong> reales utilizando la línea de comandos (CLI) y sus sistemas operativos (IOS).</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-diagram-project text-conalep-light mt-1 mr-4"></i> 
+                            <span>Diseñaremos arquitecturas de red conectando PCs, laptops, servidores y dispositivos móviles tal como se hace en la industria.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-bug text-conalep-light mt-1 mr-4"></i> 
+                            <span>Analizaremos el flujo de paquetes en tiempo real (Ping, protocolos de ruteo) para diagnosticar, resolver problemas de conectividad (troubleshooting) y simular fallas sin romper equipos físicos.</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="lg:w-1/2 relative min-h-[400px]">
+                    <img src="https://images.unsplash.com/photo-1614064641913-6b7140414e21?auto=format&fit=crop&w=800&q=80" alt="Cisco Packet Tracer en uso" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-screen">
+                    <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-transparent"></div>
+                    <div class="absolute inset-0 bg-blue-900/20 mix-blend-multiply"></div>
+                </div>
+            </div>
+
+            <!-- Animación y Simulación del Modelo OSI -->
+            <div class="mt-16 bg-gray-900 rounded-2xl shadow-2xl border border-gray-700">
+                <div class="p-8 border-b border-gray-800 text-center rounded-t-2xl">
+                    <span class="inline-block py-1 px-3 rounded-full bg-purple-900/50 text-purple-300 text-xs font-bold uppercase tracking-wider mb-3 border border-purple-700">Simulación Interactiva</span>
+                    <h3 class="text-2xl font-bold text-white"><i class="fa-solid fa-layer-group text-conalep-light mr-2"></i>Arquitectura de Red: Modelo OSI</h3>
+                    <p class="text-gray-400 mt-2">Observa cómo viaja la información desde tu computadora hasta el destino. <strong class="text-white">Pasa el cursor sobre las capas del emisor</strong> para conocer la función de cada una.</p>
+                </div>
+
+                <div class="p-8 md:p-12 flex flex-col lg:flex-row justify-between items-center gap-8 relative rounded-b-2xl">
+                    
+                    <!-- Computadora Emisora -->
+                    <div class="w-full lg:w-1/3 flex flex-col gap-2 relative z-10">
+                        <div class="text-center mb-2 text-conalep-light font-bold"><i class="fa-solid fa-laptop mb-1 text-2xl"></i><br>Emisor (PC A)</div>
+                        
+                        <!-- Capa 7 -->
+                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-conalep-green hover:border-conalep-green transition-all duration-300 hover:scale-105 hover:z-50 hover:shadow-lg">
+                            <span class="text-gray-300 group-hover:text-white font-semibold">7. Aplicación</span>
+                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
+                                <strong class="block text-conalep-green mb-1"><i class="fa-solid fa-browser"></i> Capa de Aplicación</strong>
+                                Proporciona servicios de red directamente a las aplicaciones del usuario (Ej. Navegadores web usando HTTP, DNS).
+                            </div>
+                        </div>
+                        <!-- Capa 6 -->
+                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-conalep-green hover:border-conalep-green transition-all duration-300 hover:scale-105 hover:z-40 hover:shadow-lg">
+                            <span class="text-gray-300 group-hover:text-white font-semibold">6. Presentación</span>
+                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
+                                <strong class="block text-conalep-green mb-1"><i class="fa-solid fa-file-code"></i> Capa de Presentación</strong>
+                                Se encarga del formato, el cifrado y la compresión de los datos para que el receptor los entienda (Ej. JPEG, SSL, TLS).
+                            </div>
+                        </div>
+                        <!-- Capa 5 -->
+                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-conalep-green hover:border-conalep-green transition-all duration-300 hover:scale-105 hover:z-30 hover:shadow-lg">
+                            <span class="text-gray-300 group-hover:text-white font-semibold">5. Sesión</span>
+                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
+                                <strong class="block text-conalep-green mb-1"><i class="fa-solid fa-handshake"></i> Capa de Sesión</strong>
+                                Establece, mantiene, sincroniza y finaliza la conexión (sesión) entre los dos dispositivos comunicantes.
+                            </div>
+                        </div>
+                        <!-- Capa 4 -->
+                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-blue-500 hover:border-blue-500 transition-all duration-300 hover:scale-105 hover:z-20 hover:shadow-lg">
+                            <span class="text-gray-300 group-hover:text-white font-semibold">4. Transporte</span>
+                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
+                                <strong class="block text-blue-500 mb-1"><i class="fa-solid fa-truck-fast"></i> Capa de Transporte</strong>
+                                Segmentación de los datos y control de errores/flujo para garantizar la entrega. Protocolos clave: TCP y UDP.
+                            </div>
+                        </div>
+                        <!-- Capa 3 -->
+                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-blue-500 hover:border-blue-500 transition-all duration-300 hover:scale-105 hover:z-10 hover:shadow-lg">
+                            <span class="text-gray-300 group-hover:text-white font-semibold">3. Red</span>
+                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
+                                <strong class="block text-blue-500 mb-1"><i class="fa-solid fa-route"></i> Capa de Red</strong>
+                                Direccionamiento lógico y determinación de la mejor ruta (Enrutamiento). Aquí actúan los <strong>Routers</strong> y las direcciones IP.
+                            </div>
+                        </div>
+                        <!-- Capa 2 -->
+                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-purple-500 hover:border-purple-500 transition-all duration-300 hover:scale-105 hover:z-10 hover:shadow-lg">
+                            <span class="text-gray-300 group-hover:text-white font-semibold">2. Enlace de Datos</span>
+                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
+                                <strong class="block text-purple-500 mb-1"><i class="fa-solid fa-link"></i> Capa de Enlace de Datos</strong>
+                                Direccionamiento físico y acceso al medio. Envía tramas entre nodos locales. Aquí operan los <strong>Switches</strong> y direcciones MAC.
+                            </div>
+                        </div>
+                        <!-- Capa 1 -->
+                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-purple-500 hover:border-purple-500 transition-all duration-300 hover:scale-105 hover:z-10 hover:shadow-lg">
+                            <span class="text-gray-300 group-hover:text-white font-semibold">1. Física</span>
+                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
+                                <strong class="block text-purple-500 mb-1"><i class="fa-solid fa-plug"></i> Capa Física</strong>
+                                Transmisión de bits (0s y 1s) a través del medio físico, como cables UTP, fibra óptica o señales inalámbricas de radio.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Medio Físico / Animación de Transmisión -->
+                    <div class="w-full lg:w-1/3 flex flex-col items-center justify-center my-8 lg:my-0">
+                        <div class="text-gray-400 mb-4 text-sm font-bold uppercase tracking-widest text-center"><i class="fa-solid fa-wifi mr-2"></i> Medio Físico <i class="fa-solid fa-network-wired ml-2"></i></div>
+                        <div class="w-full h-3 bg-gray-800 rounded-full relative overflow-hidden border border-gray-700 shadow-inner">
+                            <!-- Paquete de datos animado -->
+                            <div class="absolute top-0 h-full w-12 bg-conalep-light rounded-full shadow-[0_0_20px_#009A7A] animate-packet"></div>
+                        </div>
+                        <div class="mt-4 flex flex-col gap-2 text-xs text-gray-500 text-center">
+                            <span><i class="fa-solid fa-bolt text-yellow-500 mr-1"></i> Transmisión de datos encapsulados</span>
+                            <span class="font-mono bg-gray-800 px-3 py-1 rounded text-conalep-light tracking-widest">10110101 01101001 01110011</span>
+                        </div>
+                    </div>
+
+                    <!-- Computadora Receptora -->
+                    <div class="w-full lg:w-1/3 flex flex-col gap-2 relative z-0">
+                        <div class="text-center mb-2 text-blue-400 font-bold"><i class="fa-solid fa-server mb-1 text-2xl"></i><br>Receptor (Servidor B)</div>
+                        
+                        <!-- Capas Receptor -->
+                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">7. Aplicación</span></div>
+                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">6. Presentación</span></div>
+                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">5. Sesión</span></div>
+                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">4. Transporte</span></div>
+                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">3. Red</span></div>
+                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">2. Enlace de Datos</span></div>
+                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">1. Física</span></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Actividad Introductoria -->
+    <section id="actividad" class="py-20 bg-gray-900 text-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <i class="fa-solid fa-laptop-code text-5xl text-conalep-light mb-4"></i>
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Examen Diagnóstico</h2>
-                <p class="text-gray-400">Descubre qué tanto sabes sobre los conceptos básicos de redes antes de iniciar la materia. Selecciona la respuesta correcta para cada pregunta.</p>
+                <i class="fa-solid fa-pen-to-square text-5xl text-conalep-light mb-4"></i>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Actividad Introductoria</h2>
+                <div class="bg-gray-800 inline-block px-6 py-4 rounded-lg border-l-4 border-yellow-500 mt-4">
+                    <p class="text-gray-300"><i class="fa-solid fa-circle-info text-yellow-500 mr-2"></i><strong>Instrucciones:</strong> Copia detenidamente las siguientes preguntas en tu cuaderno y subraya la respuesta que consideres correcta. Esto nos ayudará a conocer tus conocimientos previos antes de iniciar la materia.</p>
+                </div>
             </div>
 
             <div class="bg-gray-800 rounded-2xl p-6 md:p-10 shadow-2xl border border-gray-700">
-                <form id="quizForm" class="space-y-8">
+                <div class="space-y-8">
                     <!-- Q1 -->
                     <div>
                         <h4 class="text-lg font-semibold mb-3 text-gray-200">1. ¿Qué significan las siglas LAN?</h4>
                         <div class="space-y-2">
-                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
-                                <input type="radio" name="q1" value="a" class="w-5 h-5 text-conalep-green focus:ring-conalep-light bg-gray-700 border-gray-600">
-                                <span class="ml-3 text-gray-300">Large Area Network</span>
-                            </label>
-                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
-                                <input type="radio" name="q1" value="b" class="w-5 h-5 text-conalep-green focus:ring-conalep-light bg-gray-700 border-gray-600">
-                                <span class="ml-3 text-gray-300">Local Area Network</span>
-                            </label>
-                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
-                                <input type="radio" name="q1" value="c" class="w-5 h-5 text-conalep-green focus:ring-conalep-light bg-gray-700 border-gray-600">
-                                <span class="ml-3 text-gray-300">Logical Access Node</span>
-                            </label>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">a) Large Area Network</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">b) Local Area Network</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">c) Logical Access Node</div>
                         </div>
                     </div>
 
@@ -315,18 +554,9 @@
                     <div>
                         <h4 class="text-lg font-semibold mb-3 text-gray-200">2. ¿Cuál es la función principal de un Router?</h4>
                         <div class="space-y-2">
-                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
-                                <input type="radio" name="q2" value="a" class="w-5 h-5 text-conalep-green">
-                                <span class="ml-3 text-gray-300">Interconectar distintas redes y enrutar el tráfico entre ellas.</span>
-                            </label>
-                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
-                                <input type="radio" name="q2" value="b" class="w-5 h-5 text-conalep-green">
-                                <span class="ml-3 text-gray-300">Proveer energía eléctrica a los equipos de cómputo.</span>
-                            </label>
-                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
-                                <input type="radio" name="q2" value="c" class="w-5 h-5 text-conalep-green">
-                                <span class="ml-3 text-gray-300">Evitar virus en las computadoras locales.</span>
-                            </label>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">a) Interconectar distintas redes y enrutar el tráfico entre ellas.</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">b) Proveer energía eléctrica a los equipos de cómputo.</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">c) Evitar virus en las computadoras locales.</div>
                         </div>
                     </div>
 
@@ -334,18 +564,9 @@
                     <div>
                         <h4 class="text-lg font-semibold mb-3 text-gray-200">3. ¿Qué comando se utiliza comúnmente para verificar la conectividad entre dos dispositivos?</h4>
                         <div class="space-y-2">
-                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
-                                <input type="radio" name="q3" value="a" class="w-5 h-5 text-conalep-green">
-                                <span class="ml-3 text-gray-300">ipconfig</span>
-                            </label>
-                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
-                                <input type="radio" name="q3" value="b" class="w-5 h-5 text-conalep-green">
-                                <span class="ml-3 text-gray-300">ping</span>
-                            </label>
-                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
-                                <input type="radio" name="q3" value="c" class="w-5 h-5 text-conalep-green">
-                                <span class="ml-3 text-gray-300">format</span>
-                            </label>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">a) ipconfig</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">b) ping</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">c) format</div>
                         </div>
                     </div>
 
@@ -353,18 +574,9 @@
                     <div>
                         <h4 class="text-lg font-semibold mb-3 text-gray-200">4. ¿Qué es una dirección IP?</h4>
                         <div class="space-y-2">
-                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
-                                <input type="radio" name="q4" value="a" class="w-5 h-5 text-conalep-green">
-                                <span class="ml-3 text-gray-300">Un número físico grabado en la tarjeta de red (MAC).</span>
-                            </label>
-                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
-                                <input type="radio" name="q4" value="b" class="w-5 h-5 text-conalep-green">
-                                <span class="ml-3 text-gray-300">Un cable de fibra óptica de alta velocidad.</span>
-                            </label>
-                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
-                                <input type="radio" name="q4" value="c" class="w-5 h-5 text-conalep-green">
-                                <span class="ml-3 text-gray-300">Un identificador lógico y numérico asignado a un dispositivo en una red.</span>
-                            </label>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">a) Un número físico grabado en la tarjeta de red (MAC).</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">b) Un cable de fibra óptica de alta velocidad.</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">c) Un identificador lógico y numérico asignado a un dispositivo en una red.</div>
                         </div>
                     </div>
 
@@ -372,32 +584,62 @@
                     <div>
                         <h4 class="text-lg font-semibold mb-3 text-gray-200">5. ¿Qué significa la "W" en WLAN?</h4>
                         <div class="space-y-2">
-                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
-                                <input type="radio" name="q5" value="a" class="w-5 h-5 text-conalep-green">
-                                <span class="ml-3 text-gray-300">Wireless (Inalámbrica)</span>
-                            </label>
-                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
-                                <input type="radio" name="q5" value="b" class="w-5 h-5 text-conalep-green">
-                                <span class="ml-3 text-gray-300">Wide (Amplia)</span>
-                            </label>
-                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
-                                <input type="radio" name="q5" value="c" class="w-5 h-5 text-conalep-green">
-                                <span class="ml-3 text-gray-300">Web</span>
-                            </label>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">a) Wireless (Inalámbrica)</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">b) Wide (Amplia)</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">c) Web</div>
                         </div>
                     </div>
 
-                    <div class="text-center pt-6">
-                        <button type="button" onclick="calificarExamen()" class="bg-conalep-light hover:bg-conalep-green text-white font-bold py-3 px-10 rounded-full transition shadow-lg text-lg">
-                            Calificar Examen
-                        </button>
+                    <!-- Q6 -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3 text-gray-200">6. ¿Qué dispositivo se utiliza comúnmente para conectar múltiples computadoras dentro de una misma red local (LAN)?</h4>
+                        <div class="space-y-2">
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">a) Switch (Conmutador)</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">b) Monitor</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">c) Memoria RAM</div>
+                        </div>
                     </div>
 
-                    <!-- Contenedor de Resultado -->
-                    <div id="resultadoQuiz" class="hidden mt-6 p-6 rounded-lg text-center text-lg font-bold">
-                        <!-- El texto del resultado se inyectará aquí mediante JavaScript -->
+                    <!-- Q7 -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3 text-gray-200">7. ¿Cuál es el tipo de cable más utilizado para redes de área local Ethernet?</h4>
+                        <div class="space-y-2">
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">a) Cable Coaxial</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">b) Cable UTP (Par trenzado)</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">c) Cable HDMI</div>
+                        </div>
                     </div>
-                </form>
+
+                    <!-- Q8 -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3 text-gray-200">8. ¿Qué unidad básica de información se transfiere a través de las conexiones en una red de computadoras?</h4>
+                        <div class="space-y-2">
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">a) Paquete de datos / Trama</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">b) Gigabyte</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">c) Archivo comprimido (.zip)</div>
+                        </div>
+                    </div>
+
+                    <!-- Q9 -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3 text-gray-200">9. ¿Cuál es la función principal de un servidor DNS?</h4>
+                        <div class="space-y-2">
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">a) Bloquear anuncios y pop-ups en el navegador web.</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">b) Traducir nombres de dominio (como google.com) a direcciones IP numéricas.</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">c) Asignar direcciones IP dinámicas a los equipos que se conectan a la red.</div>
+                        </div>
+                    </div>
+
+                    <!-- Q10 -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3 text-gray-200">10. ¿Qué indican las siglas Wi-Fi de manera general en el ámbito de redes?</h4>
+                        <div class="space-y-2">
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">a) Wire-Fiber (Fibra alámbrica)</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">b) Windows Firewall</div>
+                            <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">c) Tecnología de conexión de red inalámbrica basada en el estándar IEEE 802.11</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -410,56 +652,5 @@
         </div>
     </footer>
 
-    <!-- Lógica del Examen -->
-    <script>
-        function calificarExamen() {
-            // Respuestas correctas
-            const respuestas = {
-                q1: 'b',
-                q2: 'a',
-                q3: 'b',
-                q4: 'c',
-                q5: 'a'
-            };
-
-            let puntaje = 0;
-            const totalPreguntas = Object.keys(respuestas).length;
-            const form = document.getElementById('quizForm');
-            let todasRespondidas = true;
-
-            // Verificar respuestas
-            for (let [pregunta, respuestaCorrecta] of Object.entries(respuestas)) {
-                const seleccionada = form.elements[pregunta].value;
-                if (!seleccionada) {
-                    todasRespondidas = false;
-                }
-                if (seleccionada === respuestaCorrecta) {
-                    puntaje++;
-                }
-            }
-
-            const resultadoBox = document.getElementById('resultadoQuiz');
-            resultadoBox.classList.remove('hidden', 'bg-green-600', 'bg-yellow-600', 'bg-red-600');
-
-            if (!todasRespondidas) {
-                resultadoBox.innerHTML = "<i class='fa-solid fa-triangle-exclamation mr-2'></i> Por favor, responde todas las preguntas antes de calificar.";
-                resultadoBox.classList.add('bg-yellow-600', 'text-white');
-                return;
-            }
-
-            const porcentaje = (puntaje / totalPreguntas) * 100;
-            
-            if (porcentaje === 100) {
-                resultadoBox.classList.add('bg-green-600', 'text-white');
-                resultadoBox.innerHTML = `<i class='fa-solid fa-check-circle mr-2 text-2xl align-middle'></i> ¡Excelente! Tienes conocimientos sólidos. Obtuviste ${puntaje} de ${totalPreguntas} aciertos.`;
-            } else if (porcentaje >= 60) {
-                resultadoBox.classList.add('bg-yellow-600', 'text-white');
-                resultadoBox.innerHTML = `<i class='fa-solid fa-thumbs-up mr-2 text-2xl align-middle'></i> ¡Buen intento! Conoces las bases. Obtuviste ${puntaje} de ${totalPreguntas} aciertos. Durante el semestre perfeccionarás estos temas.`;
-            } else {
-                resultadoBox.classList.add('bg-red-600', 'text-white');
-                resultadoBox.innerHTML = `<i class='fa-solid fa-book mr-2 text-2xl align-middle'></i> Obtuviste ${puntaje} de ${totalPreguntas} aciertos. ¡No te preocupes! Esta materia está diseñada para que aprendas todo esto desde cero.`;
-            }
-        }
-    </script>
 </body>
 </html>
