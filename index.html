@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de Redes - CONALEP Chilpancingo</title>
+    <!-- Tailwind CSS para los estilos modernos y responsivos -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para los íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        conalep: {
+                            green: '#006B54',
+                            light: '#009A7A',
+                            dark: '#004C3B'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .bg-hero {
+            background-image: linear-gradient(rgba(0, 76, 59, 0.8), rgba(0, 76, 59, 0.8)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans selection:bg-conalep-light selection:text-white">
+
+    <!-- Navegación -->
+    <nav class="bg-white shadow-md fixed w-full z-50 top-0 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <i class="fa-solid fa-network-wired text-conalep-green text-3xl mr-3"></i>
+                    <div>
+                        <span class="font-bold text-xl text-conalep-green block leading-tight">CONALEP</span>
+                        <span class="text-xs text-gray-500 font-semibold tracking-wider">CHILPANCINGO</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-gray-600 hover:text-conalep-green transition font-medium">Inicio</a>
+                    <a href="#introduccion" class="text-gray-600 hover:text-conalep-green transition font-medium">Introducción</a>
+                    <a href="#evaluacion" class="text-gray-600 hover:text-conalep-green transition font-medium">Evaluación</a>
+                    <a href="#temario" class="text-gray-600 hover:text-conalep-green transition font-medium">Temario</a>
+                    <a href="#examen" class="bg-conalep-green text-white px-5 py-2 rounded-full hover:bg-conalep-dark transition font-medium shadow-lg hover:shadow-xl">Examen Diagnóstico</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header / Hero Section -->
+    <header id="inicio" class="bg-hero h-screen flex items-center justify-center text-center mt-10">
+        <div class="px-4 max-w-4xl mx-auto text-white">
+            <h2 class="text-conalep-light font-semibold tracking-widest uppercase mb-3 drop-shadow-md">PT-B en Informática • 6° Semestre</h2>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 drop-shadow-lg">Manejo de Redes</h1>
+            <p class="text-lg md:text-2xl font-light mb-10 text-gray-200">Construyendo las conexiones del mañana. Aprende a implementar, configurar y administrar infraestructura de red de nivel empresarial.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#introduccion" class="bg-white text-conalep-green font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition duration-300">Explorar Materia</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Introducción y Objetivos -->
+    <section id="introduccion" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h3 class="text-sm font-bold text-conalep-green uppercase tracking-wider mb-2">Conoce la materia</h3>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Introducción</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-justify">
+                        El módulo de <strong>Manejo de redes</strong> tiene como finalidad que adquieras las habilidades y destrezas necesarias para integrar y manejar dispositivos de red, proporcionando un nivel de seguridad óptimo mediante la configuración e interconexión de los equipos requeridos para brindar acceso a los usuarios.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed text-justify">
+                        Aprenderás a identificar y resolver problemas que se presentan en el manejo de la red de una organización, preparándote para un entorno laboral exigente y dinámico.
+                    </p>
+                    
+                    <div class="bg-gray-50 border-l-4 border-conalep-green p-6 rounded-r-lg shadow-sm">
+                        <h4 class="text-xl font-bold text-conalep-green mb-2"><i class="fa-solid fa-bullseye mr-2"></i> Propósito del Módulo</h4>
+                        <p class="text-gray-700 italic">
+                            "Implementar y configurar dispositivos de red, de acuerdo con las necesidades específicas de una organización, para elevar los niveles de administración, rendimiento y seguridad de las redes de área local cableadas e inalámbricas."
+                        </p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Equipos de red" class="rounded-xl shadow-2xl object-cover h-96 w-full">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-conalep-light p-3 rounded-full text-white">
+                                <i class="fa-solid fa-clock text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 font-semibold">Carga Horaria</p>
+                                <p class="text-xl font-bold text-gray-900">8 hrs / semana</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forma de Evaluación -->
+    <section id="evaluacion" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-sm font-bold text-conalep-green uppercase tracking-wider mb-2">Criterios de Calificación</h3>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Forma de Evaluación</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">La evaluación está diseñada para valorar tanto el trabajo constante en el aula como las competencias prácticas adquiridas mediante proyectos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Firmas -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-blue-500 text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 -mr-4 -mt-4 text-blue-100 opacity-50">
+                        <i class="fa-solid fa-signature text-8xl"></i>
+                    </div>
+                    <div class="text-5xl font-black text-blue-500 mb-2">40%</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Firmas</h4>
+                    <p class="text-gray-600 text-sm">Trabajos en clase, tareas, participaciones y prácticas formativas evaluadas de manera continua.</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-6">
+                        <div class="bg-blue-500 h-2.5 rounded-full" style="width: 40%"></div>
+                    </div>
+                </div>
+
+                <!-- Proyecto -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-conalep-green text-center transform md:-translate-y-4 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 -mr-4 -mt-4 text-conalep-green opacity-10">
+                        <i class="fa-solid fa-diagram-project text-8xl"></i>
+                    </div>
+                    <div class="text-6xl font-black text-conalep-green mb-2">50%</div>
+                    <h4 class="text-2xl font-bold text-gray-800 mb-4">Proyecto Integrador</h4>
+                    <p class="text-gray-600 text-sm">Implementación práctica de una topología de red real evaluando ruteo, conmutación y seguridad.</p>
+                    <div class="w-full bg-gray-200 rounded-full h-3 mt-6">
+                        <div class="bg-conalep-green h-3 rounded-full" style="width: 50%"></div>
+                    </div>
+                </div>
+
+                <!-- Asistencia -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border-t-4 border-yellow-500 text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 -mr-4 -mt-4 text-yellow-100 opacity-50">
+                        <i class="fa-solid fa-calendar-check text-8xl"></i>
+                    </div>
+                    <div class="text-5xl font-black text-yellow-500 mb-2">10%</div>
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">Asistencia</h4>
+                    <p class="text-gray-600 text-sm">Puntualidad y permanencia en el laboratorio y aula. Clave para el seguimiento de la materia.</p>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-6">
+                        <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 10%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temario (3 Parciales) -->
+    <section id="temario" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h3 class="text-sm font-bold text-conalep-green uppercase tracking-wider mb-2">Plan de Estudios</h3>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Temario del Semestre</h2>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">El contenido está estructurado en tres unidades de aprendizaje o parciales para desarrollar tus habilidades de forma progresiva.</p>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Parcial 1 -->
+                <div class="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="md:w-1/3 bg-gray-800 relative">
+                        <img src="https://images.unsplash.com/photo-1562408590-e32931084e23?auto=format&fit=crop&w=600&q=80" alt="Redes inalámbricas" class="object-cover w-full h-full opacity-60 mix-blend-overlay">
+                        <div class="absolute inset-0 p-8 flex flex-col justify-center">
+                            <span class="text-conalep-light font-bold text-xl mb-1">Parcial 1</span>
+                            <h3 class="text-white text-3xl font-bold leading-tight">Implementación de dispositivos de red inalámbricos</h3>
+                            <div class="mt-4 flex items-center text-gray-300 text-sm">
+                                <i class="fa-solid fa-hourglass-half mr-2"></i> 30 horas
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 p-8">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-conalep-green text-white flex items-center justify-center font-bold mr-4">1.1</span>
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-800">Acceso a recursos inalámbricos</h4>
+                                    <p class="text-gray-600 text-sm mt-1">Configuración del acceso a los recursos de la red inalámbrica a través de las herramientas que proveen los dispositivos de red (Puntos de Acceso, SSID, Canales).</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-conalep-green text-white flex items-center justify-center font-bold mr-4">1.2</span>
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-800">Seguridad Inalámbrica</h4>
+                                    <p class="text-gray-600 text-sm mt-1">Configuración de parámetros de seguridad (Filtrado MAC, Encriptación, Firmware) para proteger la información y mitigar amenazas comunes.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Parcial 2 -->
+                <div class="flex flex-col md:flex-row-reverse bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="md:w-1/3 bg-gray-800 relative">
+                        <img src="https://images.unsplash.com/photo-1551703599-6b3e8379aa8b?auto=format&fit=crop&w=600&q=80" alt="Routers y switches" class="object-cover w-full h-full opacity-60 mix-blend-overlay">
+                        <div class="absolute inset-0 p-8 flex flex-col justify-center">
+                            <span class="text-blue-400 font-bold text-xl mb-1">Parcial 2</span>
+                            <h3 class="text-white text-3xl font-bold leading-tight">Implementación de dispositivos de ruteo y conmutación</h3>
+                            <div class="mt-4 flex items-center text-gray-300 text-sm">
+                                <i class="fa-solid fa-hourglass-half mr-2"></i> 74 horas
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 p-8">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold mr-4">2.1</span>
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-800">Servicios de conectividad</h4>
+                                    <p class="text-gray-600 text-sm mt-1">Uso de comandos del Sistema Operativo Internetwork (IOS) mediante la CLI para la configuración global de routers y switches en una LAN Ethernet.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold mr-4">2.2</span>
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-800">Servicios integrados</h4>
+                                    <p class="text-gray-600 text-sm mt-1">Configuración de servicios como DHCP, NAT estática y dinámica en dispositivos ISR (Integrated Services Router) usando CLI o SDM.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Parcial 3 -->
+                <div class="flex flex-col md:flex-row bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="md:w-1/3 bg-gray-800 relative">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" alt="VLANs" class="object-cover w-full h-full opacity-60 mix-blend-overlay">
+                        <div class="absolute inset-0 p-8 flex flex-col justify-center">
+                            <span class="text-purple-400 font-bold text-xl mb-1">Parcial 3</span>
+                            <h3 class="text-white text-3xl font-bold leading-tight">Administración de redes de áreas locales virtuales</h3>
+                            <div class="mt-4 flex items-center text-gray-300 text-sm">
+                                <i class="fa-solid fa-hourglass-half mr-2"></i> 40 horas
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 p-8">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold mr-4">3.1</span>
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-800">Creación de VLANs y Troncales</h4>
+                                    <p class="text-gray-600 text-sm mt-1">Agrupación lógica de estaciones de trabajo, asignación de puertos y configuración de enlaces troncales IEEE 802.1Q.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold mr-4">3.2</span>
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-800">Protocolo VTP</h4>
+                                    <p class="text-gray-600 text-sm mt-1">Administración de dominios VTP, configuración de switches en modo Servidor, Cliente o Transparente para propagar las VLAN.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="flex-shrink-0 h-8 w-8 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold mr-4">3.3</span>
+                                <div>
+                                    <h4 class="text-lg font-bold text-gray-800">Enrutamiento inter-VLAN</h4>
+                                    <p class="text-gray-600 text-sm mt-1">Establecimiento de comunicación entre VLANs distintas usando la técnica "Router-on-a-stick" y subinterfaces.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examen Diagnóstico -->
+    <section id="examen" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <i class="fa-solid fa-laptop-code text-5xl text-conalep-light mb-4"></i>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Examen Diagnóstico</h2>
+                <p class="text-gray-400">Descubre qué tanto sabes sobre los conceptos básicos de redes antes de iniciar la materia. Selecciona la respuesta correcta para cada pregunta.</p>
+            </div>
+
+            <div class="bg-gray-800 rounded-2xl p-6 md:p-10 shadow-2xl border border-gray-700">
+                <form id="quizForm" class="space-y-8">
+                    <!-- Q1 -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3 text-gray-200">1. ¿Qué significan las siglas LAN?</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
+                                <input type="radio" name="q1" value="a" class="w-5 h-5 text-conalep-green focus:ring-conalep-light bg-gray-700 border-gray-600">
+                                <span class="ml-3 text-gray-300">Large Area Network</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
+                                <input type="radio" name="q1" value="b" class="w-5 h-5 text-conalep-green focus:ring-conalep-light bg-gray-700 border-gray-600">
+                                <span class="ml-3 text-gray-300">Local Area Network</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
+                                <input type="radio" name="q1" value="c" class="w-5 h-5 text-conalep-green focus:ring-conalep-light bg-gray-700 border-gray-600">
+                                <span class="ml-3 text-gray-300">Logical Access Node</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3 text-gray-200">2. ¿Cuál es la función principal de un Router?</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
+                                <input type="radio" name="q2" value="a" class="w-5 h-5 text-conalep-green">
+                                <span class="ml-3 text-gray-300">Interconectar distintas redes y enrutar el tráfico entre ellas.</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
+                                <input type="radio" name="q2" value="b" class="w-5 h-5 text-conalep-green">
+                                <span class="ml-3 text-gray-300">Proveer energía eléctrica a los equipos de cómputo.</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
+                                <input type="radio" name="q2" value="c" class="w-5 h-5 text-conalep-green">
+                                <span class="ml-3 text-gray-300">Evitar virus en las computadoras locales.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3 text-gray-200">3. ¿Qué comando se utiliza comúnmente para verificar la conectividad entre dos dispositivos?</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
+                                <input type="radio" name="q3" value="a" class="w-5 h-5 text-conalep-green">
+                                <span class="ml-3 text-gray-300">ipconfig</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
+                                <input type="radio" name="q3" value="b" class="w-5 h-5 text-conalep-green">
+                                <span class="ml-3 text-gray-300">ping</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
+                                <input type="radio" name="q3" value="c" class="w-5 h-5 text-conalep-green">
+                                <span class="ml-3 text-gray-300">format</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q4 -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3 text-gray-200">4. ¿Qué es una dirección IP?</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
+                                <input type="radio" name="q4" value="a" class="w-5 h-5 text-conalep-green">
+                                <span class="ml-3 text-gray-300">Un número físico grabado en la tarjeta de red (MAC).</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
+                                <input type="radio" name="q4" value="b" class="w-5 h-5 text-conalep-green">
+                                <span class="ml-3 text-gray-300">Un cable de fibra óptica de alta velocidad.</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
+                                <input type="radio" name="q4" value="c" class="w-5 h-5 text-conalep-green">
+                                <span class="ml-3 text-gray-300">Un identificador lógico y numérico asignado a un dispositivo en una red.</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Q5 -->
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3 text-gray-200">5. ¿Qué significa la "W" en WLAN?</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
+                                <input type="radio" name="q5" value="a" class="w-5 h-5 text-conalep-green">
+                                <span class="ml-3 text-gray-300">Wireless (Inalámbrica)</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
+                                <input type="radio" name="q5" value="b" class="w-5 h-5 text-conalep-green">
+                                <span class="ml-3 text-gray-300">Wide (Amplia)</span>
+                            </label>
+                            <label class="flex items-center p-3 border border-gray-600 rounded-lg cursor-pointer hover:bg-gray-700 transition">
+                                <input type="radio" name="q5" value="c" class="w-5 h-5 text-conalep-green">
+                                <span class="ml-3 text-gray-300">Web</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="text-center pt-6">
+                        <button type="button" onclick="calificarExamen()" class="bg-conalep-light hover:bg-conalep-green text-white font-bold py-3 px-10 rounded-full transition shadow-lg text-lg">
+                            Calificar Examen
+                        </button>
+                    </div>
+
+                    <!-- Contenedor de Resultado -->
+                    <div id="resultadoQuiz" class="hidden mt-6 p-6 rounded-lg text-center text-lg font-bold">
+                        <!-- El texto del resultado se inyectará aquí mediante JavaScript -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 text-gray-400 py-8 text-center">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="mb-2">&copy; 2026 CONALEP Chilpancingo. Educación Técnica para la Equidad.</p>
+            <p class="text-sm">Módulo MRDE-20 - Manejo de Redes</p>
+        </div>
+    </footer>
+
+    <!-- Lógica del Examen -->
+    <script>
+        function calificarExamen() {
+            // Respuestas correctas
+            const respuestas = {
+                q1: 'b',
+                q2: 'a',
+                q3: 'b',
+                q4: 'c',
+                q5: 'a'
+            };
+
+            let puntaje = 0;
+            const totalPreguntas = Object.keys(respuestas).length;
+            const form = document.getElementById('quizForm');
+            let todasRespondidas = true;
+
+            // Verificar respuestas
+            for (let [pregunta, respuestaCorrecta] of Object.entries(respuestas)) {
+                const seleccionada = form.elements[pregunta].value;
+                if (!seleccionada) {
+                    todasRespondidas = false;
+                }
+                if (seleccionada === respuestaCorrecta) {
+                    puntaje++;
+                }
+            }
+
+            const resultadoBox = document.getElementById('resultadoQuiz');
+            resultadoBox.classList.remove('hidden', 'bg-green-600', 'bg-yellow-600', 'bg-red-600');
+
+            if (!todasRespondidas) {
+                resultadoBox.innerHTML = "<i class='fa-solid fa-triangle-exclamation mr-2'></i> Por favor, responde todas las preguntas antes de calificar.";
+                resultadoBox.classList.add('bg-yellow-600', 'text-white');
+                return;
+            }
+
+            const porcentaje = (puntaje / totalPreguntas) * 100;
+            
+            if (porcentaje === 100) {
+                resultadoBox.classList.add('bg-green-600', 'text-white');
+                resultadoBox.innerHTML = `<i class='fa-solid fa-check-circle mr-2 text-2xl align-middle'></i> ¡Excelente! Tienes conocimientos sólidos. Obtuviste ${puntaje} de ${totalPreguntas} aciertos.`;
+            } else if (porcentaje >= 60) {
+                resultadoBox.classList.add('bg-yellow-600', 'text-white');
+                resultadoBox.innerHTML = `<i class='fa-solid fa-thumbs-up mr-2 text-2xl align-middle'></i> ¡Buen intento! Conoces las bases. Obtuviste ${puntaje} de ${totalPreguntas} aciertos. Durante el semestre perfeccionarás estos temas.`;
+            } else {
+                resultadoBox.classList.add('bg-red-600', 'text-white');
+                resultadoBox.innerHTML = `<i class='fa-solid fa-book mr-2 text-2xl align-middle'></i> Obtuviste ${puntaje} de ${totalPreguntas} aciertos. ¡No te preocupes! Esta materia está diseñada para que aprendas todo esto desde cero.`;
+            }
+        }
+    </script>
+</body>
+</html>
