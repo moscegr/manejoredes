@@ -68,7 +68,8 @@
                     <a href="#evaluacion" class="text-gray-600 hover:text-conalep-green transition font-medium">Evaluación</a>
                     <a href="#temario" class="text-gray-600 hover:text-conalep-green transition font-medium">Temario</a>
                     <a href="#aplicacion" class="text-gray-600 hover:text-conalep-green transition font-medium">Aplicación</a>
-                    <a href="#actividad" class="bg-conalep-green text-white px-5 py-2 rounded-full hover:bg-conalep-dark transition font-medium shadow-lg hover:shadow-xl">Actividad Inicial</a>
+                    <a href="#actividad" class="text-gray-600 hover:text-conalep-green transition font-medium">Actividad Inicial</a>
+                    <a href="#simulacion" class="bg-conalep-green text-white px-5 py-2 rounded-full hover:bg-conalep-dark transition font-medium shadow-lg hover:shadow-xl">Simulación</a>
                 </div>
             </div>
         </div>
@@ -422,108 +423,6 @@
                     <div class="absolute inset-0 bg-blue-900/20 mix-blend-multiply"></div>
                 </div>
             </div>
-
-            <!-- Animación y Simulación del Modelo OSI -->
-            <div class="mt-16 bg-gray-900 rounded-2xl shadow-2xl border border-gray-700">
-                <div class="p-8 border-b border-gray-800 text-center rounded-t-2xl">
-                    <span class="inline-block py-1 px-3 rounded-full bg-purple-900/50 text-purple-300 text-xs font-bold uppercase tracking-wider mb-3 border border-purple-700">Simulación Interactiva</span>
-                    <h3 class="text-2xl font-bold text-white"><i class="fa-solid fa-layer-group text-conalep-light mr-2"></i>Arquitectura de Red: Modelo OSI</h3>
-                    <p class="text-gray-400 mt-2">Observa cómo viaja la información desde tu computadora hasta el destino. <strong class="text-white">Pasa el cursor sobre las capas del emisor</strong> para conocer la función de cada una.</p>
-                </div>
-
-                <div class="p-8 md:p-12 flex flex-col lg:flex-row justify-between items-center gap-8 relative rounded-b-2xl">
-                    
-                    <!-- Computadora Emisora -->
-                    <div class="w-full lg:w-1/3 flex flex-col gap-2 relative z-10">
-                        <div class="text-center mb-2 text-conalep-light font-bold"><i class="fa-solid fa-laptop mb-1 text-2xl"></i><br>Emisor (PC A)</div>
-                        
-                        <!-- Capa 7 -->
-                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-conalep-green hover:border-conalep-green transition-all duration-300 hover:scale-105 hover:z-50 hover:shadow-lg">
-                            <span class="text-gray-300 group-hover:text-white font-semibold">7. Aplicación</span>
-                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
-                                <strong class="block text-conalep-green mb-1"><i class="fa-solid fa-browser"></i> Capa de Aplicación</strong>
-                                Proporciona servicios de red directamente a las aplicaciones del usuario (Ej. Navegadores web usando HTTP, DNS).
-                            </div>
-                        </div>
-                        <!-- Capa 6 -->
-                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-conalep-green hover:border-conalep-green transition-all duration-300 hover:scale-105 hover:z-40 hover:shadow-lg">
-                            <span class="text-gray-300 group-hover:text-white font-semibold">6. Presentación</span>
-                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
-                                <strong class="block text-conalep-green mb-1"><i class="fa-solid fa-file-code"></i> Capa de Presentación</strong>
-                                Se encarga del formato, el cifrado y la compresión de los datos para que el receptor los entienda (Ej. JPEG, SSL, TLS).
-                            </div>
-                        </div>
-                        <!-- Capa 5 -->
-                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-conalep-green hover:border-conalep-green transition-all duration-300 hover:scale-105 hover:z-30 hover:shadow-lg">
-                            <span class="text-gray-300 group-hover:text-white font-semibold">5. Sesión</span>
-                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
-                                <strong class="block text-conalep-green mb-1"><i class="fa-solid fa-handshake"></i> Capa de Sesión</strong>
-                                Establece, mantiene, sincroniza y finaliza la conexión (sesión) entre los dos dispositivos comunicantes.
-                            </div>
-                        </div>
-                        <!-- Capa 4 -->
-                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-blue-500 hover:border-blue-500 transition-all duration-300 hover:scale-105 hover:z-20 hover:shadow-lg">
-                            <span class="text-gray-300 group-hover:text-white font-semibold">4. Transporte</span>
-                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
-                                <strong class="block text-blue-500 mb-1"><i class="fa-solid fa-truck-fast"></i> Capa de Transporte</strong>
-                                Segmentación de los datos y control de errores/flujo para garantizar la entrega. Protocolos clave: TCP y UDP.
-                            </div>
-                        </div>
-                        <!-- Capa 3 -->
-                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-blue-500 hover:border-blue-500 transition-all duration-300 hover:scale-105 hover:z-10 hover:shadow-lg">
-                            <span class="text-gray-300 group-hover:text-white font-semibold">3. Red</span>
-                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
-                                <strong class="block text-blue-500 mb-1"><i class="fa-solid fa-route"></i> Capa de Red</strong>
-                                Direccionamiento lógico y determinación de la mejor ruta (Enrutamiento). Aquí actúan los <strong>Routers</strong> y las direcciones IP.
-                            </div>
-                        </div>
-                        <!-- Capa 2 -->
-                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-purple-500 hover:border-purple-500 transition-all duration-300 hover:scale-105 hover:z-10 hover:shadow-lg">
-                            <span class="text-gray-300 group-hover:text-white font-semibold">2. Enlace de Datos</span>
-                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
-                                <strong class="block text-purple-500 mb-1"><i class="fa-solid fa-link"></i> Capa de Enlace de Datos</strong>
-                                Direccionamiento físico y acceso al medio. Envía tramas entre nodos locales. Aquí operan los <strong>Switches</strong> y direcciones MAC.
-                            </div>
-                        </div>
-                        <!-- Capa 1 -->
-                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-purple-500 hover:border-purple-500 transition-all duration-300 hover:scale-105 hover:z-10 hover:shadow-lg">
-                            <span class="text-gray-300 group-hover:text-white font-semibold">1. Física</span>
-                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
-                                <strong class="block text-purple-500 mb-1"><i class="fa-solid fa-plug"></i> Capa Física</strong>
-                                Transmisión de bits (0s y 1s) a través del medio físico, como cables UTP, fibra óptica o señales inalámbricas de radio.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Medio Físico / Animación de Transmisión -->
-                    <div class="w-full lg:w-1/3 flex flex-col items-center justify-center my-8 lg:my-0">
-                        <div class="text-gray-400 mb-4 text-sm font-bold uppercase tracking-widest text-center"><i class="fa-solid fa-wifi mr-2"></i> Medio Físico <i class="fa-solid fa-network-wired ml-2"></i></div>
-                        <div class="w-full h-3 bg-gray-800 rounded-full relative overflow-hidden border border-gray-700 shadow-inner">
-                            <!-- Paquete de datos animado -->
-                            <div class="absolute top-0 h-full w-12 bg-conalep-light rounded-full shadow-[0_0_20px_#009A7A] animate-packet"></div>
-                        </div>
-                        <div class="mt-4 flex flex-col gap-2 text-xs text-gray-500 text-center">
-                            <span><i class="fa-solid fa-bolt text-yellow-500 mr-1"></i> Transmisión de datos encapsulados</span>
-                            <span class="font-mono bg-gray-800 px-3 py-1 rounded text-conalep-light tracking-widest">10110101 01101001 01110011</span>
-                        </div>
-                    </div>
-
-                    <!-- Computadora Receptora -->
-                    <div class="w-full lg:w-1/3 flex flex-col gap-2 relative z-0">
-                        <div class="text-center mb-2 text-blue-400 font-bold"><i class="fa-solid fa-server mb-1 text-2xl"></i><br>Receptor (Servidor B)</div>
-                        
-                        <!-- Capas Receptor -->
-                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">7. Aplicación</span></div>
-                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">6. Presentación</span></div>
-                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">5. Sesión</span></div>
-                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">4. Transporte</span></div>
-                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">3. Red</span></div>
-                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">2. Enlace de Datos</span></div>
-                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">1. Física</span></div>
-                    </div>
-
-                </div>
-            </div>
         </div>
     </section>
 
@@ -639,6 +538,112 @@
                             <div class="p-3 border border-gray-600 rounded-lg bg-gray-700">c) Tecnología de conexión de red inalámbrica basada en el estándar IEEE 802.11</div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animación y Simulación del Modelo OSI -->
+    <section id="simulacion" class="py-20 bg-gray-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mt-8 bg-gray-900 rounded-2xl shadow-2xl border border-gray-700">
+                <div class="p-8 border-b border-gray-800 text-center rounded-t-2xl">
+                    <span class="inline-block py-1 px-3 rounded-full bg-purple-900/50 text-purple-300 text-xs font-bold uppercase tracking-wider mb-3 border border-purple-700">Simulación Interactiva</span>
+                    <h3 class="text-2xl font-bold text-white"><i class="fa-solid fa-layer-group text-conalep-light mr-2"></i>Arquitectura de Red: Modelo OSI</h3>
+                    <p class="text-gray-400 mt-2">Observa cómo viaja la información desde tu computadora hasta el destino. <strong class="text-white">Pasa el cursor sobre las capas del emisor</strong> para conocer la función de cada una.</p>
+                </div>
+
+                <div class="p-8 md:p-12 flex flex-col lg:flex-row justify-between items-center gap-8 relative rounded-b-2xl">
+                    
+                    <!-- Computadora Emisora -->
+                    <div class="w-full lg:w-1/3 flex flex-col gap-2 relative z-10">
+                        <div class="text-center mb-2 text-conalep-light font-bold"><i class="fa-solid fa-laptop mb-1 text-2xl"></i><br>Emisor (PC A)</div>
+                        
+                        <!-- Capa 7 -->
+                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-conalep-green hover:border-conalep-green transition-all duration-300 hover:scale-105 hover:z-50 hover:shadow-lg">
+                            <span class="text-gray-300 group-hover:text-white font-semibold">7. Aplicación</span>
+                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
+                                <strong class="block text-conalep-green mb-1"><i class="fa-solid fa-browser"></i> Capa de Aplicación</strong>
+                                Proporciona servicios de red directamente a las aplicaciones del usuario (Ej. Navegadores web usando HTTP, DNS).
+                            </div>
+                        </div>
+                        <!-- Capa 6 -->
+                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-conalep-green hover:border-conalep-green transition-all duration-300 hover:scale-105 hover:z-40 hover:shadow-lg">
+                            <span class="text-gray-300 group-hover:text-white font-semibold">6. Presentación</span>
+                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
+                                <strong class="block text-conalep-green mb-1"><i class="fa-solid fa-file-code"></i> Capa de Presentación</strong>
+                                Se encarga del formato, el cifrado y la compresión de los datos para que el receptor los entienda (Ej. JPEG, SSL, TLS).
+                            </div>
+                        </div>
+                        <!-- Capa 5 -->
+                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-conalep-green hover:border-conalep-green transition-all duration-300 hover:scale-105 hover:z-30 hover:shadow-lg">
+                            <span class="text-gray-300 group-hover:text-white font-semibold">5. Sesión</span>
+                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
+                                <strong class="block text-conalep-green mb-1"><i class="fa-solid fa-handshake"></i> Capa de Sesión</strong>
+                                Establece, mantiene, sincroniza y finaliza la conexión (sesión) entre los dos dispositivos comunicantes.
+                            </div>
+                        </div>
+                        <!-- Capa 4 -->
+                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-blue-500 hover:border-blue-500 transition-all duration-300 hover:scale-105 hover:z-20 hover:shadow-lg">
+                            <span class="text-gray-300 group-hover:text-white font-semibold">4. Transporte</span>
+                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
+                                <strong class="block text-blue-500 mb-1"><i class="fa-solid fa-truck-fast"></i> Capa de Transporte</strong>
+                                Segmentación de los datos y control de errores/flujo para garantizar la entrega. Protocolos clave: TCP y UDP.
+                            </div>
+                        </div>
+                        <!-- Capa 3 -->
+                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-blue-500 hover:border-blue-500 transition-all duration-300 hover:scale-105 hover:z-10 hover:shadow-lg">
+                            <span class="text-gray-300 group-hover:text-white font-semibold">3. Red</span>
+                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
+                                <strong class="block text-blue-500 mb-1"><i class="fa-solid fa-route"></i> Capa de Red</strong>
+                                Direccionamiento lógico y determinación de la mejor ruta (Enrutamiento). Aquí actúan los <strong>Routers</strong> y las direcciones IP.
+                            </div>
+                        </div>
+                        <!-- Capa 2 -->
+                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-purple-500 hover:border-purple-500 transition-all duration-300 hover:scale-105 hover:z-10 hover:shadow-lg">
+                            <span class="text-gray-300 group-hover:text-white font-semibold">2. Enlace de Datos</span>
+                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
+                                <strong class="block text-purple-500 mb-1"><i class="fa-solid fa-link"></i> Capa de Enlace de Datos</strong>
+                                Direccionamiento físico y acceso al medio. Envía tramas entre nodos locales. Aquí operan los <strong>Switches</strong> y direcciones MAC.
+                            </div>
+                        </div>
+                        <!-- Capa 1 -->
+                        <div class="group relative bg-gray-800 border border-gray-700 rounded-lg p-3 text-center cursor-pointer hover:bg-purple-500 hover:border-purple-500 transition-all duration-300 hover:scale-105 hover:z-10 hover:shadow-lg">
+                            <span class="text-gray-300 group-hover:text-white font-semibold">1. Física</span>
+                            <div class="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 lg:left-full bottom-full lg:bottom-auto lg:top-0 mb-2 lg:mb-0 lg:ml-4 w-64 bg-white p-4 rounded-lg shadow-xl text-sm text-gray-800 pointer-events-none text-left">
+                                <strong class="block text-purple-500 mb-1"><i class="fa-solid fa-plug"></i> Capa Física</strong>
+                                Transmisión de bits (0s y 1s) a través del medio físico, como cables UTP, fibra óptica o señales inalámbricas de radio.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Medio Físico / Animación de Transmisión -->
+                    <div class="w-full lg:w-1/3 flex flex-col items-center justify-center my-8 lg:my-0">
+                        <div class="text-gray-400 mb-4 text-sm font-bold uppercase tracking-widest text-center"><i class="fa-solid fa-wifi mr-2"></i> Medio Físico <i class="fa-solid fa-network-wired ml-2"></i></div>
+                        <div class="w-full h-3 bg-gray-800 rounded-full relative overflow-hidden border border-gray-700 shadow-inner">
+                            <!-- Paquete de datos animado -->
+                            <div class="absolute top-0 h-full w-12 bg-conalep-light rounded-full shadow-[0_0_20px_#009A7A] animate-packet"></div>
+                        </div>
+                        <div class="mt-4 flex flex-col gap-2 text-xs text-gray-500 text-center">
+                            <span><i class="fa-solid fa-bolt text-yellow-500 mr-1"></i> Transmisión de datos encapsulados</span>
+                            <span class="font-mono bg-gray-800 px-3 py-1 rounded text-conalep-light tracking-widest">10110101 01101001 01110011</span>
+                        </div>
+                    </div>
+
+                    <!-- Computadora Receptora -->
+                    <div class="w-full lg:w-1/3 flex flex-col gap-2 relative z-0">
+                        <div class="text-center mb-2 text-blue-400 font-bold"><i class="fa-solid fa-server mb-1 text-2xl"></i><br>Receptor (Servidor B)</div>
+                        
+                        <!-- Capas Receptor -->
+                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">7. Aplicación</span></div>
+                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">6. Presentación</span></div>
+                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">5. Sesión</span></div>
+                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">4. Transporte</span></div>
+                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">3. Red</span></div>
+                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">2. Enlace de Datos</span></div>
+                        <div class="bg-gray-800/60 border border-gray-700/60 rounded-lg p-3 text-center"><span class="text-gray-400 font-semibold">1. Física</span></div>
+                    </div>
+
                 </div>
             </div>
         </div>
