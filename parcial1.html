@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcial 1 - Manejo de Redes</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        conalep: {
+                            green: '#006B54',
+                            light: '#009A7A',
+                            dark: '#004C3B'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .bg-header {
+            background-image: linear-gradient(rgba(0, 76, 59, 0.85), rgba(0, 76, 59, 0.85)), url('https://images.unsplash.com/photo-1562408590-e32931084e23?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans">
+
+    <!-- Navegación -->
+    <nav class="bg-white shadow-md fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center">
+                    <i class="fa-solid fa-wifi text-conalep-green text-3xl mr-3"></i>
+                    <div>
+                        <span class="font-bold text-xl text-conalep-green block leading-tight">Parcial 1</span>
+                        <span class="text-xs text-gray-500 font-semibold tracking-wider">REDES INALÁMBRICAS</span>
+                    </div>
+                </div>
+                <div>
+                    <a href="index.html" class="text-gray-600 hover:text-conalep-green transition font-medium flex items-center">
+                        <i class="fa-solid fa-arrow-left mr-2"></i> Volver al Inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-header pt-32 pb-20 text-center text-white mt-10">
+        <div class="max-w-4xl mx-auto px-4">
+            <span class="bg-conalep-light text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block">Módulo MRDE-20</span>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Implementación de Dispositivos WLAN</h1>
+            <p class="text-xl font-light text-gray-200">Cronograma detallado dividido en 4 semanas (32 horas en total).</p>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal -->
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 space-y-20">
+
+        <!-- SEMANA 1 -->
+        <section id="semana1" class="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-conalep-green">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-conalep-green text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mr-4">1</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Semana 1: Infraestructura y Topologías WLAN</h2>
+                        <p class="text-conalep-light font-semibold">Duración: 8 horas | Temas: Estándares Wi-Fi, Componentes y Topologías.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div>
+                        <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">Explicación del Tema</h3>
+                        <p class="text-gray-600 mb-4 text-justify">Las Redes de Área Local Inalámbricas (WLAN) permiten la conexión de dispositivos sin necesidad de cables, utilizando ondas de radiofrecuencia. Se rigen por los estándares del <strong>IEEE 802.11</strong> (conocidos comercialmente como Wi-Fi).</p>
+                        <ul class="list-disc ml-5 text-gray-600 space-y-2 mb-4">
+                            <li><strong>Componentes físicos:</strong> Tarjetas de red inalámbricas (NICs), Antenas, Puntos de Acceso (Access Points - AP) y Routers Inalámbricos.</li>
+                            <li><strong>Topología Ad-hoc:</strong> Conexión directa de dispositivo a dispositivo (Peer-to-Peer) sin usar un router central.</li>
+                            <li><strong>Topología de Infraestructura:</strong> Todos los dispositivos se conectan a un punto central (el Access Point o Router), que a su vez se conecta a internet. Es la más común.</li>
+                        </ul>
+                        
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mt-6">
+                            <h4 class="font-bold text-blue-800"><i class="fa-solid fa-lightbulb text-blue-500 mr-2"></i>Ejemplo Cotidiano</h4>
+                            <p class="text-sm text-blue-900 mt-1">Cuando compartes internet desde tu celular a la laptop de tu amigo usando la opción "Zona Wi-Fi portátil", estás creando una red similar a la <strong>Ad-Hoc</strong>. Sin embargo, el módem de Telmex/Totalplay que tienes en tu casa funciona con una topología de <strong>Infraestructura</strong>.</p>
+                        </div>
+                    </div>
+                    <div class="relative rounded-xl overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&q=80" alt="Antenas e infraestructura Wi-Fi" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Ejercicios Semana 1 -->
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-person-chalkboard text-conalep-green mr-2"></i>Ejercicio Guiado (Packet Tracer)</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Reconocer y agregar módulos inalámbricos a una PC.</p>
+                        <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Abre Cisco Packet Tracer.</li>
+                            <li>Arrastra una <strong>PC-PT</strong> al área de trabajo.</li>
+                            <li>Haz clic sobre la PC y ve a la pestaña <em>Physical</em>.</li>
+                            <li><strong>Apaga</strong> la computadora dando clic en el botón rojo de encendido.</li>
+                            <li>Arrastra el módulo FastEthernet (tarjeta de red alámbrica) hacia la lista de la izquierda para quitarlo.</li>
+                            <li>Selecciona el módulo <strong>WMP300N</strong> (Antena Wi-Fi) y arrástralo al espacio vacío de la PC.</li>
+                            <li>Enciende la PC nuevamente.</li>
+                        </ol>
+                    </div>
+                    <div class="bg-conalep-light/10 p-6 rounded-xl border border-conalep-light/30">
+                        <h4 class="font-bold text-conalep-dark mb-3"><i class="fa-solid fa-pen-clip text-conalep-green mr-2"></i>Ejercicio de Clase (Firma 1)</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Realiza el siguiente reto en Packet Tracer y llama al profesor para tu firma.</p>
+                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Agrega al escenario 1 Router inalámbrico (Home Router WRT300N).</li>
+                            <li>Agrega 3 Laptops y 2 PCs de escritorio.</li>
+                            <li>Reemplaza las tarjetas de red de todos los equipos por tarjetas inalámbricas (módulos WPC300N para laptops y WMP300N para PCs).</li>
+                            <li>Verifica que visualmente aparezcan ondas de radio conectando los equipos al router automáticamente (conexión por defecto).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMANA 2 -->
+        <section id="semana2" class="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-blue-500">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mr-4">2</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Semana 2: Configuración de Acceso WLAN</h2>
+                        <p class="text-blue-600 font-semibold">Duración: 8 horas | Temas: Configuración de AP, SSID y Canales.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="order-2 lg:order-1 relative rounded-xl overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1558089687-f282ffcbc126?auto=format&fit=crop&w=800&q=80" alt="Configuración de Router" class="w-full h-full object-cover">
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">Explicación del Tema</h3>
+                        <p class="text-gray-600 mb-4 text-justify">Para que una red inalámbrica funcione correctamente en modo infraestructura, el Access Point o Router debe ser configurado con parámetros básicos:</p>
+                        <ul class="list-disc ml-5 text-gray-600 space-y-2 mb-4">
+                            <li><strong>SSID (Service Set Identifier):</strong> Es el nombre de la red inalámbrica. Es lo que buscas en tu teléfono cuando quieres conectarte a un Wi-Fi. Puede estar visible u oculto.</li>
+                            <li><strong>Canales:</strong> El espectro de 2.4 GHz se divide en canales (del 1 al 11). Si muchos routers vecinos usan el mismo canal, habrá interferencia. Se recomienda usar los canales <strong>1, 6 u 11</strong> porque no se superponen entre sí.</li>
+                            <li><strong>DHCP:</strong> Servicio en el router que entrega direcciones IP automáticamente a las laptops o celulares que se conectan.</li>
+                        </ul>
+                        
+                        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded mt-6">
+                            <h4 class="font-bold text-green-800"><i class="fa-solid fa-lightbulb text-green-500 mr-2"></i>Ejemplo Cotidiano</h4>
+                            <p class="text-sm text-green-900 mt-1">¿Alguna vez tu Wi-Fi estaba lentísimo, apagaste el módem, lo volviste a prender y se arregló? Muchos módems están configurados para tener "Selección de Canal Automática". Al reiniciarlo, el módem analizó a los vecinos y se cambió de un canal saturado (ej. 6) a uno libre (ej. 1), mejorando tu velocidad.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ejercicios Semana 2 -->
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-person-chalkboard text-blue-500 mr-2"></i>Ejercicio Guiado (Packet Tracer)</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Cambiar el SSID y el Canal de un Home Router.</p>
+                        <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Haz clic en el <em>Home Router WRT300N</em> de la clase anterior.</li>
+                            <li>Ve a la pestaña <strong>GUI</strong> (Graphical User Interface).</li>
+                            <li>En el menú superior, haz clic en <strong>Wireless</strong>.</li>
+                            <li>Cambia el <em>Network Name (SSID)</em> de "Default" a "Conalep_Redes".</li>
+                            <li>En <em>Standard Channel</em>, selecciona el canal <strong>6 - 2.437GHZ</strong>.</li>
+                            <li>Desliza hasta el fondo de la página y presiona <strong>Save Settings</strong>.</li>
+                            <li>Nota: Verás que todas las laptops se desconectan. En el siguiente ejercicio las volveremos a conectar.</li>
+                        </ol>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
+                        <h4 class="font-bold text-blue-900 mb-3"><i class="fa-solid fa-pen-clip text-blue-500 mr-2"></i>Ejercicio de Clase (Firma 2)</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Conecta los dispositivos clientes al nuevo SSID.</p>
+                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Haz clic en una de las Laptops de tu escenario.</li>
+                            <li>Ve a la pestaña <em>Desktop</em> y abre la aplicación <strong>PC Wireless</strong>.</li>
+                            <li>Ve a la pestaña <em>Connect</em> y presiona el botón <em>Refresh</em>.</li>
+                            <li>Selecciona la red "Conalep_Redes" y presiona <em>Connect</em>.</li>
+                            <li>Repite el proceso para los 5 dispositivos.</li>
+                            <li>Llama al profesor para comprobar que las ondas de conexión volvieron a aparecer y obtén tu firma.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMANA 3 -->
+        <section id="semana3" class="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-yellow-500">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-yellow-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mr-4">3</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Semana 3: Seguridad Inalámbrica</h2>
+                        <p class="text-yellow-600 font-semibold">Duración: 8 horas | Temas: Amenazas, Encriptación y Control de Acceso.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div>
+                        <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">Explicación del Tema</h3>
+                        <p class="text-gray-600 mb-4 text-justify">Las redes Wi-Fi viajan por el aire, por lo que cualquier persona en el radio de cobertura puede interceptar los datos. Para evitarlo, aplicamos seguridad:</p>
+                        <ul class="list-disc ml-5 text-gray-600 space-y-2 mb-4">
+                            <li><strong>Amenazas Comunes:</strong> Rogue AP (un Access Point falso que engaña a los usuarios), MITM (Man-in-the-middle, donde el atacante lee la información en tránsito), DoS (Denegación de servicio para tumbar la red).</li>
+                            <li><strong>Protocolos de Encriptación:</strong>
+                                <ul class="list-circle ml-5 mt-1 text-sm">
+                                    <li><em>WEP:</em> Obsoleto y muy fácil de hackear. No usar.</li>
+                                    <li><em>WPA / WPA2:</em> Uso de contraseña (PSK). WPA2 con algoritmo <strong>AES</strong> es el estándar más utilizado y seguro actualmente.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Filtrado MAC:</strong> Seguridad adicional que consiste en crear una "Lista Blanca". Solo las tarjetas de red cuyas direcciones físicas (MAC Address) estén registradas en el Router podrán conectarse, aunque tengan la contraseña correcta.</li>
+                        </ul>
+                    </div>
+                    <div class="relative rounded-xl overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Código y ciberseguridad" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Ejercicios Semana 3 -->
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-person-chalkboard text-yellow-500 mr-2"></i>Ejercicio Guiado (Packet Tracer)</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Configurar contraseña WPA2 en el Router.</p>
+                        <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Abre el <em>GUI</em> del Router WRT300N.</li>
+                            <li>En la sección <em>Wireless</em>, haz clic en el submenú <strong>Wireless Security</strong>.</li>
+                            <li>Cambia el Security Mode de "Disabled" a <strong>WPA2 Personal</strong>.</li>
+                            <li>En <em>Encryption</em> selecciona <strong>AES</strong>.</li>
+                            <li>En <em>Passphrase</em> escribe la contraseña: <strong>C0nal3p2026*</strong></li>
+                            <li>Presiona <strong>Save Settings</strong> al fondo.</li>
+                            <li>Vuelve a abrir <em>PC Wireless</em> en las Laptops, busca la red y ahora te pedirá la clave para conectarte.</li>
+                        </ol>
+                    </div>
+                    <div class="bg-yellow-50 p-6 rounded-xl border border-yellow-200">
+                        <h4 class="font-bold text-yellow-900 mb-3"><i class="fa-solid fa-pen-clip text-yellow-500 mr-2"></i>Ejercicio de Clase (Firma 3)</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Implementa Filtrado MAC para bloquear un intruso.</p>
+                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Agrega un "Smartphone" al escenario simulando el celular de un Hacker e intenta conectarlo con la clave WPA2.</li>
+                            <li>Busca la dirección MAC (MAC Address) de una de tus PCs legítimas (Pestaña Config -> Wireless0 -> MAC Address). Anótala.</li>
+                            <li>Ve al Router -> Wireless -> <strong>Wireless MAC Filter</strong>. Actívalo (Enable).</li>
+                            <li>Selecciona la opción: <em>"Permit only PCs listed to access the wireless network"</em> (Lista Blanca).</li>
+                            <li>Ingresa la MAC de tu PC legítima y guarda los cambios.</li>
+                            <li>Demuestra al profesor que el Smartphone del intruso no puede conectarse aunque tenga la clave. ¡Obtén tu firma!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMANA 4 -->
+        <section id="semana4" class="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-red-500">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-red-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mr-4">4</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Semana 4: Resolución de Problemas (Troubleshooting)</h2>
+                        <p class="text-red-600 font-semibold">Duración: 8 horas | Temas: Conflictos de acceso, Firmware y Autenticación.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="order-2 lg:order-1 relative rounded-xl overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" alt="Técnico reparando red" class="w-full h-full object-cover">
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">Explicación del Tema</h3>
+                        <p class="text-gray-600 mb-4 text-justify">En el mundo real, los administradores de red pasan gran parte de su tiempo diagnosticando y reparando fallas. Los problemas inalámbricos más comunes incluyen:</p>
+                        <ul class="list-disc ml-5 text-gray-600 space-y-2 mb-4">
+                            <li><strong>Conflictos de canales de radio:</strong> Dos Access Points cercanos emitiendo en el mismo canal causan interferencia. La solución es hacer un escaneo y cambiar a canales sin traslape (1, 6 u 11).</li>
+                            <li><strong>Errores de Autenticación:</strong> El cliente ingresa mal la contraseña PSK, o su tarjeta de red es muy vieja y soporta WEP pero el router exige WPA2.</li>
+                            <li><strong>Actualización de Firmware:</strong> El sistema operativo del Access Point tiene un bug que desconecta usuarios. Se debe descargar la última versión de la página del fabricante y "flashear" el equipo.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Ejercicios Semana 4 -->
+                <div class="mt-10 bg-red-50 p-6 md:p-10 rounded-xl border border-red-200">
+                    <div class="text-center mb-8">
+                        <i class="fa-solid fa-triangle-exclamation text-4xl text-red-500 mb-3"></i>
+                        <h4 class="text-2xl font-bold text-red-900">Proyecto de la Semana: Ticket de Soporte Técnico</h4>
+                        <p class="text-gray-700 mt-2">Pon a prueba todo lo aprendido. Este ejercicio simula un entorno laboral real.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded shadow-sm border border-gray-100">
+                        <p class="text-gray-800 font-semibold mb-2">📥 TICKET #4059 - Recibido de: Dirección Escolar</p>
+                        <p class="text-gray-600 italic">"Hola soporte técnico. Ayer la red Wi-Fi funcionaba perfectamente en la sala de maestros, pero hoy ninguno de los 4 profesores puede conectarse con sus Laptops. Necesitamos que lo reparen urgente para capturar calificaciones."</p>
+                    </div>
+
+                    <div class="mt-6">
+                        <h5 class="font-bold text-gray-900 mb-2">Instrucciones para la Firma 4:</h5>
+                        <p class="text-sm text-gray-600 mb-4">El profesor te enviará por WhatsApp un archivo llamado <code>Escenario_Roto_WLAN.pkt</code> para Packet Tracer. Ábrelo y realiza lo siguiente:</p>
+                        <ul class="list-disc ml-6 text-sm text-gray-700 space-y-2">
+                            <li><strong>Paso 1:</strong> Verifica por qué la Laptop 1 no conecta. <em>Pista: Revisa si el nombre del SSID que tiene configurado está mal escrito (Ej. "Conalep_redes" vs "Conalep_Redes").</em> Corrígelo.</li>
+                            <li><strong>Paso 2:</strong> Verifica la Laptop 2. <em>Pista: Revisa si el tipo de encriptación coincide (el router tiene WPA2-AES, pero la laptop quizás está configurada en TKIP).</em> Corrígelo.</li>
+                            <li><strong>Paso 3:</strong> Verifica la Laptop 3. Revisa en el router si su dirección MAC fue bloqueada por error en la lista negra del MAC Filtering.</li>
+                            <li><strong>Paso 4:</strong> Documenta los errores que encontraste en tu cuaderno y llama al docente para mostrar las 4 laptops conectadas y recibir tu calificación.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 text-gray-400 py-8 text-center mt-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="mb-2">&copy; 2026 CONALEP Chilpancingo. Educación Técnica para la Equidad.</p>
+            <p class="text-sm">Módulo MRDE-20 - Parcial 1</p>
+        </div>
+    </footer>
+
+</body>
+</html>
