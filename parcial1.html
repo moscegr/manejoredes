@@ -106,26 +106,29 @@
                 <!-- Ejercicios Semana 1 -->
                 <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-person-chalkboard text-conalep-green mr-2"></i>Ejercicio Guiado (Packet Tracer)</h4>
-                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Reconocer y agregar módulos inalámbricos a una PC.</p>
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-person-chalkboard text-conalep-green mr-2"></i>Investigación y Análisis Teórico</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Comprender la evolución de los estándares Wi-Fi y su impacto.</p>
                         <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
-                            <li>Abre Cisco Packet Tracer.</li>
-                            <li>Arrastra una <strong>PC-PT</strong> al área de trabajo.</li>
-                            <li>Haz clic sobre la PC y ve a la pestaña <em>Physical</em>.</li>
-                            <li><strong>Apaga</strong> la computadora dando clic en el botón rojo de encendido.</li>
-                            <li>Arrastra el módulo FastEthernet (tarjeta de red alámbrica) hacia la lista de la izquierda para quitarlo.</li>
-                            <li>Selecciona el módulo <strong>WMP300N</strong> (Antena Wi-Fi) y arrástralo al espacio vacío de la PC.</li>
-                            <li>Enciende la PC nuevamente.</li>
+                            <li>Investiga los siguientes estándares del IEEE: <strong>802.11a, 802.11b, 802.11g, 802.11n, 802.11ac (Wi-Fi 5) y 802.11ax (Wi-Fi 6)</strong>.</li>
+                            <li>Crea una tabla comparativa en tu cuaderno incluyendo:
+                                <ul class="list-circle ml-5 mt-1">
+                                    <li>Año de lanzamiento.</li>
+                                    <li>Frecuencia de operación (2.4 GHz, 5 GHz o ambas).</li>
+                                    <li>Velocidad máxima teórica.</li>
+                                </ul>
+                            </li>
+                            <li>Responde: ¿Por qué es importante que un Router moderno sea "Doble Banda" (Dual Band)?</li>
                         </ol>
                     </div>
                     <div class="bg-conalep-light/10 p-6 rounded-xl border border-conalep-light/30">
                         <h4 class="font-bold text-conalep-dark mb-3"><i class="fa-solid fa-pen-clip text-conalep-green mr-2"></i>Ejercicio de Clase (Firma 1)</h4>
-                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Realiza el siguiente reto en Packet Tracer y llama al profesor para tu firma.</p>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Identifica los componentes de una red WLAN en tu entorno.</p>
                         <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
-                            <li>Agrega al escenario 1 Router inalámbrico (Home Router WRT300N).</li>
-                            <li>Agrega 3 Laptops y 2 PCs de escritorio.</li>
-                            <li>Reemplaza las tarjetas de red de todos los equipos por tarjetas inalámbricas (módulos WPC300N para laptops y WMP300N para PCs).</li>
-                            <li>Verifica que visualmente aparezcan ondas de radio conectando los equipos al router automáticamente (conexión por defecto).</li>
+                            <li>Realiza un diagrama (croquis) de tu casa o del laboratorio de informática.</li>
+                            <li>Ubica y dibuja el lugar exacto donde se encuentra el <strong>Router o Access Point principal</strong>.</li>
+                            <li>Identifica al menos 5 dispositivos que se conecten a esa red de forma inalámbrica (Laptops, Celulares, Smart TVs, etc.) y dibújalos conectados al router.</li>
+                            <li>Anota la marca y el modelo del Router principal.</li>
+                            <li>Llama al profesor para que revise tu diagrama y la tabla comparativa de estándares. ¡Obtén tu primera firma!</li>
                         </ul>
                     </div>
                 </div>
@@ -139,7 +142,7 @@
                     <div class="bg-blue-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mr-4">2</div>
                     <div>
                         <h2 class="text-3xl font-bold text-gray-900">Semana 2: Configuración de Acceso WLAN</h2>
-                        <p class="text-blue-600 font-semibold">Duración: 8 horas | Temas: Configuración de AP, SSID y Canales.</p>
+                        <p class="text-blue-600 font-semibold">Duración: 8 horas | Temas: Configuración de AP, SSID y Canales (Práctica con Routers Comerciales).</p>
                     </div>
                 </div>
 
@@ -149,45 +152,40 @@
                     </div>
                     <div class="order-1 lg:order-2">
                         <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">Explicación del Tema</h3>
-                        <p class="text-gray-600 mb-4 text-justify">Para que una red inalámbrica funcione correctamente en modo infraestructura, el Access Point o Router debe ser configurado con parámetros básicos:</p>
+                        <p class="text-gray-600 mb-4 text-justify">Antes de utilizar simuladores, es fundamental entender cómo se configuran los dispositivos que usamos a diario. Los módems/routers proporcionados por proveedores de internet (como Telmex o Totalplay) tienen una interfaz web para su configuración.</p>
                         <ul class="list-disc ml-5 text-gray-600 space-y-2 mb-4">
-                            <li><strong>SSID (Service Set Identifier):</strong> Es el nombre de la red inalámbrica. Es lo que buscas en tu teléfono cuando quieres conectarte a un Wi-Fi. Puede estar visible u oculto.</li>
-                            <li><strong>Canales:</strong> El espectro de 2.4 GHz se divide en canales (del 1 al 11). Si muchos routers vecinos usan el mismo canal, habrá interferencia. Se recomienda usar los canales <strong>1, 6 u 11</strong> porque no se superponen entre sí.</li>
-                            <li><strong>DHCP:</strong> Servicio en el router que entrega direcciones IP automáticamente a las laptops o celulares que se conectan.</li>
+                            <li><strong>Puerta de Enlace (Gateway):</strong> Es la dirección IP del router. Para acceder a su configuración, normalmente se ingresa <code>192.168.1.254</code> (Telmex) o <code>192.168.100.1</code> en el navegador.</li>
+                            <li><strong>SSID (Service Set Identifier):</strong> El nombre visible de tu red Wi-Fi (Ej. <em>INFINITUM1234</em>).</li>
+                            <li><strong>Canales:</strong> Para evitar interferencias, podemos cambiar el canal de transmisión de forma manual (recomendados: 1, 6, 11 en la banda de 2.4 GHz).</li>
                         </ul>
-                        
-                        <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded mt-6">
-                            <h4 class="font-bold text-green-800"><i class="fa-solid fa-lightbulb text-green-500 mr-2"></i>Ejemplo Cotidiano</h4>
-                            <p class="text-sm text-green-900 mt-1">¿Alguna vez tu Wi-Fi estaba lentísimo, apagaste el módem, lo volviste a prender y se arregló? Muchos módems están configurados para tener "Selección de Canal Automática". Al reiniciarlo, el módem analizó a los vecinos y se cambió de un canal saturado (ej. 6) a uno libre (ej. 1), mejorando tu velocidad.</p>
-                        </div>
                     </div>
                 </div>
 
                 <!-- Ejercicios Semana 2 -->
                 <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-person-chalkboard text-blue-500 mr-2"></i>Ejercicio Guiado (Packet Tracer)</h4>
-                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Cambiar el SSID y el Canal de un Home Router.</p>
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-person-chalkboard text-blue-500 mr-2"></i>Práctica Guiada: Interfaz de Router Telmex</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Acceder a la configuración de un Módem/Router comercial y cambiar sus parámetros básicos de red inalámbrica.</p>
                         <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
-                            <li>Haz clic en el <em>Home Router WRT300N</em> de la clase anterior.</li>
-                            <li>Ve a la pestaña <strong>GUI</strong> (Graphical User Interface).</li>
-                            <li>En el menú superior, haz clic en <strong>Wireless</strong>.</li>
-                            <li>Cambia el <em>Network Name (SSID)</em> de "Default" a "Conalep_Redes".</li>
-                            <li>En <em>Standard Channel</em>, selecciona el canal <strong>6 - 2.437GHZ</strong>.</li>
-                            <li>Desliza hasta el fondo de la página y presiona <strong>Save Settings</strong>.</li>
-                            <li>Nota: Verás que todas las laptops se desconectan. En el siguiente ejercicio las volveremos a conectar.</li>
+                            <li>Asegúrate de estar conectado a la red del router proporcionado en clase.</li>
+                            <li>Abre un navegador web y escribe la dirección IP de la puerta de enlace (ej. <strong>192.168.1.254</strong>).</li>
+                            <li>Ingresa las credenciales de acceso (El usuario suele ser TELMEX y la contraseña viene en la etiqueta del módem).</li>
+                            <li>Navega hasta la sección de <strong>Red Local (LAN)</strong> o <strong>WLAN / Inalámbrico</strong>.</li>
+                            <li>Localiza el campo <strong>SSID Nombre de la red</strong> y cámbialo a "Conalep_Mesa1".</li>
+                            <li>Busca la configuración de <strong>Canal</strong> y cámbiala de Automático a <strong>Canal 6</strong>.</li>
+                            <li>Guarda los cambios y observa cómo se reinicia el servicio Wi-Fi.</li>
                         </ol>
                     </div>
                     <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
                         <h4 class="font-bold text-blue-900 mb-3"><i class="fa-solid fa-pen-clip text-blue-500 mr-2"></i>Ejercicio de Clase (Firma 2)</h4>
-                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Conecta los dispositivos clientes al nuevo SSID.</p>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Personaliza y documenta la configuración del equipo de tu mesa.</p>
                         <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
-                            <li>Haz clic en una de las Laptops de tu escenario.</li>
-                            <li>Ve a la pestaña <em>Desktop</em> y abre la aplicación <strong>PC Wireless</strong>.</li>
-                            <li>Ve a la pestaña <em>Connect</em> y presiona el botón <em>Refresh</em>.</li>
-                            <li>Selecciona la red "Conalep_Redes" y presiona <em>Connect</em>.</li>
-                            <li>Repite el proceso para los 5 dispositivos.</li>
-                            <li>Llama al profesor para comprobar que las ondas de conexión volvieron a aparecer y obtén tu firma.</li>
+                            <li>Formen equipos según las instrucciones del profesor y accedan al router asignado a su mesa.</li>
+                            <li>Cambien el SSID a "Equipo_[SuNúmero]_Redes" (ej. <em>Equipo_3_Redes</em>).</li>
+                            <li>Cambien el canal de transmisión a <strong>11</strong>.</li>
+                            <li>Utilizando sus teléfonos celulares, conéctense a la nueva red que acaban de configurar.</li>
+                            <li>Tomen una captura de pantalla desde la interfaz del router que muestre a su celular conectado (En la sección <em>Dispositivos conectados / DHCP</em>).</li>
+                            <li>Muestren al profesor su teléfono conectado a la red correcta y la captura de pantalla para obtener su firma.</li>
                         </ul>
                     </div>
                 </div>
