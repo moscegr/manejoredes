@@ -86,16 +86,39 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                     <div>
                         <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">Explicación del Tema</h3>
-                        <p class="text-gray-600 mb-4 text-justify">Las Redes de Área Local Inalámbricas (WLAN) permiten la conexión de dispositivos sin necesidad de cables, utilizando ondas de radiofrecuencia. Se rigen por los estándares del <strong>IEEE 802.11</strong> (conocidos comercialmente como Wi-Fi).</p>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-2 mb-4">
-                            <li><strong>Componentes físicos:</strong> Tarjetas de red inalámbricas (NICs), Antenas, Puntos de Acceso (Access Points - AP) y Routers Inalámbricos.</li>
-                            <li><strong>Topología Ad-hoc:</strong> Conexión directa de dispositivo a dispositivo (Peer-to-Peer) sin usar un router central.</li>
-                            <li><strong>Topología de Infraestructura:</strong> Todos los dispositivos se conectan a un punto central (el Access Point o Router), que a su vez se conecta a internet. Es la más común.</li>
+                        <p class="text-gray-600 mb-4 text-justify">Las Redes de Área Local Inalámbricas (WLAN) permiten la conexión de dispositivos sin necesidad de cables, utilizando ondas de radiofrecuencia. A continuación, se detalla la estructura base de estas redes:</p>
+                        
+                        <h4 class="font-bold text-conalep-dark mb-2">A. Identificación de la infraestructura de redes LAN inalámbricas</h4>
+                        <ul class="list-disc ml-5 text-gray-600 space-y-3 mb-4">
+                            <li>
+                                <strong class="text-gray-800">Estándares vigentes de LAN inalámbricas:</strong>
+                                <ul class="list-[circle] ml-6 mt-1 text-sm space-y-1 text-gray-600">
+                                    <li>Certificación Wi-Fi</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong class="text-gray-800">Componentes de las LAN inalámbricas:</strong>
+                                <ul class="list-[circle] ml-6 mt-1 text-sm space-y-1 text-gray-600">
+                                    <li>NIC Inalámbricas (Tarjetas de Interfaz de Red)</li>
+                                    <li>Antenas</li>
+                                    <li>Punto de acceso (Access Point)</li>
+                                    <li>Router inalámbrico</li>
+                                    <li>Bridge inalámbrico (Puente)</li>
+                                    <li>Cliente inalámbrico</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong class="text-gray-800">Topologías inalámbricas:</strong>
+                                <ul class="list-[circle] ml-6 mt-1 text-sm space-y-1 text-gray-600">
+                                    <li><strong>Ad-hoc:</strong> Conexión directa dispositivo a dispositivo, sin un equipo central.</li>
+                                    <li><strong>Infraestructura:</strong> Todos los clientes se conectan a un punto central (Access Point o Router).</li>
+                                </ul>
+                            </li>
                         </ul>
                         
                         <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mt-6">
                             <h4 class="font-bold text-blue-800"><i class="fa-solid fa-lightbulb text-blue-500 mr-2"></i>Ejemplo Cotidiano</h4>
-                            <p class="text-sm text-blue-900 mt-1">Cuando compartes internet desde tu celular a la laptop de tu amigo usando la opción "Zona Wi-Fi portátil", estás creando una red similar a la <strong>Ad-Hoc</strong>. Sin embargo, el módem de Telmex/Totalplay que tienes en tu casa funciona con una topología de <strong>Infraestructura</strong>.</p>
+                            <p class="text-sm text-blue-900 mt-1">Cuando compartes internet desde tu celular a la laptop de tu amigo usando la opción "Zona Wi-Fi portátil", estás creando una red similar a la <strong>Ad-Hoc</strong>. Sin embargo, el módem de Telmex/Totalplay que tienes en tu casa y conecta a todos los dispositivos funciona con una topología de <strong>Infraestructura</strong>.</p>
                         </div>
                     </div>
                     <div class="relative rounded-xl overflow-hidden shadow-md">
@@ -111,7 +134,7 @@
                         <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
                             <li>Investiga los siguientes estándares del IEEE: <strong>802.11a, 802.11b, 802.11g, 802.11n, 802.11ac (Wi-Fi 5) y 802.11ax (Wi-Fi 6)</strong>.</li>
                             <li>Crea una tabla comparativa en tu cuaderno incluyendo:
-                                <ul class="list-circle ml-5 mt-1">
+                                <ul class="list-[circle] ml-5 mt-1">
                                     <li>Año de lanzamiento.</li>
                                     <li>Frecuencia de operación (2.4 GHz, 5 GHz o ambas).</li>
                                     <li>Velocidad máxima teórica.</li>
@@ -126,7 +149,7 @@
                         <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
                             <li>Realiza un diagrama (croquis) de tu casa o del laboratorio de informática.</li>
                             <li>Ubica y dibuja el lugar exacto donde se encuentra el <strong>Router o Access Point principal</strong>.</li>
-                            <li>Identifica al menos 5 dispositivos que se conecten a esa red de forma inalámbrica (Laptops, Celulares, Smart TVs, etc.) y dibújalos conectados al router.</li>
+                            <li>Identifica al menos 5 dispositivos que se conecten a esa red de forma inalámbrica (Laptops, Celulares, Smart TVs, etc.) y dibújalos conectados al router (Clientes inalámbricos).</li>
                             <li>Anota la marca y el modelo del Router principal.</li>
                             <li>Llama al profesor para que revise tu diagrama y la tabla comparativa de estándares. ¡Obtén tu primera firma!</li>
                         </ul>
@@ -210,7 +233,7 @@
                         <ul class="list-disc ml-5 text-gray-600 space-y-2 mb-4">
                             <li><strong>Amenazas Comunes:</strong> Rogue AP (un Access Point falso que engaña a los usuarios), MITM (Man-in-the-middle, donde el atacante lee la información en tránsito), DoS (Denegación de servicio para tumbar la red).</li>
                             <li><strong>Protocolos de Encriptación:</strong>
-                                <ul class="list-circle ml-5 mt-1 text-sm">
+                                <ul class="list-[circle] ml-5 mt-1 text-sm">
                                     <li><em>WEP:</em> Obsoleto y muy fácil de hackear. No usar.</li>
                                     <li><em>WPA / WPA2:</em> Uso de contraseña (PSK). WPA2 con algoritmo <strong>AES</strong> es el estándar más utilizado y seguro actualmente.</li>
                                 </ul>
