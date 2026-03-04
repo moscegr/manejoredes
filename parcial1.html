@@ -43,16 +43,20 @@
     <!-- Navegación -->
     <nav class="bg-white shadow-md fixed w-full z-50 top-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
+            <div class="flex justify-between h-14 items-center">
                 <div class="flex items-center">
-                    <i class="fa-solid fa-wifi text-conalep-green text-3xl mr-3"></i>
+                    <i class="fa-solid fa-wifi text-conalep-green text-2xl mr-3"></i>
                     <div>
-                        <span class="font-bold text-xl text-conalep-green block leading-tight">Parcial 1</span>
-                        <span class="text-xs text-gray-500 font-semibold tracking-wider">REDES INALÁMBRICAS</span>
+                        <span class="font-bold text-lg text-conalep-green block leading-tight">Parcial 1</span>
+                        <span class="text-[10px] text-gray-500 font-semibold tracking-wider">REDES INALÁMBRICAS</span>
                     </div>
                 </div>
-                <div>
-                    <a href="index.html" class="text-gray-600 hover:text-conalep-green transition font-medium flex items-center">
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8 text-sm lg:text-base">
+                    <a href="#semana1" class="text-gray-600 hover:text-conalep-green transition font-medium">Semana 1</a>
+                    <a href="#semana2" class="text-gray-600 hover:text-blue-500 transition font-medium">Semana 2</a>
+                    <a href="#semana3" class="text-gray-600 hover:text-yellow-500 transition font-medium">Semana 3</a>
+                    <a href="#semana4" class="text-gray-600 hover:text-red-500 transition font-medium">Semana 4</a>
+                    <a href="index.html" class="bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full hover:bg-gray-200 transition font-medium flex items-center shadow-sm text-sm">
                         <i class="fa-solid fa-arrow-left mr-2"></i> Volver al Inicio
                     </a>
                 </div>
@@ -61,7 +65,7 @@
     </nav>
 
     <!-- Header -->
-    <header class="bg-header pt-32 pb-20 text-center text-white mt-10">
+    <header class="bg-header pt-24 pb-8 text-center text-white mt-10">
         <div class="max-w-4xl mx-auto px-4">
             <span class="bg-conalep-light text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block">Módulo MRDE-20</span>
             <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Implementación de Dispositivos WLAN</h1>
@@ -160,14 +164,14 @@
                         </ol>
                     </div>
                     <div class="bg-conalep-light/10 p-6 rounded-xl border border-conalep-light/30">
-                        <h4 class="font-bold text-conalep-dark mb-3"><i class="fa-solid fa-pen-clip text-conalep-green mr-2"></i>Ejercicio de Clase (Firma 1)</h4>
+                        <h4 class="font-bold text-conalep-dark mb-3"><i class="fa-solid fa-pen-clip text-conalep-green mr-2"></i>Ejercicio de Clase</h4>
                         <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Identifica los componentes de una red WLAN en tu entorno.</p>
                         <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
                             <li>Realiza un diagrama (croquis) de tu casa o del laboratorio de informática.</li>
                             <li>Ubica y dibuja el lugar exacto donde se encuentra el <strong>Router o Access Point principal</strong>.</li>
                             <li>Identifica al menos 5 dispositivos que se conecten a esa red de forma inalámbrica (Laptops, Celulares, Smart TVs, etc.) y dibújalos conectados al router (Clientes inalámbricos).</li>
                             <li>Anota la marca y el modelo del Router principal.</li>
-                            <li>Llama al profesor para que revise tu diagrama y la tabla comparativa de estándares. ¡Obtén tu primera firma!</li>
+                            <li>Llama al profesor para que revise tu diagrama y la tabla comparativa de estándares y registre tu actividad.</li>
                         </ul>
                     </div>
                 </div>
@@ -216,7 +220,7 @@
                         </ol>
                     </div>
                     <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
-                        <h4 class="font-bold text-blue-900 mb-3"><i class="fa-solid fa-pen-clip text-blue-500 mr-2"></i>Ejercicio de Clase (Firma 2)</h4>
+                        <h4 class="font-bold text-blue-900 mb-3"><i class="fa-solid fa-pen-clip text-blue-500 mr-2"></i>Ejercicio de Clase</h4>
                         <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Configura una IP Estática paso a paso en tu dispositivo móvil (Android).</p>
                         <ul class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
                             <li>Conéctate a la red Wi-Fi "Conalep_Mesa1" (o la asignada por el profesor) desde tu celular.</li>
@@ -225,7 +229,33 @@
                             <li>Despliega o busca la sección de <strong>Opciones Avanzadas</strong>.</li>
                             <li>En <em>Ajustes de IP</em>, cambia la opción de <strong>DHCP</strong> a <strong>Estática</strong>.</li>
                             <li>Asigna manualmente la Dirección IP: <strong>192.168.1.50</strong> (o la terminación que te indique el profesor) y asegúrate de que la Puerta de Enlace (Gateway/Enrutador) sea <strong>192.168.1.254</strong>.</li>
-                            <li>Guarda los cambios, verifica que tu dispositivo mantenga la conexión a la red y muestra tu pantalla al profesor para obtener tu firma.</li>
+                            <li>Guarda los cambios, verifica que tu dispositivo mantenga la conexión a la red y muestra tu pantalla al profesor para registrar tu actividad.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Más Ejercicios Semana 2 -->
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-laptop text-blue-500 mr-2"></i>Ejercicio 3: IP Estática en Windows</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Configurar manualmente los parámetros de red en una computadora de escritorio o laptop.</p>
+                        <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Presiona las teclas <strong>Windows + R</strong>, escribe <code>ncpa.cpl</code> y presiona Enter para abrir las conexiones de red.</li>
+                            <li>Haz clic derecho en tu adaptador <strong>Wi-Fi</strong> y selecciona <strong>Propiedades</strong>.</li>
+                            <li>Selecciona <em>Protocolo de Internet versión 4 (TCP/IPv4)</em> y haz clic en <strong>Propiedades</strong>.</li>
+                            <li>Elige "Usar la siguiente dirección IP" e ingresa: IP <strong>192.168.1.60</strong>, Máscara <strong>255.255.255.0</strong>, Puerta de enlace <strong>192.168.1.254</strong>.</li>
+                            <li>Haz clic en Aceptar, verifica que sigues teniendo conexión a la red local y documenta el proceso en tu cuaderno.</li>
+                        </ol>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
+                        <h4 class="font-bold text-blue-900 mb-3"><i class="fa-solid fa-satellite-dish text-blue-500 mr-2"></i>Ejercicio 4: Análisis de Canales</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Identifica la saturación de canales Wi-Fi a tu alrededor usando comandos de Windows.</p>
+                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Abre el <strong>Símbolo del sistema (CMD)</strong> en tu computadora.</li>
+                            <li>Escribe el comando: <code>netsh wlan show networks mode=bssid</code> y presiona Enter.</li>
+                            <li>Analiza la lista que aparece en pantalla y anota en tu cuaderno 3 redes distintas que detecte tu equipo.</li>
+                            <li>Para cada red anota: Nombre (SSID), nivel de Señal (%) y el <strong>Canal</strong> de transmisión que utilizan.</li>
+                            <li>Responde en tu cuaderno: ¿Qué canal es el más usado por los routers cercanos? Llama a tu profesor para registrar tu participación.</li>
                         </ul>
                     </div>
                 </div>
@@ -266,28 +296,27 @@
                 <!-- Ejercicios Semana 3 -->
                 <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-person-chalkboard text-yellow-500 mr-2"></i>Ejercicio Guiado (Packet Tracer)</h4>
-                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Configurar contraseña WPA2 en el Router.</p>
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-shield-halved text-yellow-500 mr-2"></i>Práctica Guiada: Auditoría en Router Real</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Explorar los menús de seguridad y filtrado MAC en un módem/router comercial (sin modificar valores).</p>
                         <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
-                            <li>Abre el <em>GUI</em> del Router WRT300N.</li>
-                            <li>En la sección <em>Wireless</em>, haz clic en el submenú <strong>Wireless Security</strong>.</li>
-                            <li>Cambia el Security Mode de "Disabled" a <strong>WPA2 Personal</strong>.</li>
-                            <li>En <em>Encryption</em> selecciona <strong>AES</strong>.</li>
-                            <li>En <em>Passphrase</em> escribe la contraseña: <strong>C0nal3p2026*</strong></li>
-                            <li>Presiona <strong>Save Settings</strong> al fondo.</li>
-                            <li>Vuelve a abrir <em>PC Wireless</em> en las Laptops, busca la red y ahora te pedirá la clave para conectarte.</li>
+                            <li>Accede nuevamente a la puerta de enlace de tu router (ej. 192.168.1.254) desde el navegador web.</li>
+                            <li>Dirígete a la sección de <strong>WLAN</strong> o <strong>Seguridad Inalámbrica</strong>.</li>
+                            <li>Identifica qué tipo de cifrado está utilizando el router actualmente (Ej. WPA2-PSK, WPA3, AES, TKIP). Anótalo en tu cuaderno.</li>
+                            <li>Busca la sección de <strong>Filtrado MAC</strong> (MAC Filtering o Control de Acceso).</li>
+                            <li>Observa las opciones disponibles: ¿Permite crear listas blancas (Permitir) y listas negras (Bloquear)? Documenta la ruta o el menú para llegar a esta opción.</li>
+                            <li><em>Nota importante:</em> <strong>No guardes ningún cambio</strong> para evitar desconectar los equipos del laboratorio. Solo cierra la sesión al finalizar la exploración.</li>
                         </ol>
                     </div>
                     <div class="bg-yellow-50 p-6 rounded-xl border border-yellow-200">
-                        <h4 class="font-bold text-yellow-900 mb-3"><i class="fa-solid fa-pen-clip text-yellow-500 mr-2"></i>Ejercicio de Clase (Firma 3)</h4>
-                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Implementa Filtrado MAC para bloquear un intruso.</p>
+                        <h4 class="font-bold text-yellow-900 mb-3"><i class="fa-solid fa-user-secret text-yellow-500 mr-2"></i>Ejercicio de Clase: Estudio de Caso</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Analiza el siguiente escenario de ciberseguridad y responde en tu cuaderno.</p>
+                        <div class="bg-white p-3 rounded text-sm text-gray-600 italic mb-3 border border-yellow-300">
+                            "La cafetería de la escuela ofrece Wi-Fi gratis abierto (sin contraseña). Un atacante (Hacker) crea una red falsa con el mismo nombre (Rogue AP). Varios alumnos se conectan a la red falsa sin saberlo, y el atacante intercepta sus contraseñas (Ataque Man-in-the-Middle)."
+                        </div>
                         <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
-                            <li>Agrega un "Smartphone" al escenario simulando el celular de un Hacker e intenta conectarlo con la clave WPA2.</li>
-                            <li>Busca la dirección MAC (MAC Address) de una de tus PCs legítimas (Pestaña Config -> Wireless0 -> MAC Address). Anótala.</li>
-                            <li>Ve al Router -> Wireless -> <strong>Wireless MAC Filter</strong>. Actívalo (Enable).</li>
-                            <li>Selecciona la opción: <em>"Permit only PCs listed to access the wireless network"</em> (Lista Blanca).</li>
-                            <li>Ingresa la MAC de tu PC legítima y guarda los cambios.</li>
-                            <li>Demuestra al profesor que el Smartphone del intruso no puede conectarse aunque tenga la clave. ¡Obtén tu firma!</li>
+                            <li><strong>Pregunta 1:</strong> ¿Qué protocolo de seguridad (WEP, WPA o WPA2) recomendarías implementar para proteger la red de la cafetería de forma moderna y por qué?</li>
+                            <li><strong>Pregunta 2:</strong> Si la red fuera de uso exclusivo para 5 empleados de caja, ¿cómo usarías el <strong>Filtrado MAC</strong> para asegurar que absolutamente nadie más se conecte?</li>
+                            <li>Muestra tus respuestas y apuntes al profesor para registrar tu actividad.</li>
                         </ul>
                     </div>
                 </div>
@@ -334,7 +363,7 @@
                     </div>
 
                     <div class="mt-6">
-                        <h5 class="font-bold text-gray-900 mb-2">Instrucciones para la Firma 4:</h5>
+                        <h5 class="font-bold text-gray-900 mb-2">Instrucciones de la Actividad:</h5>
                         <p class="text-sm text-gray-600 mb-4">El profesor te enviará por WhatsApp un archivo llamado <code>Escenario_Roto_WLAN.pkt</code> para Packet Tracer. Ábrelo y realiza lo siguiente:</p>
                         <ul class="list-disc ml-6 text-sm text-gray-700 space-y-2">
                             <li><strong>Paso 1:</strong> Verifica por qué la Laptop 1 no conecta. <em>Pista: Revisa si el nombre del SSID que tiene configurado está mal escrito (Ej. "Conalep_redes" vs "Conalep_Redes").</em> Corrígelo.</li>
