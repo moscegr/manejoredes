@@ -273,52 +273,146 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- Explicación ampliada con imágenes -->
+                <div class="space-y-8">
+                    
+                    <!-- Amenazas -->
                     <div>
-                        <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">Explicación del Tema</h3>
-                        <p class="text-gray-600 mb-4 text-justify">Las redes Wi-Fi viajan por el aire, por lo que cualquier persona en el radio de cobertura puede interceptar los datos. Para evitarlo, aplicamos seguridad:</p>
-                        <ul class="list-disc ml-5 text-gray-600 space-y-2 mb-4">
-                            <li><strong>Amenazas Comunes:</strong> Rogue AP (un Access Point falso que engaña a los usuarios), MITM (Man-in-the-middle, donde el atacante lee la información en tránsito), DoS (Denegación de servicio para tumbar la red).</li>
-                            <li><strong>Protocolos de Encriptación:</strong>
-                                <ul class="list-[circle] ml-5 mt-1 text-sm">
-                                    <li><em>WEP:</em> Obsoleto y muy fácil de hackear. No usar.</li>
-                                    <li><em>WPA / WPA2:</em> Uso de contraseña (PSK). WPA2 con algoritmo <strong>AES</strong> es el estándar más utilizado y seguro actualmente.</li>
-                                </ul>
-                            </li>
-                            <li><strong>Filtrado MAC:</strong> Seguridad adicional que consiste en crear una "Lista Blanca". Solo las tarjetas de red cuyas direcciones físicas (MAC Address) estén registradas en el Router podrán conectarse, aunque tengan la contraseña correcta.</li>
-                        </ul>
+                        <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">1. Amenazas más comunes en Redes Inalámbricas</h3>
+                        <p class="text-sm text-gray-600 mb-4">Las redes Wi-Fi viajan por el aire, haciéndolas vulnerables a interceptaciones si no se aseguran correctamente.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+                            <!-- MITM -->
+                            <div class="bg-gray-50 rounded-lg p-6 border border-gray-200 text-center shadow-sm hover:shadow-md transition">
+                                <i class="fa-solid fa-user-ninja text-5xl text-red-500 mb-4 drop-shadow-sm"></i>
+                                <h4 class="font-bold text-gray-800">Man-in-the-Middle (MITM)</h4>
+                                <p class="text-xs text-gray-600 mt-2">El atacante (hacker) se sitúa silenciosamente entre el usuario y el router para interceptar, leer o modificar la información que viaja por el aire.</p>
+                            </div>
+                            <!-- Rogue AP -->
+                            <div class="bg-gray-50 rounded-lg p-6 border border-gray-200 text-center shadow-sm hover:shadow-md transition">
+                                <i class="fa-solid fa-wifi text-5xl text-orange-500 mb-4 drop-shadow-sm"></i>
+                                <h4 class="font-bold text-gray-800">Rogue AP (Punto Falso)</h4>
+                                <p class="text-xs text-gray-600 mt-2">Un router no autorizado (gemelo malvado) que se hace pasar por una red legítima, como el Wi-Fi abierto de una cafetería, para robar datos de los usuarios.</p>
+                            </div>
+                            <!-- DoS -->
+                            <div class="bg-gray-50 rounded-lg p-6 border border-gray-200 text-center shadow-sm hover:shadow-md transition">
+                                <i class="fa-solid fa-ban text-5xl text-purple-500 mb-4 drop-shadow-sm"></i>
+                                <h4 class="font-bold text-gray-800">Ataque DoS</h4>
+                                <p class="text-xs text-gray-600 mt-2">Denegación de Servicio (Denial of Service). Consiste en enviar miles de solicitudes falsas al router para saturarlo y desconectar a los usuarios legítimos.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="relative rounded-xl overflow-hidden shadow-md">
-                        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Código y ciberseguridad" class="w-full h-full object-cover">
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Protocolos -->
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">2. Protocolos de Encriptación</h3>
+                            <p class="text-sm text-gray-600 mb-4">La encriptación oculta los datos convirtiéndolos en código ilegible sin la contraseña.</p>
+                            <ul class="space-y-3">
+                                <li class="flex items-center bg-red-50 p-3 rounded-lg border border-red-200">
+                                    <span class="bg-red-500 text-white text-xs font-bold px-3 py-1 rounded mr-4 shadow-sm w-20 text-center">WEP</span>
+                                    <span class="text-sm text-gray-700">Protocolo obsoleto y vulnerable. Un atacante puede hackearlo en pocos minutos. <strong>No debe utilizarse.</strong></span>
+                                </li>
+                                <li class="flex items-center bg-yellow-50 p-3 rounded-lg border border-yellow-200">
+                                    <span class="bg-yellow-500 text-white text-xs font-bold px-3 py-1 rounded mr-4 shadow-sm w-20 text-center">WPA</span>
+                                    <span class="text-sm text-gray-700">Mejora sobre WEP usando cifrado TKIP, pero hoy en día ya se considera inseguro y fácil de romper.</span>
+                                </li>
+                                <li class="flex items-center bg-green-50 p-3 rounded-lg border border-green-200">
+                                    <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded mr-4 shadow-sm w-20 text-center">WPA2 / 3</span>
+                                    <span class="text-sm text-gray-700">Estándares seguros actuales. WPA2 utiliza cifrado militar <strong>AES</strong> para proteger las contraseñas (PSK).</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- MAC Address -->
+                        <div>
+                            <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">3. Dirección MAC y Filtrado</h3>
+                            <div class="bg-gray-800 text-white p-6 rounded-xl shadow-inner relative overflow-hidden h-full flex flex-col justify-center">
+                                <i class="fa-solid fa-fingerprint absolute -right-6 -bottom-6 text-9xl text-gray-700 opacity-30 pointer-events-none"></i>
+                                <p class="text-sm mb-4 relative z-10 leading-relaxed">La <strong>Dirección MAC</strong> (Media Access Control) es la "huella digital" o el número de serie único e irrepetible grabado de fábrica en tu tarjeta de red. Su formato hexadecimal se ve así:</p>
+                                <div class="font-mono text-center text-conalep-light text-2xl tracking-widest bg-gray-900 py-3 rounded-lg mb-4 relative z-10 border border-gray-700 shadow-md">
+                                    00:1A:2B:3C:4D:5E
+                                </div>
+                                <p class="text-sm text-gray-300 relative z-10"><strong>Filtrado MAC:</strong> Medida de seguridad avanzada en el router que crea una "Lista Blanca". Solo los dispositivos con una MAC autorizada podrán navegar, incluso si un intruso adivina la contraseña del Wi-Fi.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Ejercicios Semana 3 -->
-                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-shield-halved text-yellow-500 mr-2"></i>Práctica Guiada: Auditoría en Router Real</h4>
-                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Explorar los menús de seguridad y filtrado MAC en un módem/router comercial (sin modificar valores).</p>
-                        <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
-                            <li>Accede nuevamente a la puerta de enlace de tu router (ej. 192.168.1.254) desde el navegador web.</li>
-                            <li>Dirígete a la sección de <strong>WLAN</strong> o <strong>Seguridad Inalámbrica</strong>.</li>
-                            <li>Identifica qué tipo de cifrado está utilizando el router actualmente (Ej. WPA2-PSK, WPA3, AES, TKIP). Anótalo en tu cuaderno.</li>
-                            <li>Busca la sección de <strong>Filtrado MAC</strong> (MAC Filtering o Control de Acceso).</li>
-                            <li>Observa las opciones disponibles: ¿Permite crear listas blancas (Permitir) y listas negras (Bloquear)? Documenta la ruta o el menú para llegar a esta opción.</li>
-                            <li><em>Nota importante:</em> <strong>No guardes ningún cambio</strong> para evitar desconectar los equipos del laboratorio. Solo cierra la sesión al finalizar la exploración.</li>
-                        </ol>
-                    </div>
-                    <div class="bg-yellow-50 p-6 rounded-xl border border-yellow-200">
-                        <h4 class="font-bold text-yellow-900 mb-3"><i class="fa-solid fa-user-secret text-yellow-500 mr-2"></i>Ejercicio de Clase: Estudio de Caso</h4>
-                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Analiza el siguiente escenario de ciberseguridad y responde en tu cuaderno.</p>
-                        <div class="bg-white p-3 rounded text-sm text-gray-600 italic mb-3 border border-yellow-300">
-                            "La cafetería de la escuela ofrece Wi-Fi gratis abierto (sin contraseña). Un atacante (Hacker) crea una red falsa con el mismo nombre (Rogue AP). Varios alumnos se conectan a la red falsa sin saberlo, y el atacante intercepta sus contraseñas (Ataque Man-in-the-Middle)."
+                <!-- Ejercicios Semana 3 (Simulador) -->
+                <div class="mt-12">
+                    <h4 class="font-bold text-gray-900 mb-4 text-2xl"><i class="fa-solid fa-laptop-code text-yellow-500 mr-2"></i>Práctica Guiada: Simulador Interactivo de Ataque (Rogue AP & MITM)</h4>
+                    <p class="text-gray-700 mb-6 leading-relaxed">Como alternativa a software complejo, usaremos este entorno interactivo seguro integrado en la página. <br><br><strong>Instrucciones:</strong> Imagina que vas a una cafetería y te conectas a una red Wi-Fi sin contraseña llamada <em>"Cafeteria_Free_WiFi"</em>. Simula iniciar sesión en tu red social en la pantalla azul y observa lo que captura el atacante (Hacker) en su terminal negra en tiempo real.</p>
+                    
+                    <!-- Contenedor del Simulador Integrado -->
+                    <div class="flex flex-col lg:flex-row gap-6 bg-gray-900 p-6 rounded-2xl border border-gray-700 shadow-2xl">
+                        
+                        <!-- Víctima UI (Pantalla de Login) -->
+                        <div class="lg:w-1/2 bg-gray-100 rounded-xl p-6 shadow-inner border-t-4 border-blue-500 relative">
+                            <span class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">Pantalla de la Víctima</span>
+                            <div class="text-center mb-6 mt-4">
+                                <i class="fa-solid fa-wifi text-4xl text-blue-500 mb-2"></i>
+                                <h5 class="font-bold text-gray-800 text-lg">Conectado a: Cafeteria_Free_WiFi</h5>
+                                <span class="text-xs text-red-500 font-bold bg-red-100 px-2 py-1 rounded-full"><i class="fa-solid fa-unlock text-xs mr-1"></i>Red Abierta Insegura</span>
+                            </div>
+                            <div class="space-y-4 bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                                <h6 class="text-center font-bold text-gray-700 mb-4">Iniciar sesión en Red Social</h6>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Usuario / Correo</label>
+                                    <input type="text" id="simUser" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-2 bg-gray-50" placeholder="usuario@correo.com" onkeyup="updateHackerTerminal()">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-1">Contraseña</label>
+                                    <input type="password" id="simPass" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 border p-2 bg-gray-50" placeholder="••••••••" onkeyup="updateHackerTerminal()">
+                                </div>
+                                <button class="w-full bg-blue-600 text-white rounded-md py-3 mt-2 font-bold hover:bg-blue-700 transition" onclick="alert('¡Error de conexión! El servidor no responde o el atacante ha bloqueado el acceso.')">Entrar</button>
+                            </div>
                         </div>
-                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
-                            <li><strong>Pregunta 1:</strong> ¿Qué protocolo de seguridad (WEP, WPA o WPA2) recomendarías implementar para proteger la red de la cafetería de forma moderna y por qué?</li>
-                            <li><strong>Pregunta 2:</strong> Si la red fuera de uso exclusivo para 5 empleados de caja, ¿cómo usarías el <strong>Filtrado MAC</strong> para asegurar que absolutamente nadie más se conecte?</li>
-                            <li>Muestra tus respuestas y apuntes al profesor para registrar tu actividad.</li>
+
+                        <!-- Hacker UI (Terminal) -->
+                        <div class="lg:w-1/2 bg-black rounded-xl p-6 shadow-inner border-t-4 border-red-500 relative font-mono text-sm">
+                            <span class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">Terminal del Atacante (MITM)</span>
+                            <div class="text-green-500 mt-6 space-y-2">
+                                <p>root@kali:~# <span class="text-white">start_rogue_ap --ssid "Cafeteria_Free_WiFi"</span></p>
+                                <p class="text-gray-400">[*] Access Point falso iniciado.</p>
+                                <p class="text-gray-400">[*] Esperando conexiones de víctimas...</p>
+                                <p class="text-yellow-400 font-bold">[*] ¡Nueva víctima detectada! (MAC: 4A:2C:99:F1:0B)</p>
+                                <p>root@kali:~# <span class="text-white">intercept_traffic --sniff</span></p>
+                                <div id="hackerOutput" class="bg-gray-900 p-4 rounded border border-gray-800 min-h-[140px] mt-4 text-green-400 break-all shadow-inner">
+                                    > Analizando paquetes de red... esperando datos en texto plano.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Script interactivo de la simulación -->
+                    <script>
+                        function updateHackerTerminal() {
+                            const user = document.getElementById('simUser').value;
+                            const pass = document.getElementById('simPass').value;
+                            const terminal = document.getElementById('hackerOutput');
+                            
+                            if(user.length > 0 || pass.length > 0) {
+                                terminal.innerHTML = `> <span class="text-red-500 font-bold">¡PAQUETE HTTP INTERCEPTADO!</span><br>
+                                <span class="text-gray-400">POST /login HTTP/1.1</span><br>
+                                <span class="text-gray-400">Host: www.redsocial.com</span><br><br>
+                                <span class="text-blue-300">Username:</span> <strong class="text-white text-base">${user}</strong><br>
+                                <span class="text-blue-300">Password:</span> <strong class="text-red-400 text-base bg-red-900/30 px-1">${pass}</strong>`;
+                            } else {
+                                terminal.innerHTML = "> Analizando paquetes de red... esperando datos en texto plano.";
+                            }
+                        }
+                    </script>
+
+                    <!-- Páginas recomendadas y Actividad -->
+                    <div class="mt-8 bg-yellow-50 p-6 md:p-8 rounded-xl border border-yellow-200">
+                        <h4 class="font-bold text-yellow-900 mb-4 text-xl"><i class="fa-solid fa-list-check text-yellow-500 mr-2"></i>Análisis y Páginas Recomendadas (Laboratorios Hacking)</h4>
+                        <ul class="list-disc ml-5 text-sm md:text-base text-gray-700 space-y-4">
+                            <li><strong>Reflexión del Simulador:</strong> Como notaste, si una red no tiene encriptación (Abierta) o usa WEP, un atacante puede leer exactamente lo que escribes en texto plano. El protocolo <strong>WPA2</strong> evita esto encriptando la comunicación, para que el hacker solo vea "basura" ilegible.</li>
+                            <li><strong>Plataformas de Simulación Avanzadas:</strong> Como administradores de red, es crucial conocer cómo operan los atacantes para saber defendernos. Te sugerimos registrarte en páginas educativas como <a href="https://tryhackme.com" target="_blank" class="text-blue-600 font-bold hover:underline">TryHackMe</a> o <a href="https://app.hackthebox.com" target="_blank" class="text-blue-600 font-bold hover:underline">HackTheBox</a>. Estas plataformas ofrecen "Sandboxes" o laboratorios virtuales gratuitos directamente desde el navegador para aprender hacking ético y análisis de redes Wi-Fi sin instalar software en tu PC.</li>
+                            <li class="bg-white p-4 rounded border border-yellow-300 shadow-sm mt-4"><strong>Actividad a realizar:</strong> Anota en tu cuaderno 3 formas en las que podrías proteger tus datos personales al conectarte a una red pública (Ej. Uso de VPN, verificar el candado HTTPS, evitar aplicaciones bancarias). Muestra tus apuntes al profesor para <strong>registrar tu actividad</strong>.</li>
                         </ul>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -329,8 +423,8 @@
                 <div class="flex items-center mb-6">
                     <div class="bg-red-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mr-4">4</div>
                     <div>
-                        <h2 class="text-3xl font-bold text-gray-900">Semana 4: Resolución de Problemas (Troubleshooting)</h2>
-                        <p class="text-red-600 font-semibold">Duración: 8 horas | Temas: Conflictos de acceso, Firmware y Autenticación.</p>
+                        <h2 class="text-3xl font-bold text-gray-900">Semana 4: Evaluación y Resolución de Problemas</h2>
+                        <p class="text-red-600 font-semibold">Duración: 8 horas | Temas: Diagnóstico, Seguridad y Proyecto Integrador.</p>
                     </div>
                 </div>
 
@@ -340,37 +434,89 @@
                     </div>
                     <div class="order-1 lg:order-2">
                         <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">Explicación del Tema</h3>
-                        <p class="text-gray-600 mb-4 text-justify">En el mundo real, los administradores de red pasan gran parte de su tiempo diagnosticando y reparando fallas. Los problemas inalámbricos más comunes incluyen:</p>
+                        <p class="text-gray-600 mb-4 text-justify">En el mundo real, los administradores de red pasan gran parte de su tiempo diagnosticando y reparando fallas (Troubleshooting). Los problemas inalámbricos más comunes incluyen:</p>
                         <ul class="list-disc ml-5 text-gray-600 space-y-2 mb-4">
                             <li><strong>Conflictos de canales de radio:</strong> Dos Access Points cercanos emitiendo en el mismo canal causan interferencia. La solución es hacer un escaneo y cambiar a canales sin traslape (1, 6 u 11).</li>
                             <li><strong>Errores de Autenticación:</strong> El cliente ingresa mal la contraseña PSK, o su tarjeta de red es muy vieja y soporta WEP pero el router exige WPA2.</li>
-                            <li><strong>Actualización de Firmware:</strong> El sistema operativo del Access Point tiene un bug que desconecta usuarios. Se debe descargar la última versión de la página del fabricante y "flashear" el equipo.</li>
+                            <li><strong>Actualización de Firmware:</strong> El sistema operativo del Access Point tiene un error que desconecta usuarios. Se debe descargar la última versión del fabricante para solucionarlo.</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Ejercicios Semana 4 -->
+                <!-- Proyecto Final Semana 4 -->
                 <div class="mt-10 bg-red-50 p-6 md:p-10 rounded-xl border border-red-200">
                     <div class="text-center mb-8">
-                        <i class="fa-solid fa-triangle-exclamation text-4xl text-red-500 mb-3"></i>
-                        <h4 class="text-2xl font-bold text-red-900">Proyecto de la Semana: Ticket de Soporte Técnico</h4>
-                        <p class="text-gray-700 mt-2">Pon a prueba todo lo aprendido. Este ejercicio simula un entorno laboral real.</p>
+                        <i class="fa-solid fa-file-contract text-5xl text-red-500 mb-3 drop-shadow-sm"></i>
+                        <h4 class="text-3xl font-bold text-red-900">Proyecto Integrador: Auditoría y Mejora de Red WLAN</h4>
+                        <p class="text-gray-700 mt-2 text-lg">Evaluación Final de la Unidad 1. Pon a prueba todo lo aprendido aplicándolo en un entorno real.</p>
                     </div>
                     
-                    <div class="bg-white p-6 rounded shadow-sm border border-gray-100">
-                        <p class="text-gray-800 font-semibold mb-2">📥 TICKET #4059 - Recibido de: Dirección Escolar</p>
-                        <p class="text-gray-600 italic">"Hola soporte técnico. Ayer la red Wi-Fi funcionaba perfectamente en la sala de maestros, pero hoy ninguno de los 4 profesores puede conectarse con sus Laptops. Necesitamos que lo reparen urgente para capturar calificaciones."</p>
+                    <div class="bg-white p-6 rounded-lg shadow-sm border border-red-100 mb-8">
+                        <h5 class="font-bold text-gray-900 mb-4 text-xl border-b pb-2"><i class="fa-solid fa-clipboard-list text-red-500 mr-2"></i>Instrucciones del Proyecto</h5>
+                        <p class="text-gray-600 mb-4 text-sm">Realiza una auditoría completa de la red inalámbrica de tu casa o del laboratorio de la escuela. Deberás elaborar un <strong>Reporte Técnico Documental</strong> que incluya las siguientes 3 fases, basándote en lo visto durante las semanas anteriores:</p>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 p-4 rounded border-l-4 border-conalep-green">
+                                <h6 class="font-bold text-gray-800">Fase 1: Levantamiento de Infraestructura (Temas Semana 1 y 2)</h6>
+                                <ul class="list-disc ml-5 text-sm text-gray-600 mt-2 space-y-1">
+                                    <li>Identifica la topología de la red, la marca/modelo del router principal y deduce el estándar Wi-Fi que utiliza (ej. 802.11n, 802.11ac).</li>
+                                    <li>Dibuja el diagrama físico.</li>
+                                    <li>Obtén y documenta la <strong>Dirección IP, Máscara de subred y Puerta de Enlace</strong> de al menos 2 dispositivos conectados usando la consola de comandos (<code>ipconfig</code>).</li>
+                                    <li>Haz un escaneo de redes vecinas (<code>netsh wlan show networks mode=bssid</code>) y anota si tu red sufre de interferencia por usar canales saturados.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded border-l-4 border-yellow-500">
+                                <h6 class="font-bold text-gray-800">Fase 2: Auditoría de Seguridad (Temas Semana 3)</h6>
+                                <ul class="list-disc ml-5 text-sm text-gray-600 mt-2 space-y-1">
+                                    <li>Identifica el tipo de cifrado actual de la red (Abierta, WEP, WPA, WPA2).</li>
+                                    <li>Analiza: En su estado actual, ¿existe riesgo de que esta red sufra ataques <em>Man-in-the-Middle</em> o clonación por <em>Rogue AP</em>? Justifica tu respuesta.</li>
+                                    <li>Recopila la <strong>Dirección MAC</strong> de tu teléfono o computadora y explica teóricamente cómo la usarías para configurar una lista blanca en el router.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded border-l-4 border-red-500">
+                                <h6 class="font-bold text-gray-800">Fase 3: Propuesta de Solución (Troubleshooting)</h6>
+                                <ul class="list-disc ml-5 text-sm text-gray-600 mt-2 space-y-1">
+                                    <li>Basado en los datos de la Fase 1, propón un cambio específico de <strong>Canal de transmisión</strong> para mejorar la velocidad.</li>
+                                    <li>Propón al menos 2 medidas concretas para endurecer la seguridad (ej. "Migrar a WPA3", "Cambiar contraseñas predeterminadas del admin", "Ocultar el SSID").</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="mt-6">
-                        <h5 class="font-bold text-gray-900 mb-2">Instrucciones de la Actividad:</h5>
-                        <p class="text-sm text-gray-600 mb-4">El profesor te enviará por WhatsApp un archivo llamado <code>Escenario_Roto_WLAN.pkt</code> para Packet Tracer. Ábrelo y realiza lo siguiente:</p>
-                        <ul class="list-disc ml-6 text-sm text-gray-700 space-y-2">
-                            <li><strong>Paso 1:</strong> Verifica por qué la Laptop 1 no conecta. <em>Pista: Revisa si el nombre del SSID que tiene configurado está mal escrito (Ej. "Conalep_redes" vs "Conalep_Redes").</em> Corrígelo.</li>
-                            <li><strong>Paso 2:</strong> Verifica la Laptop 2. <em>Pista: Revisa si el tipo de encriptación coincide (el router tiene WPA2-AES, pero la laptop quizás está configurada en TKIP).</em> Corrígelo.</li>
-                            <li><strong>Paso 3:</strong> Verifica la Laptop 3. Revisa en el router si su dirección MAC fue bloqueada por error en la lista negra del MAC Filtering.</li>
-                            <li><strong>Paso 4:</strong> Documenta los errores que encontraste en tu cuaderno y llama al docente para mostrar las 4 laptops conectadas y recibir tu calificación.</li>
-                        </ul>
+                    <!-- Rúbrica de Evaluación -->
+                    <h5 class="font-bold text-gray-900 mb-4 text-xl"><i class="fa-solid fa-check-double text-red-500 mr-2"></i>Método de Calificación / Rúbrica (100%)</h5>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left text-gray-500 bg-white rounded-lg shadow overflow-hidden">
+                            <thead class="text-xs text-white uppercase bg-red-600">
+                                <tr>
+                                    <th scope="col" class="px-6 py-4">Criterio a Evaluar</th>
+                                    <th scope="col" class="px-6 py-4 text-center">Ponderación</th>
+                                    <th scope="col" class="px-6 py-4">Requisitos para Nivel Excelente</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-bold text-gray-800">1. Documentación e Infraestructura</td>
+                                    <td class="px-6 py-4 text-center text-blue-600 font-bold text-lg">30%</td>
+                                    <td class="px-6 py-4">El diagrama es claro. Identifica correctamente componentes físicos y el estándar IEEE.</td>
+                                </tr>
+                                <tr class="border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-bold text-gray-800">2. Práctica de Comandos de Red</td>
+                                    <td class="px-6 py-4 text-center text-blue-600 font-bold text-lg">30%</td>
+                                    <td class="px-6 py-4">Evidencia con capturas de pantalla el uso correcto de comandos en consola (IP, MAC, Canales). Entiende la función del Gateway.</td>
+                                </tr>
+                                <tr class="border-b hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-bold text-gray-800">3. Análisis de Seguridad Inalámbrica</td>
+                                    <td class="px-6 py-4 text-center text-blue-600 font-bold text-lg">20%</td>
+                                    <td class="px-6 py-4">Detecta vulnerabilidades reales y justifica el uso de cifrado avanzado y/o filtrado MAC para mitigar ataques de interceptación.</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 font-bold text-gray-800">4. Presentación, Ortografía y Conclusiones</td>
+                                    <td class="px-6 py-4 text-center text-blue-600 font-bold text-lg">20%</td>
+                                    <td class="px-6 py-4">Reporte limpio, bien redactado. Propone soluciones (troubleshooting) muy lógicas que mejorarían el rendimiento de la red auditada.</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
