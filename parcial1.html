@@ -237,14 +237,14 @@
                 <!-- Más Ejercicios Semana 2 -->
                 <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
-                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-laptop text-blue-500 mr-2"></i>Ejercicio 3: IP Estática en Windows</h4>
-                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Configurar manualmente los parámetros de red en una computadora de escritorio o laptop.</p>
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-laptop text-blue-500 mr-2"></i>Ejercicio 3: Auditoría de Red en Windows</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Identificar la configuración IP y MAC de la computadora mediante comandos (sin requerir permisos de administrador).</p>
                         <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
-                            <li>Presiona las teclas <strong>Windows + R</strong>, escribe <code>ncpa.cpl</code> y presiona Enter para abrir las conexiones de red.</li>
-                            <li>Haz clic derecho en tu adaptador <strong>Wi-Fi</strong> y selecciona <strong>Propiedades</strong>.</li>
-                            <li>Selecciona <em>Protocolo de Internet versión 4 (TCP/IPv4)</em> y haz clic en <strong>Propiedades</strong>.</li>
-                            <li>Elige "Usar la siguiente dirección IP" e ingresa: IP <strong>192.168.1.60</strong>, Máscara <strong>255.255.255.0</strong>, Puerta de enlace <strong>192.168.1.254</strong>.</li>
-                            <li>Haz clic en Aceptar, verifica que sigues teniendo conexión a la red local y documenta el proceso en tu cuaderno.</li>
+                            <li>Presiona las teclas <strong>Windows + R</strong>, escribe <code>cmd</code> y presiona Enter para abrir el Símbolo del sistema.</li>
+                            <li>Escribe el comando <code>ipconfig /all</code> y presiona Enter.</li>
+                            <li>Localiza tu adaptador de red activo en la lista (puede llamarse <em>Adaptador de LAN inalámbrica Wi-Fi</em> o <em>Adaptador Ethernet</em>).</li>
+                            <li>Anota en tu cuaderno los datos reales de tu equipo: <strong>Dirección IPv4, Máscara de subred, Puerta de enlace predeterminada y Dirección Física (MAC Address)</strong>.</li>
+                            <li>Responde brevemente en tus apuntes: ¿Para qué sirve cada uno de esos 4 parámetros dentro de la red del laboratorio?</li>
                         </ol>
                     </div>
                     <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
