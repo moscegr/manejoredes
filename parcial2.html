@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcial 2 - Manejo de Redes</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        conalep: {
+                            green: '#006B54',
+                            light: '#009A7A',
+                            dark: '#004C3B'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .bg-header {
+            background-image: linear-gradient(rgba(14, 116, 144, 0.85), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans">
+
+    <!-- Navegación -->
+    <nav class="bg-white shadow-md fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-14 items-center">
+                <div class="flex items-center">
+                    <i class="fa-solid fa-server text-blue-600 text-2xl mr-3"></i>
+                    <div>
+                        <span class="font-bold text-lg text-blue-700 block leading-tight">Parcial 2</span>
+                        <span class="text-[10px] text-gray-500 font-semibold tracking-wider">RUTEO Y CONMUTACIÓN</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8 text-sm lg:text-base">
+                    <a href="#semana1" class="text-gray-600 hover:text-conalep-green transition font-medium">Semana 1</a>
+                    <a href="#semana2" class="text-gray-600 hover:text-blue-500 transition font-medium">Semana 2</a>
+                    <a href="#semana3" class="text-gray-600 hover:text-yellow-500 transition font-medium">Semana 3</a>
+                    <a href="#semana4" class="text-gray-600 hover:text-red-500 transition font-medium">Semana 4</a>
+                    <a href="index.html" class="bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full hover:bg-gray-200 transition font-medium flex items-center shadow-sm text-sm border border-gray-200">
+                        <i class="fa-solid fa-arrow-left mr-2"></i> Volver al Inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-header pt-24 pb-8 text-center text-white mt-10">
+        <div class="max-w-4xl mx-auto px-4">
+            <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block shadow-lg">Módulo MRDE-20</span>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Dispositivos de Ruteo y Conmutación</h1>
+            <p class="text-xl font-light text-blue-100">Dominando la Línea de Comandos (CLI) y Cisco Packet Tracer en 4 semanas.</p>
+            
+            <!-- Botones de navegación rápida -->
+            <div class="flex flex-wrap justify-center gap-4 mt-8">
+                <a href="#semana1" class="bg-white/10 hover:bg-conalep-green text-white font-semibold py-2 px-6 rounded-full transition duration-300 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl">
+                    <i class="fa-solid fa-terminal mr-2"></i>Semana 1
+                </a>
+                <a href="#semana2" class="bg-white/10 hover:bg-blue-500 text-white font-semibold py-2 px-6 rounded-full transition duration-300 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl">
+                    <i class="fa-solid fa-network-wired mr-2"></i>Semana 2
+                </a>
+                <a href="#semana3" class="bg-white/10 hover:bg-yellow-500 text-white font-semibold py-2 px-6 rounded-full transition duration-300 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl">
+                    <i class="fa-solid fa-cloud mr-2"></i>Semana 3
+                </a>
+                <a href="#semana4" class="bg-white/10 hover:bg-red-500 text-white font-semibold py-2 px-6 rounded-full transition duration-300 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl">
+                    <i class="fa-solid fa-file-contract mr-2"></i>Semana 4
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal -->
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 space-y-20">
+
+        <!-- SEMANA 1 -->
+        <section id="semana1" class="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-conalep-green">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-conalep-green text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mr-4">1</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Semana 1: Introducción a Cisco IOS y CLI</h2>
+                        <p class="text-conalep-light font-semibold">Duración: 8 horas | Temas: Modos de IOS, Contraseñas y Configuración Básica.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div>
+                        <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">1. Del Entorno Gráfico a la Línea de Comandos</h3>
+                        <p class="text-gray-600 mb-4 text-justify">A diferencia de los módems caseros (como vimos en el Parcial 1), los Switches y Routers empresariales no tienen pantalla ni una página web con botones. Se configuran mediante una pantalla negra escribiendo comandos. A este sistema operativo se le conoce como <strong>Cisco IOS (Internetwork Operating System)</strong>.</p>
+                        
+                        <h4 class="font-bold text-conalep-dark mb-2">Modos de Operación principales:</h4>
+                        <ul class="space-y-3 mb-4">
+                            <li class="bg-gray-50 p-3 rounded border border-gray-200">
+                                <span class="font-mono text-blue-600 font-bold">Router></span> <strong>Modo EXEC de Usuario:</strong> Solo permite ver información básica. No se puede configurar nada.
+                            </li>
+                            <li class="bg-gray-50 p-3 rounded border border-gray-200">
+                                <span class="font-mono text-green-600 font-bold">Router#</span> <strong>Modo EXEC Privilegiado:</strong> Da acceso a todos los comandos de monitoreo y guardado (comandos <em>show</em>). Se accede escribiendo <code>enable</code>.
+                            </li>
+                            <li class="bg-gray-50 p-3 rounded border border-gray-200">
+                                <span class="font-mono text-red-600 font-bold">Router(config)#</span> <strong>Modo de Configuración Global:</strong> Aquí se aplican los cambios que afectan a todo el equipo (nombres, contraseñas). Se accede escribiendo <code>configure terminal</code>.
+                            </li>
+                        </ul>
+                        
+                        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mt-6">
+                            <h4 class="font-bold text-blue-800"><i class="fa-solid fa-lightbulb text-blue-500 mr-2"></i>Contexto Real</h4>
+                            <p class="text-sm text-blue-900 mt-1">Para acceder a esta consola negra por primera vez en la vida real, necesitas un <strong>Cable de Consola (Azul claro)</strong> que conecta el Router físico al puerto USB/Serial de tu Laptop, y usar un programa como <em>PuTTY</em> o <em>TeraTerm</em>.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Código y consola visual -->
+                    <div class="relative rounded-xl overflow-hidden shadow-2xl bg-black border border-gray-800 flex flex-col">
+                        <div class="bg-gray-800 px-4 py-2 border-b border-gray-700 flex items-center">
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <span class="text-gray-400 text-xs font-mono ml-4">COM3 - PuTTY</span>
+                        </div>
+                        <div class="p-4 font-mono text-sm text-green-400 flex-1 overflow-y-auto">
+                            <p>Press RETURN to get started.</p>
+                            <br>
+                            <p>Router&gt; <span class="text-white">enable</span></p>
+                            <p>Router# <span class="text-white">configure terminal</span></p>
+                            <p>Enter configuration commands, one per line. End with CNTL/Z.</p>
+                            <p>Router(config)# <span class="text-white">hostname SW_Sistemas</span></p>
+                            <p>SW_Sistemas(config)# <span class="text-white">enable secret class</span></p>
+                            <p>SW_Sistemas(config)# <span class="text-white">line console 0</span></p>
+                            <p>SW_Sistemas(config-line)# <span class="text-white">password cisco</span></p>
+                            <p>SW_Sistemas(config-line)# <span class="text-white">login</span></p>
+                            <p>SW_Sistemas(config-line)# <span class="text-white">exit</span></p>
+                            <p class="animate-pulse">_</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ejercicios Semana 1 -->
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-code text-conalep-green mr-2"></i>Ejercicio 1: Traducción de Comandos</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Familiarizarse con la sintaxis del IOS de Cisco.</p>
+                        <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Analiza la pantalla negra (PuTTY) que está arriba a la derecha.</li>
+                            <li>En tu cuaderno, haz una lista de los 8 comandos que aparecen escritos en color blanco.</li>
+                            <li>Investiga y escribe a un lado de cada comando <strong>para qué sirve exactamente</strong> en español (Ej. <code>hostname SW_Sistemas</code> = Sirve para cambiar el nombre del equipo a "SW_Sistemas").</li>
+                        </ol>
+                    </div>
+                    <div class="bg-conalep-light/10 p-6 rounded-xl border border-conalep-light/30">
+                        <h4 class="font-bold text-conalep-dark mb-3"><i class="fa-solid fa-pen-clip text-conalep-green mr-2"></i>Ejercicio 2 (Scripting Básico)</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Crea tu primer "Script" de configuración. Un script es un archivo de texto con comandos listos para copiarse y pegarse en el router real.</p>
+                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Abre el <strong>Bloc de Notas</strong> en tu computadora.</li>
+                            <li>Escribe la secuencia de comandos necesaria para:
+                                <ul class="list-[circle] ml-4 mt-1">
+                                    <li>Entrar al modo privilegiado y luego al modo de configuración global.</li>
+                                    <li>Cambiar el nombre del Router a <strong>R1_Conalep</strong>.</li>
+                                    <li>Poner la contraseña secreta <strong>mexico2026</strong>.</li>
+                                </ul>
+                            </li>
+                            <li>Guarda el archivo como <code>config_R1.txt</code>.</li>
+                        </ul>
+                    </div>
+
+                    <!-- NUEVO EJERCICIO SIMULADOR -->
+                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-200 md:col-span-2 shadow-sm">
+                        <h4 class="font-bold text-purple-900 mb-3 text-lg"><i class="fa-solid fa-laptop-code text-purple-600 mr-2"></i>Ejercicio 3 (Simulador): Conexión por Consola en Packet Tracer</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Replicar el entorno físico de configuración utilizando Cisco Packet Tracer.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <ul class="list-decimal ml-4 text-sm text-gray-700 space-y-2">
+                                <li>Abre el simulador <strong>Cisco Packet Tracer</strong>.</li>
+                                <li>Arrastra al área de trabajo un <strong>Router 1941</strong> y una <strong>PC</strong>.</li>
+                                <li>Selecciona la herramienta de conexiones (el rayo naranja) y elige el <strong>Cable de Consola</strong> (línea curva celeste).</li>
+                                <li>Haz clic en la PC, elige el puerto <strong>RS 232</strong>. Luego haz clic en el Router y conéctalo al puerto <strong>Console</strong>.</li>
+                                <li>Haz clic en la PC para abrir su ventana, ve a la pestaña <em>Desktop</em> y abre la aplicación <strong>Terminal</strong>. Deja los valores por defecto y presiona OK.</li>
+                                <li>¡Felicidades! Estás dentro del IOS. Escribe <code>no</code> si te pregunta por el diálogo de configuración inicial. Copia el texto de tu bloc de notas (Ejercicio 2) y pégalo en la terminal. Verifica que el nombre del router haya cambiado.</li>
+                            </ul>
+                            <div class="bg-gray-50 p-4 rounded-lg border border-purple-200 flex items-center justify-center overflow-hidden">
+                                <!-- Diseño de conexión de consola en SVG -->
+                                <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto drop-shadow-md">
+                                    <!-- Router -->
+                                    <rect x="20" y="55" width="60" height="40" rx="4" fill="#1e293b"/>
+                                    <circle cx="50" cy="75" r="12" fill="#334155"/>
+                                    <text x="50" y="115" fill="#475569" font-size="12" text-anchor="middle" font-weight="bold" font-family="sans-serif">Router</text>
+                                    <path d="M 50 67 L 50 83 M 42 75 L 58 75" stroke="#94a3b8" stroke-width="2"/>
+                                    <!-- Laptop -->
+                                    <path d="M 210 85 L 270 85 L 280 100 L 200 100 Z" fill="#94a3b8"/>
+                                    <rect x="215" y="45" width="50" height="40" rx="2" fill="#475569"/>
+                                    <rect x="220" y="50" width="40" height="30" fill="#0f172a"/>
+                                    <text x="240" y="65" fill="#10b981" font-size="8" font-family="monospace">CLI></text>
+                                    <text x="240" y="115" fill="#475569" font-size="12" text-anchor="middle" font-weight="bold" font-family="sans-serif">PC (Terminal)</text>
+                                    <!-- Console Cable -->
+                                    <path d="M 80 85 Q 140 100 210 90" fill="none" stroke="#0ea5e9" stroke-width="4"/>
+                                    <text x="145" y="85" fill="#0ea5e9" font-size="10" text-anchor="middle" font-weight="bold" font-family="sans-serif">Cable de Consola</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMANA 2 -->
+        <section id="semana2" class="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-blue-500">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-blue-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mr-4">2</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Semana 2: Interfaces y Conectividad</h2>
+                        <p class="text-blue-600 font-semibold">Duración: 8 horas | Temas: IP en interfaces Ethernet/Seriales, Ping, Loopback.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="order-2 lg:order-1">
+                        <!-- Diagrama Teórico -->
+                        <div class="bg-gray-100 p-6 rounded-xl border border-gray-300 text-center h-full flex flex-col justify-center">
+                            <h4 class="font-bold text-gray-700 mb-4">Diagrama de Conexión de Redes (Ruteo)</h4>
+                            <div class="flex items-center justify-center space-x-4 mb-4">
+                                <div class="text-center">
+                                    <i class="fa-solid fa-users text-4xl text-blue-500"></i>
+                                    <p class="text-xs font-bold mt-2">Red Alumnos<br><span class="text-gray-500 font-mono">192.168.10.0</span></p>
+                                </div>
+                                <div class="h-1 w-12 bg-gray-400 relative">
+                                    <span class="absolute -top-5 left-0 text-[10px] font-mono font-bold">G0/0</span>
+                                </div>
+                                <div class="relative">
+                                    <div class="w-16 h-16 rounded-full border-4 border-blue-600 flex items-center justify-center bg-white shadow-lg z-10 relative">
+                                        <i class="fa-solid fa-arrows-left-right text-blue-600 text-2xl"></i>
+                                    </div>
+                                    <p class="text-xs font-bold mt-2">Router 1</p>
+                                </div>
+                                <div class="h-1 w-12 bg-gray-400 relative">
+                                    <span class="absolute -top-5 right-0 text-[10px] font-mono font-bold">G0/1</span>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fa-solid fa-user-tie text-4xl text-red-500"></i>
+                                    <p class="text-xs font-bold mt-2">Red Maestros<br><span class="text-gray-500 font-mono">192.168.20.0</span></p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-4">Para que los Alumnos se comuniquen con los Maestros, el Router necesita una IP configurada en cada uno de sus "brazos" (Interfaces G0/0 y G0/1) y deben estar encendidos (<code class="bg-gray-200 px-1 rounded">no shutdown</code>).</p>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">2. Configurando las Puertas de Enlace</h3>
+                        <p class="text-gray-600 mb-4 text-justify">Un Router conecta diferentes redes. Para hacerlo, cada puerto físico del router (llamado Interfaz) necesita tener una Dirección IP asignada. Esa IP se convertirá en la <strong>Puerta de Enlace Predeterminada (Default Gateway)</strong> de las computadoras conectadas a ese puerto.</p>
+                        
+                        <h4 class="font-bold text-gray-800 mb-2">Comandos de Configuración de Interfaz:</h4>
+                        <ul class="list-disc ml-5 text-gray-600 space-y-2 mb-4 text-sm">
+                            <li>Entrar a la interfaz: <code>interface gigabitEthernet 0/0</code></li>
+                            <li>Asignar IP: <code>ip address 192.168.10.1 255.255.255.0</code></li>
+                            <li>Encender el puerto: <code>no shutdown</code> (Los puertos de los routers vienen apagados de fábrica por seguridad).</li>
+                        </ul>
+
+                        <h4 class="font-bold text-gray-800 mb-2 mt-4">Comandos de Verificación (Troubleshooting):</h4>
+                        <ul class="list-disc ml-5 text-gray-600 space-y-2 text-sm">
+                            <li><strong>Ping:</strong> <code>ping 192.168.20.1</code> - Envía paquetes a un destino para ver si responde (prueba de conectividad básica).</li>
+                            <li><strong>Prueba Loopback:</strong> <code>ping 127.0.0.1</code> - Comprueba que la tarjeta de red interna de nuestra propia computadora funciona correctamente.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Ejercicios Semana 2 -->
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-code text-blue-500 mr-2"></i>Ejercicio 1: Script de Interfaces</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Generar el código CLI para encender los puertos del Router.</p>
+                        <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Abre un Bloc de notas nuevo.</li>
+                            <li>Escribe los comandos para entrar a la configuración global (<code>enable</code>, <code>configure t</code>).</li>
+                            <li>Basándote en el diagrama de arriba, escribe los comandos para entrar a la interfaz <strong>GigabitEthernet 0/0</strong>.</li>
+                            <li>Asígnale la dirección IP <strong>192.168.10.1</strong> con máscara <strong>255.255.255.0</strong>.</li>
+                            <li>Enciéndela usando el comando correcto y sal de la interfaz con <code>exit</code>.</li>
+                            <li>Guarda tu código para revisión.</li>
+                        </ol>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
+                        <h4 class="font-bold text-blue-900 mb-3"><i class="fa-solid fa-magnifying-glass-chart text-blue-500 mr-2"></i>Ejercicio 2: Comprobación de Red Local</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Utiliza los comandos de verificación en la computadora física de tu laboratorio.</p>
+                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Abre la consola de Windows (CMD).</li>
+                            <li>Ejecuta una prueba de loopback (<code>ping 127.0.0.1</code>) y anota en tu cuaderno qué mensaje te devolvió. ¿Funcionó?</li>
+                            <li>Ejecuta un ping a los servidores de Google: <code>ping 8.8.8.8</code>. Observa la estadística: ¿Cuántos paquetes se enviaron, cuántos se recibieron y cuántos se perdieron?</li>
+                        </ul>
+                    </div>
+
+                    <!-- NUEVO EJERCICIO SIMULADOR -->
+                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-200 md:col-span-2 shadow-sm">
+                        <h4 class="font-bold text-purple-900 mb-3 text-lg"><i class="fa-solid fa-route text-purple-600 mr-2"></i>Ejercicio 3 (Simulador): Ruteo Básico entre dos subredes</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Usar Packet Tracer para conectar la red de Alumnos con la red de Maestros.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <ul class="list-decimal ml-4 text-sm text-gray-700 space-y-2">
+                                <li>En un archivo nuevo de Packet Tracer, coloca 1 Router (1941) al centro y 2 PCs (una a cada lado).</li>
+                                <li>Conecta la "PC Alumno" al puerto <strong>G0/0</strong> del router usando un Cable Directo (Copper Straight-Through). Conecta la "PC Maestro" al puerto <strong>G0/1</strong>.</li>
+                                <li>Ve a la pestaña CLI del Router y aplica la configuración de interfaces (IPs y <code>no shutdown</code>) para ambas redes según el diagrama teórico. Notarás que los triángulos rojos de los cables cambian a verde.</li>
+                                <li>Entra a la configuración IP estática de la <strong>PC Alumno</strong> y ponle la IP <code>192.168.10.10</code> y su Gateway <code>192.168.10.1</code>. Haz lo mismo con la <strong>PC Maestro</strong> pero en la red <code>192.168.20.10</code> con Gateway <code>192.168.20.1</code>.</li>
+                                <li>Abre el <em>Command Prompt</em> de la PC Alumno y haz ping a la PC Maestro (<code>ping 192.168.20.10</code>). ¡El primer paquete puede fallar, pero los demás deben responder exitosamente!</li>
+                            </ul>
+                            <div class="bg-white p-4 rounded-lg border border-purple-100 text-center flex flex-col justify-center">
+                                <i class="fa-solid fa-circle-check text-5xl text-green-500 mb-2"></i>
+                                <p class="text-sm font-bold text-gray-700">Verificación de Conectividad</p>
+                                <p class="text-xs text-gray-500 mt-2">Si el ping responde con <em>"Reply from..."</em> significa que el Router está enrutando correctamente los paquetes entre las dos redes distintas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMANA 3 -->
+        <section id="semana3" class="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-yellow-500">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-yellow-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mr-4">3</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Semana 3: Servicios Integrados (DHCP y NAT)</h2>
+                        <p class="text-yellow-600 font-semibold">Duración: 8 horas | Temas: Asignación dinámica, NAT estático/dinámico, SDM.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div>
+                        <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">3. Haciendo la red inteligente e invisible</h3>
+                        <p class="text-gray-600 mb-4 text-justify">Configurar IP por IP en 500 computadoras de una escuela sería imposible. Además, las IPs locales (192.168.x.x) no pueden navegar en internet porque no son válidas mundialmente. Para resolver esto, los routers tienen dos "superpoderes":</p>
+                        
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                <h4 class="font-bold text-yellow-600"><i class="fa-solid fa-hand-holding-droplet mr-2"></i>DHCP (Protocolo de Configuración Dinámica de Host)</h4>
+                                <p class="text-sm text-gray-700 mt-1">El router crea una "alberca" (Pool) de direcciones IP. Cuando conectas tu celular a la red, el celular grita "¿Alguien me da una IP?", y el servicio DHCP del router le presta una automáticamente (IP, Máscara, Gateway y DNS) por un tiempo determinado (concesión).</p>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                                <h4 class="font-bold text-orange-600"><i class="fa-solid fa-masks-theater mr-2"></i>NAT (Traducción de Direcciones de Red)</h4>
+                                <p class="text-sm text-gray-700 mt-1">Las IP Privadas (ej. 192.168.1.50) no existen en internet. Cuando tu celular intenta abrir YouTube, el router intercepta el paquete, le quita tu IP privada, le pone la <strong>IP Pública</strong> de Telmex/Totalplay (Traducción/Enmascaramiento) y lo manda a internet. Cuando YouTube responde, el router deshace el truco y te lo entrega.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Representación Visual NAT -->
+                    <div class="relative rounded-xl overflow-hidden shadow-md bg-gray-900 flex flex-col items-center justify-center p-6 border border-gray-700">
+                        <h4 class="text-white font-bold mb-6">El Truco de NAT (Overload / PAT)</h4>
+                        <div class="flex items-center w-full justify-between px-2 md:px-6">
+                            <!-- IPs Privadas -->
+                            <div class="space-y-4">
+                                <div class="bg-gray-800 text-gray-300 px-3 py-1 rounded text-xs font-mono border border-gray-600"><i class="fa-solid fa-laptop text-blue-400 mr-2"></i>192.168.1.10</div>
+                                <div class="bg-gray-800 text-gray-300 px-3 py-1 rounded text-xs font-mono border border-gray-600"><i class="fa-solid fa-mobile text-green-400 mr-2"></i>192.168.1.11</div>
+                                <div class="bg-gray-800 text-gray-300 px-3 py-1 rounded text-xs font-mono border border-gray-600"><i class="fa-solid fa-tv text-purple-400 mr-2"></i>192.168.1.12</div>
+                            </div>
+                            
+                            <!-- Router -->
+                            <div class="relative mx-4">
+                                <div class="w-20 h-20 rounded-full border-4 border-yellow-500 bg-gray-800 flex items-center justify-center z-10 relative shadow-[0_0_15px_#eab308]">
+                                    <i class="fa-solid fa-arrows-left-right text-yellow-500 text-3xl"></i>
+                                </div>
+                                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 text-yellow-500 text-xs font-bold uppercase">Router NAT</div>
+                            </div>
+                            
+                            <!-- Internet (IP Pública Única) -->
+                            <div class="text-center">
+                                <i class="fa-solid fa-globe text-4xl text-blue-300 mb-2"></i>
+                                <div class="bg-blue-900 text-blue-100 px-3 py-1 rounded font-bold text-xs font-mono border border-blue-500">IP Pública Única<br>200.15.8.44</div>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-xs text-center mt-6">Gracias al NAT, las 3 computadoras navegan compartiendo exactamente la misma IP Pública hacia el exterior.</p>
+                    </div>
+                </div>
+
+                <!-- Ejercicios Semana 3 -->
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-code text-yellow-600 mr-2"></i>Ejercicio 1: Script de DHCP</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Configurar el servidor DHCP en el bloc de notas.</p>
+                        <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
+                            <li>En tu archivo de texto, agrega la exclusión de IPs (para que el router no preste su propia IP): <br><code>ip dhcp excluded-address 192.168.10.1</code></li>
+                            <li>Crea el pool de IPs: <br><code>ip dhcp pool ALUMNOS</code></li>
+                            <li>Declara la red que vas a repartir: <br><code>network 192.168.10.0 255.255.255.0</code></li>
+                            <li>Declara la puerta de enlace que tendrán los alumnos: <br><code>default-router 192.168.10.1</code></li>
+                        </ol>
+                    </div>
+                    <div class="bg-yellow-50 p-6 rounded-xl border border-yellow-200">
+                        <h4 class="font-bold text-yellow-900 mb-3"><i class="fa-solid fa-magnifying-glass-location text-yellow-600 mr-2"></i>Ejercicio 2: Auditoría NAT Real</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Descubre la IP Privada y la IP Pública del plantel escolar.</p>
+                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Abre el CMD en tu PC y escribe <code>ipconfig</code>. Anota tu <strong>Dirección IPv4</strong> (Esta es tu IP Privada).</li>
+                            <li>Abre el navegador web de tu PC y busca en Google: <em>"Cual es mi IP"</em>. Entra a cualquier página y anota la dirección que aparece grande en pantalla (Esta es tu IP Pública asignada por el proveedor).</li>
+                            <li>Pide a un compañero de otra computadora que haga lo mismo y comparen la IP Pública. ¿Son iguales o diferentes? ¿Por qué?</li>
+                        </ul>
+                    </div>
+
+                    <!-- NUEVO EJERCICIO SIMULADOR -->
+                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-200 md:col-span-2 shadow-sm">
+                        <h4 class="font-bold text-purple-900 mb-3 text-lg"><i class="fa-solid fa-bolt text-purple-600 mr-2"></i>Ejercicio 3 (Simulador): Implementando un Servidor DHCP en Cisco IOS</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Hacer que el Router asigne automáticamente direcciones IP a múltiples computadoras sin configurarlas una por una.</p>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <ul class="list-decimal ml-4 text-sm text-gray-700 space-y-2">
+                                <li>Utiliza la topología de la Semana 2. En la red de Alumnos, elimina el cable que va a la PC e inserta un <strong>Switch (ej. 2960)</strong> en medio.</li>
+                                <li>Conecta el puerto G0/0 del Router al Switch, y luego agrega 3 PCs más y conéctalas también al Switch.</li>
+                                <li>Ingresa al Router por la pestaña CLI y en el modo de configuración global, <strong>copia y pega tu Script del Ejercicio 1</strong> (el del DHCP).</li>
+                                <li>Abre cada una de las PCs, ve a <em>IP Configuration</em> y cambia el selector de "Static" a <strong>"DHCP"</strong>.</li>
+                                <li>¡Observa la magia! Verás cómo los campos de IP se llenan solos con direcciones como 192.168.10.2, 192.168.10.3, etc. Muestra el mensaje de éxito a tu profesor.</li>
+                            </ul>
+                            <div class="bg-white p-4 rounded-lg border border-purple-100 flex items-center justify-center text-center">
+                                <div>
+                                    <span class="bg-green-100 text-green-800 font-bold px-3 py-1 rounded-full text-xs uppercase border border-green-300">DHCP request successful</span>
+                                    <p class="text-xs text-gray-500 mt-4 italic">Esta es exactamente la misma tecnología que hace que tu teléfono funcione de inmediato al ponerle la contraseña del Wi-Fi en tu casa.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMANA 4 -->
+        <section id="semana4" class="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-red-500">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-red-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mr-4">4</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Semana 4: Mantenimiento y Ruteo Default</h2>
+                        <p class="text-red-600 font-semibold">Duración: 8 horas | Temas: Protocolo CDP, Ruteo Predeterminado y Respaldos TFTP.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="order-2 lg:order-1 relative rounded-xl overflow-hidden shadow-xl border border-gray-200 bg-gray-900 flex items-center justify-center min-h-[250px] p-6">
+                        <!-- Diseño de Mantenimiento y Respaldo en SVG -->
+                        <div class="absolute inset-0 opacity-20">
+                            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#4b5563" stroke-width="0.5"/>
+                                    </pattern>
+                                </defs>
+                                <rect width="100%" height="100%" fill="url(#grid)" />
+                            </svg>
+                        </div>
+                        <div class="z-10 text-center flex flex-col items-center w-full">
+                            <h4 class="text-white font-bold mb-4 border-b border-gray-600 pb-2">Respaldo TFTP</h4>
+                            <div class="flex justify-between items-center w-full max-w-[250px]">
+                                <div class="text-center">
+                                    <i class="fa-solid fa-server text-4xl text-conalep-light"></i>
+                                    <p class="text-xs text-gray-300 mt-2 font-mono">Router IOS</p>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <i class="fa-solid fa-arrow-right-arrow-left text-yellow-500 text-xl"></i>
+                                    <p class="text-[10px] text-gray-400 font-mono mt-1">copy run tftp</p>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fa-solid fa-database text-4xl text-blue-400"></i>
+                                    <p class="text-xs text-gray-300 mt-2 font-mono">Server TFTP</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">Comandos Avanzados de Administración</h3>
+                        <p class="text-gray-600 mb-4 text-justify">Para administrar una red empresarial de forma profesional, un técnico debe saber cómo descubrir equipos vecinos, cómo enviar el tráfico desconocido a internet y cómo respaldar su trabajo en caso de que el router se queme.</p>
+                        
+                        <ul class="list-disc ml-5 text-gray-600 space-y-3 mb-4 text-sm">
+                            <li><strong>Protocolo CDP (Cisco Discovery Protocol):</strong> Es un protocolo exclusivo de Cisco que sirve para "ver" qué otros equipos Cisco están conectados directamente a nuestros puertos, sin saber sus IPs. Comando: <code>show cdp neighbors</code>.</li>
+                            <li><strong>Ruteo Default (Ruta estática predeterminada):</strong> Es la salida de emergencia. Le dice al router: "Si alguien te pide una IP que no conoces, mándala por este puerto hacia el módem de internet". Comando: <code>ip route 0.0.0.0 0.0.0.0 [Interfaz_Salida]</code>.</li>
+                            <li><strong>Respaldos TFTP:</strong> Si un router se descompone, volver a escribir todo el código toma horas. Usamos un Servidor TFTP para guardar una copia exacta de la configuración. Comando: <code>copy running-config tftp</code>.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Ejercicios Semana 4 -->
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-code text-red-500 mr-2"></i>Ejercicio 1: Script de Ruta Predeterminada</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Configurar la salida a internet del Router.</p>
+                        <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
+                            <li>En tu archivo de script del bloc de notas, asegúrate de estar en el modo de configuración global.</li>
+                            <li>Supongamos que el puerto que va hacia el proveedor de internet (Telmex/Totalplay) es el <strong>GigabitEthernet 0/1</strong>.</li>
+                            <li>Escribe el comando: <code>ip route 0.0.0.0 0.0.0.0 g0/1</code>.</li>
+                            <li>Responde en tu cuaderno: ¿Por qué usamos puros ceros en ese comando?</li>
+                        </ol>
+                    </div>
+                    <div class="bg-red-50 p-6 rounded-xl border border-red-200">
+                        <h4 class="font-bold text-red-900 mb-3"><i class="fa-solid fa-laptop-code text-red-600 mr-2"></i>Ejercicio 2: Respaldo en Simulador</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Utiliza Packet Tracer para simular el guardado de configuración.</p>
+                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Abre la topología de la semana anterior. Agrega un "Servidor Genérico" al Switch y ponle la IP fija <strong>192.168.10.100</strong>.</li>
+                            <li>En el Servidor, ve a la pestaña <em>Services</em>, entra a <strong>TFTP</strong> y asegúrate de que esté encendido (ON).</li>
+                            <li>Ve a la CLI del Router (en modo privilegiado <code>Router#</code>).</li>
+                            <li>Escribe <code>copy running-config tftp</code>. Cuando te pida la IP remota, escribe <code>192.168.10.100</code>. Presiona Enter para confirmar el nombre del archivo.</li>
+                            <li>Muestra al profesor el mensaje de "OK" indicando que el archivo se copió correctamente al servidor para registrar tu actividad.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Botón hacia el Proyecto Final en otra pestaña -->
+                <div class="mt-12 bg-gradient-to-r from-gray-900 to-slate-800 p-8 md:p-10 rounded-xl border border-gray-700 text-center shadow-2xl relative overflow-hidden">
+                    <i class="fa-solid fa-flag-checkered absolute -right-4 -bottom-4 text-9xl text-gray-700 opacity-20 transform -rotate-12"></i>
+                    <h4 class="text-3xl font-bold text-white mb-3 relative z-10">Evaluación del Parcial</h4>
+                    <p class="text-gray-300 mb-8 max-w-2xl mx-auto relative z-10">Has completado todos los temas de la unidad. Es hora de demostrar tus habilidades como Ingeniero de Redes en el Proyecto Integrador Final, donde aplicarás desde el esquema IP hasta el respaldo TFTP.</p>
+                    <a href="proyecto_parcial2.html" target="_blank" class="inline-flex items-center bg-conalep-light hover:bg-conalep-green text-white text-lg font-bold py-4 px-10 rounded-full transition duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 relative z-10">
+                        <i class="fa-solid fa-rocket mr-3"></i> Iniciar Proyecto Final
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 text-gray-400 py-8 text-center mt-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="mb-2">&copy; 2026 CONALEP Chilpancingo. Educación Técnica para la Equidad.</p>
+            <p class="text-sm">Módulo MRDE-20 - Parcial 2</p>
+        </div>
+    </footer>
+
+</body>
+</html>
