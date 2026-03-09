@@ -156,7 +156,8 @@
 
                 <!-- Ejercicios Semana 1 -->
                 <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <!-- Ejercicio 1 (Antes era el 2) -->
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
                         <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-code text-conalep-green mr-2"></i>Ejercicio 1: Traducción de Comandos</h4>
                         <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Familiarizarse con la sintaxis del IOS de Cisco.</p>
                         <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
@@ -165,8 +166,26 @@
                             <li>Investiga y escribe a un lado de cada comando <strong>para qué sirve exactamente</strong> en español (Ej. <code>hostname SW_Sistemas</code> = Sirve para cambiar el nombre del equipo a "SW_Sistemas").</li>
                         </ol>
                     </div>
-                    <div class="bg-conalep-light/10 p-6 rounded-xl border border-conalep-light/30">
-                        <h4 class="font-bold text-conalep-dark mb-3"><i class="fa-solid fa-pen-clip text-conalep-green mr-2"></i>Ejercicio 2 (Scripting Básico)</h4>
+
+                    <!-- Ejercicio 2 (Antes era el 1) -->
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 shadow-sm">
+                        <h4 class="font-bold text-blue-900 mb-3"><i class="fa-solid fa-magnifying-glass text-blue-600 mr-2"></i>Ejercicio 2: Investigación de Comandos</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Ampliar el vocabulario técnico sobre los comandos fundamentales de administración en Cisco IOS.</p>
+                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Investiga la función exacta de los siguientes comandos:
+                                <ul class="list-[circle] ml-4 mt-1 font-mono text-xs text-blue-800 space-y-1 font-bold">
+                                    <li>show running-config</li>
+                                    <li>copy running-config startup-config</li>
+                                    <li>reload</li>
+                                    <li>show version</li>
+                                </ul>
+                            </li>
+                            <li>Anota en tu cuaderno para qué sirve cada uno y en qué <strong>modo de operación</strong> (Usuario, Privilegiado o Global) se deben ejecutar.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-conalep-light/10 p-6 rounded-xl border border-conalep-light/30 shadow-sm">
+                        <h4 class="font-bold text-conalep-dark mb-3"><i class="fa-solid fa-pen-clip text-conalep-green mr-2"></i>Ejercicio 3: Scripting Básico</h4>
                         <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Crea tu primer "Script" de configuración. Un script es un archivo de texto con comandos listos para copiarse y pegarse en el router real.</p>
                         <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
                             <li>Abre el <strong>Bloc de Notas</strong> en tu computadora.</li>
@@ -181,9 +200,16 @@
                         </ul>
                     </div>
 
+                    <!-- TIP DE PRODUCTIVIDAD (Para mantener el grid balanceado visualmente) -->
+                    <div class="bg-yellow-50 p-6 rounded-xl border border-yellow-200 flex flex-col items-center justify-center text-center shadow-sm">
+                        <i class="fa-solid fa-lightbulb text-4xl text-yellow-500 mb-3 animate-pulse"></i>
+                        <h4 class="font-bold text-yellow-900 mb-2">Tip de Productividad Cisco</h4>
+                        <p class="text-sm text-gray-700">En la línea de comandos de Cisco IOS puedes usar la tecla <strong>TAB</strong> (Tabulador) para autocompletar comandos. Por ejemplo, si escribes <code>conf</code> y presionas TAB, el sistema completará automáticamente la palabra a <code>configure</code>.</p>
+                    </div>
+
                     <!-- NUEVO EJERCICIO SIMULADOR -->
                     <div class="bg-purple-50 p-6 rounded-xl border border-purple-200 md:col-span-2 shadow-sm">
-                        <h4 class="font-bold text-purple-900 mb-3 text-lg"><i class="fa-solid fa-laptop-code text-purple-600 mr-2"></i>Ejercicio 3 (Simulador): Conexión por Consola en Packet Tracer</h4>
+                        <h4 class="font-bold text-purple-900 mb-3 text-lg"><i class="fa-solid fa-laptop-code text-purple-600 mr-2"></i>Ejercicio 4 (Simulador): Conexión por Consola en Packet Tracer</h4>
                         <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Replicar el entorno físico de configuración utilizando Cisco Packet Tracer.</p>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <ul class="list-decimal ml-4 text-sm text-gray-700 space-y-2">
@@ -509,14 +535,129 @@
                     </div>
                 </div>
 
-                <!-- Botón hacia el Proyecto Final en otra pestaña -->
+                <!-- Botón hacia el Proyecto Final Desplegable -->
                 <div class="mt-12 bg-gradient-to-r from-gray-900 to-slate-800 p-8 md:p-10 rounded-xl border border-gray-700 text-center shadow-2xl relative overflow-hidden">
-                    <i class="fa-solid fa-flag-checkered absolute -right-4 -bottom-4 text-9xl text-gray-700 opacity-20 transform -rotate-12"></i>
+                    <i class="fa-solid fa-flag-checkered absolute -right-4 -bottom-4 text-9xl text-gray-700 opacity-20 transform -rotate-12 pointer-events-none"></i>
                     <h4 class="text-3xl font-bold text-white mb-3 relative z-10">Evaluación del Parcial</h4>
                     <p class="text-gray-300 mb-8 max-w-2xl mx-auto relative z-10">Has completado todos los temas de la unidad. Es hora de demostrar tus habilidades como Ingeniero de Redes en el Proyecto Integrador Final, donde aplicarás desde el esquema IP hasta el respaldo TFTP.</p>
-                    <a href="proyecto_parcial2.html" target="_blank" class="inline-flex items-center bg-conalep-light hover:bg-conalep-green text-white text-lg font-bold py-4 px-10 rounded-full transition duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 relative z-10">
-                        <i class="fa-solid fa-rocket mr-3"></i> Iniciar Proyecto Final
-                    </a>
+                    
+                    <!-- Botón que activa el despliegue -->
+                    <button onclick="document.getElementById('proyecto_final_container').classList.toggle('hidden')" class="inline-flex items-center cursor-pointer bg-conalep-light hover:bg-conalep-green text-white text-lg font-bold py-4 px-10 rounded-full transition duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 relative z-10">
+                        <i class="fa-solid fa-rocket mr-3"></i> Mostrar / Ocultar Proyecto Final
+                    </button>
+
+                    <!-- Contenedor Desplegable del Proyecto -->
+                    <div id="proyecto_final_container" class="hidden mt-10 text-left relative z-10 transition-all">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+                            <!-- Header interno del proyecto -->
+                            <div class="bg-slate-800 px-6 py-4 flex flex-col md:flex-row items-center justify-between border-b-4 border-conalep-green">
+                                <h3 class="text-2xl font-bold text-white"><i class="fa-solid fa-network-wired text-conalep-light mr-3"></i>Red Corporativa Integral</h3>
+                                <span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mt-2 md:mt-0">Valor: 50%</span>
+                            </div>
+                            
+                            <div class="p-6 md:p-8">
+                                <!-- Contexto -->
+                                <div class="flex items-start mb-8 border-b border-gray-100 pb-6">
+                                    <div class="bg-blue-100 p-4 rounded-lg mr-6 hidden md:block">
+                                        <i class="fa-solid fa-building-columns text-4xl text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="text-xl font-bold text-gray-900 mb-2">Escenario: "Banco del Centro"</h2>
+                                        <p class="text-gray-600 text-justify mb-4">La institución financiera "Banco del Centro" abrirá una nueva sucursal. Te han contratado como Arquitecto de Redes para planificar y configurar su infraestructura desde cero. El gerente exige que la red sea segura, asigne IPs de forma automática a los cajeros, tenga salida a internet mediante una ruta predeterminada, y que toda la configuración quede respaldada en un servidor.</p>
+                                        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-3 rounded text-sm text-gray-700">
+                                            <strong>Instrucción:</strong> Entrega un <strong>Reporte de Ingeniería (Documento/Cuaderno)</strong> y el <strong>Archivo funcional en Cisco Packet Tracer (.pkt)</strong>.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Fases del Proyecto -->
+                                <div class="space-y-6 mb-10">
+                                    <!-- Fase 1 -->
+                                    <div class="bg-gray-50 rounded-lg p-5 border border-gray-200">
+                                        <h3 class="text-lg font-bold text-gray-800 mb-3"><span class="text-conalep-green mr-2">Fase 1:</span> Arquitectura y Direccionamiento</h3>
+                                        <p class="text-sm text-gray-600 mb-3">La dirección base es <strong>192.168.50.0 /24</strong>.</p>
+                                        <ul class="list-decimal ml-5 text-sm text-gray-700 space-y-1">
+                                            <li>Dibuja el diagrama físico: 1 Router (1941), 1 Switch (2960), 3 PCs (Cajeros) y 1 Servidor (TFTP).</li>
+                                            <li>Identifica qué puerto del router va conectado al Switch.</li>
+                                            <li>Crea la Tabla IP: Asigna <code>192.168.50.1</code> al Router (Gateway), y <code>192.168.50.250</code> al Servidor TFTP.</li>
+                                        </ul>
+                                    </div>
+                                    <!-- Fase 2 -->
+                                    <div class="bg-gray-50 rounded-lg p-5 border border-gray-200">
+                                        <h3 class="text-lg font-bold text-gray-800 mb-3"><span class="text-conalep-green mr-2">Fase 2:</span> Seguridad y Configuración Básica</h3>
+                                        <p class="text-sm text-gray-600 mb-3">Crea un archivo de Bloc de Notas (Script) y escribe el código para:</p>
+                                        <ul class="list-disc ml-5 text-sm text-gray-700 space-y-1">
+                                            <li>Entrar a modo global y cambiar el hostname a "RT_Banco".</li>
+                                            <li>Establecer "cisco123" como contraseña secreta (<code>enable secret</code>).</li>
+                                            <li>Entrar a la línea de consola 0 y poner la contraseña "adminpass".</li>
+                                        </ul>
+                                    </div>
+                                    <!-- Fase 3 -->
+                                    <div class="bg-gray-50 rounded-lg p-5 border border-gray-200">
+                                        <h3 class="text-lg font-bold text-gray-800 mb-3"><span class="text-conalep-green mr-2">Fase 3:</span> Interfaces y Ruteo Default</h3>
+                                        <ul class="list-disc ml-5 text-sm text-gray-700 space-y-1">
+                                            <li>Entra a la interfaz de red local. Asígnale la IP Gateway y enciéndela (<code>no shutdown</code>).</li>
+                                            <li>Configura una Ruta Predeterminada (0.0.0.0) apuntando hacia <em>GigabitEthernet 0/1</em> (simulando la salida a internet).</li>
+                                        </ul>
+                                    </div>
+                                    <!-- Fase 4 -->
+                                    <div class="bg-gray-50 rounded-lg p-5 border border-gray-200">
+                                        <h3 class="text-lg font-bold text-gray-800 mb-3"><span class="text-conalep-green mr-2">Fase 4:</span> Servicios Integrados (DHCP)</h3>
+                                        <ul class="list-disc ml-5 text-sm text-gray-700 space-y-1">
+                                            <li>Excluye del préstamo las IPs <code>.1</code> hasta la <code>.10</code> y también excluye la IP del servidor <code>.250</code>.</li>
+                                            <li>Crea un pool de DHCP llamado "CAJEROS". Declara la red, máscara y el "default-router".</li>
+                                        </ul>
+                                    </div>
+                                    <!-- Fase 5 -->
+                                    <div class="bg-purple-50 rounded-lg p-5 border border-purple-200">
+                                        <h3 class="text-lg font-bold text-purple-900 mb-3"><span class="text-purple-600 mr-2">Fase 5:</span> Implementación en Simulador y Respaldo</h3>
+                                        <ul class="list-decimal ml-5 text-sm text-gray-800 space-y-2">
+                                            <li>Abre Cisco Packet Tracer, arma la topología y configura la IP estática del Servidor.</li>
+                                            <li>Pega todo tu script en la CLI del Router. Verifica que las PCs obtengan IP por DHCP.</li>
+                                            <li>Ejecuta un Ping exitoso hacia el Gateway y hacia el Servidor.</li>
+                                            <li>Usa TFTP para hacer un respaldo de la configuración (<code>copy running-config tftp</code>) hacia el Servidor.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Rúbrica -->
+                                <h3 class="text-xl font-bold text-gray-900 mb-4"><i class="fa-solid fa-list-check text-red-500 mr-2"></i>Rúbrica de Calificación</h3>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-xs md:text-sm text-left text-gray-600 bg-white shadow-sm overflow-hidden border border-gray-200">
+                                        <thead class="text-white uppercase bg-slate-700">
+                                            <tr>
+                                                <th scope="col" class="px-4 py-3">Criterio a Evaluar</th>
+                                                <th scope="col" class="px-4 py-3 text-center">Ponderación</th>
+                                                <th scope="col" class="px-4 py-3">Requisitos (Excelente)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-200">
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-4 py-3 font-bold text-gray-800">1. Diagrama y Tabla IP</td>
+                                                <td class="px-4 py-3 text-center text-blue-600 font-bold">20%</td>
+                                                <td class="px-4 py-3">Conexiones lógicas y tabla IP sin errores (Gateway y Servidor delimitados).</td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-4 py-3 font-bold text-gray-800">2. Script IOS (Seguridad/Default)</td>
+                                                <td class="px-4 py-3 text-center text-blue-600 font-bold">25%</td>
+                                                <td class="px-4 py-3">Sintaxis 100% correcta en contraseñas y ruta 0.0.0.0.</td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-4 py-3 font-bold text-gray-800">3. Script Servicios (DHCP)</td>
+                                                <td class="px-4 py-3 text-center text-blue-600 font-bold">15%</td>
+                                                <td class="px-4 py-3">Exclusión y pool declarados correctamente con network y default-router.</td>
+                                            </tr>
+                                            <tr class="hover:bg-purple-50 bg-purple-50/50">
+                                                <td class="px-4 py-3 font-bold text-purple-900">4. Simulación (.pkt) y TFTP</td>
+                                                <td class="px-4 py-3 text-center text-purple-600 font-bold">40%</td>
+                                                <td class="px-4 py-3">El archivo funciona, hay ping y el respaldo TFTP existe en el server.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
