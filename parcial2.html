@@ -69,7 +69,7 @@
         <div class="max-w-4xl mx-auto px-4">
             <span class="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block shadow-lg">Módulo MRDE-20</span>
             <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Dispositivos de Ruteo y Conmutación</h1>
-            <p class="text-xl font-light text-blue-100">Dominando la Línea de Comandos (CLI) y Cisco Packet Tracer en 4 semanas.</p>
+            <p class="text-xl font-light text-blue-100">Práctica 100% Digital: Domina Cisco IOS y la Ingeniería de Redes.</p>
             
             <!-- Botones de navegación rápida -->
             <div class="flex flex-wrap justify-center gap-4 mt-8">
@@ -106,7 +106,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                     <div>
                         <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">1. Del Entorno Gráfico a la Línea de Comandos</h3>
-                        <p class="text-gray-600 mb-4 text-justify">A diferencia de los módems caseros (como vimos en el Parcial 1), los Switches y Routers empresariales no tienen pantalla ni una página web con botones. Se configuran mediante una pantalla negra escribiendo comandos. A este sistema operativo se le conoce como <strong>Cisco IOS (Internetwork Operating System)</strong>.</p>
+                        <p class="text-gray-600 mb-4 text-justify">A diferencia de los módems caseros, los Switches y Routers empresariales no tienen pantalla ni interfaz web con botones. Se configuran mediante una terminal negra escribiendo comandos. A este sistema operativo se le conoce como <strong>Cisco IOS (Internetwork Operating System)</strong>.</p>
                         
                         <h4 class="font-bold text-conalep-dark mb-2">Modos de Operación principales:</h4>
                         <ul class="space-y-3 mb-4">
@@ -117,7 +117,7 @@
                                 <span class="font-mono text-green-600 font-bold">Router#</span> <strong>Modo EXEC Privilegiado:</strong> Da acceso a todos los comandos de monitoreo y guardado (comandos <em>show</em>). Se accede escribiendo <code>enable</code>.
                             </li>
                             <li class="bg-gray-50 p-3 rounded border border-gray-200">
-                                <span class="font-mono text-red-600 font-bold">Router(config)#</span> <strong>Modo de Configuración Global:</strong> Aquí se aplican los cambios que afectan a todo el equipo (nombres, contraseñas). Se accede escribiendo <code>configure terminal</code>.
+                                <span class="font-mono text-red-600 font-bold">Router(config)#</span> <strong>Modo de Configuración Global:</strong> Aquí se aplican los cambios que afectan a todo el equipo. Se accede escribiendo <code>configure terminal</code>.
                             </li>
                         </ul>
                         
@@ -156,18 +156,18 @@
 
                 <!-- Ejercicios Semana 1 -->
                 <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Ejercicio 1 (Antes era el 2) -->
+                    <!-- Ejercicio 1 -->
                     <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
                         <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-code text-conalep-green mr-2"></i>Ejercicio 1: Traducción de Comandos</h4>
                         <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Familiarizarse con la sintaxis del IOS de Cisco.</p>
                         <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
                             <li>Analiza la pantalla negra (PuTTY) que está arriba a la derecha.</li>
-                            <li>En tu cuaderno, haz una lista de los 8 comandos que aparecen escritos en color blanco.</li>
+                            <li>Abre un <strong>documento digital (Word/Google Docs)</strong> y haz una lista de los 8 comandos que aparecen escritos en color blanco.</li>
                             <li>Investiga y escribe a un lado de cada comando <strong>para qué sirve exactamente</strong> en español (Ej. <code>hostname SW_Sistemas</code> = Sirve para cambiar el nombre del equipo a "SW_Sistemas").</li>
                         </ol>
                     </div>
 
-                    <!-- Ejercicio 2 (Antes era el 1) -->
+                    <!-- Ejercicio 2 -->
                     <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 shadow-sm">
                         <h4 class="font-bold text-blue-900 mb-3"><i class="fa-solid fa-magnifying-glass text-blue-600 mr-2"></i>Ejercicio 2: Investigación de Comandos</h4>
                         <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Ampliar el vocabulario técnico sobre los comandos fundamentales de administración en Cisco IOS.</p>
@@ -180,67 +180,90 @@
                                     <li>show version</li>
                                 </ul>
                             </li>
-                            <li>Anota en tu cuaderno para qué sirve cada uno y en qué <strong>modo de operación</strong> (Usuario, Privilegiado o Global) se deben ejecutar.</li>
+                            <li>Crea un <strong>glosario digital</strong> o añade las definiciones a tu documento, indicando en qué modo de operación (Usuario, Privilegiado o Global) se ejecutan.</li>
                         </ul>
                     </div>
 
+                    <!-- Ejercicio 3 -->
                     <div class="bg-conalep-light/10 p-6 rounded-xl border border-conalep-light/30 shadow-sm">
                         <h4 class="font-bold text-conalep-dark mb-3"><i class="fa-solid fa-pen-clip text-conalep-green mr-2"></i>Ejercicio 3: Scripting Básico</h4>
-                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Crea tu primer "Script" de configuración. Un script es un archivo de texto con comandos listos para copiarse y pegarse en el router real.</p>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Crea tu primer "Script" de configuración.</p>
                         <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
-                            <li>Abre el <strong>Bloc de Notas</strong> en tu computadora.</li>
-                            <li>Escribe la secuencia de comandos necesaria para:
+                            <li>Abre el <strong>Bloc de Notas</strong> (Notepad) o VS Code en tu computadora.</li>
+                            <li>Escribe la secuencia de comandos (una línea por instrucción) necesaria para:
                                 <ul class="list-[circle] ml-4 mt-1">
                                     <li>Entrar al modo privilegiado y luego al modo de configuración global.</li>
                                     <li>Cambiar el nombre del Router a <strong>R1_Conalep</strong>.</li>
                                     <li>Poner la contraseña secreta <strong>mexico2026</strong>.</li>
                                 </ul>
                             </li>
-                            <li>Guarda el archivo como <code>config_R1.txt</code>.</li>
+                            <li>Guarda el archivo en tu PC como <code>config_R1.txt</code>.</li>
                         </ul>
                     </div>
 
-                    <!-- TIP DE PRODUCTIVIDAD (Para mantener el grid balanceado visualmente) -->
+                    <!-- TIP DE PRODUCTIVIDAD -->
                     <div class="bg-yellow-50 p-6 rounded-xl border border-yellow-200 flex flex-col items-center justify-center text-center shadow-sm">
                         <i class="fa-solid fa-lightbulb text-4xl text-yellow-500 mb-3 animate-pulse"></i>
                         <h4 class="font-bold text-yellow-900 mb-2">Tip de Productividad Cisco</h4>
                         <p class="text-sm text-gray-700">En la línea de comandos de Cisco IOS puedes usar la tecla <strong>TAB</strong> (Tabulador) para autocompletar comandos. Por ejemplo, si escribes <code>conf</code> y presionas TAB, el sistema completará automáticamente la palabra a <code>configure</code>.</p>
                     </div>
 
-                    <!-- NUEVO EJERCICIO SIMULADOR -->
+                    <!-- NUEVO EJERCICIO 5 -->
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-message text-conalep-green mr-2"></i>Ejercicio 5: Mensaje de Advertencia (MOTD)</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Configurar un mensaje de bienvenida o advertencia legal al ingresar al router.</p>
+                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Investiga el comando <code>banner motd</code> en Cisco IOS.</li>
+                            <li>En tu simulador (Packet Tracer), entra al modo de configuración global de tu router.</li>
+                            <li>Escribe el comando: <code>banner motd # ACCESO RESTRINGIDO. SOLO PERSONAL AUTORIZADO #</code></li>
+                            <li>Sal de la consola (<code>exit</code> hasta salir del todo) y vuelve a presionar Enter. <strong>Toma una captura de pantalla</strong> de cómo aparece tu mensaje antes de pedir contraseñas.</li>
+                        </ul>
+                    </div>
+
+                    <!-- EJERCICIO SIMULADOR -->
                     <div class="bg-purple-50 p-6 rounded-xl border border-purple-200 md:col-span-2 shadow-sm">
-                        <h4 class="font-bold text-purple-900 mb-3 text-lg"><i class="fa-solid fa-laptop-code text-purple-600 mr-2"></i>Ejercicio 4 (Simulador): Conexión por Consola en Packet Tracer</h4>
-                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Replicar el entorno físico de configuración utilizando Cisco Packet Tracer.</p>
+                        <h4 class="font-bold text-purple-900 mb-3 text-lg"><i class="fa-solid fa-laptop-code text-purple-600 mr-2"></i>Ejercicio 6 (Simulador): Conexión por Consola en Packet Tracer</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Replicar el entorno físico de configuración utilizando el software simulador.</p>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <ul class="list-decimal ml-4 text-sm text-gray-700 space-y-2">
-                                <li>Abre el simulador <strong>Cisco Packet Tracer</strong>.</li>
+                                <li>Abre <strong>Cisco Packet Tracer</strong>.</li>
                                 <li>Arrastra al área de trabajo un <strong>Router 1941</strong> y una <strong>PC</strong>.</li>
                                 <li>Selecciona la herramienta de conexiones (el rayo naranja) y elige el <strong>Cable de Consola</strong> (línea curva celeste).</li>
                                 <li>Haz clic en la PC, elige el puerto <strong>RS 232</strong>. Luego haz clic en el Router y conéctalo al puerto <strong>Console</strong>.</li>
-                                <li>Haz clic en la PC para abrir su ventana, ve a la pestaña <em>Desktop</em> y abre la aplicación <strong>Terminal</strong>. Deja los valores por defecto y presiona OK.</li>
-                                <li>¡Felicidades! Estás dentro del IOS. Escribe <code>no</code> si te pregunta por el diálogo de configuración inicial. Copia el texto de tu bloc de notas (Ejercicio 2) y pégalo en la terminal. Verifica que el nombre del router haya cambiado.</li>
+                                <li>Haz clic en la PC, ve a <em>Desktop</em> y abre <strong>Terminal</strong>.</li>
+                                <li><strong>Copia el texto</strong> de tu Bloc de notas (Ejercicio 3) y pégalo en la terminal. Verifica que el nombre del router cambie automáticamente.</li>
                             </ul>
                             <div class="bg-gray-50 p-4 rounded-lg border border-purple-200 flex items-center justify-center overflow-hidden">
                                 <!-- Diseño de conexión de consola en SVG -->
                                 <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto drop-shadow-md">
-                                    <!-- Router -->
                                     <rect x="20" y="55" width="60" height="40" rx="4" fill="#1e293b"/>
                                     <circle cx="50" cy="75" r="12" fill="#334155"/>
                                     <text x="50" y="115" fill="#475569" font-size="12" text-anchor="middle" font-weight="bold" font-family="sans-serif">Router</text>
                                     <path d="M 50 67 L 50 83 M 42 75 L 58 75" stroke="#94a3b8" stroke-width="2"/>
-                                    <!-- Laptop -->
                                     <path d="M 210 85 L 270 85 L 280 100 L 200 100 Z" fill="#94a3b8"/>
                                     <rect x="215" y="45" width="50" height="40" rx="2" fill="#475569"/>
                                     <rect x="220" y="50" width="40" height="30" fill="#0f172a"/>
                                     <text x="240" y="65" fill="#10b981" font-size="8" font-family="monospace">CLI></text>
                                     <text x="240" y="115" fill="#475569" font-size="12" text-anchor="middle" font-weight="bold" font-family="sans-serif">PC (Terminal)</text>
-                                    <!-- Console Cable -->
                                     <path d="M 80 85 Q 140 100 210 90" fill="none" stroke="#0ea5e9" stroke-width="4"/>
                                     <text x="145" y="85" fill="#0ea5e9" font-size="10" text-anchor="middle" font-weight="bold" font-family="sans-serif">Cable de Consola</text>
                                 </svg>
                             </div>
                         </div>
                     </div>
+
+                    <!-- PRÁCTICA DE LA VIDA REAL SEMANA 1 -->
+                    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-xl shadow-md md:col-span-2">
+                        <h4 class="font-bold text-indigo-900 mb-2 text-xl"><i class="fa-solid fa-earth-americas text-indigo-500 mr-2"></i>Práctica en la Vida Real: El Rack y el Cable de Consola</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Entorno de Laboratorio:</strong> Trabajaremos con los equipos físicos de la escuela (Switches Catalyst o Routers ISR).</p>
+                        <ul class="list-disc ml-5 text-sm text-indigo-800 space-y-2">
+                            <li>Formen equipos e identifiquen el Router físico asignado en el Rack del plantel.</li>
+                            <li>Localicen el puerto marcado con color azul que dice <strong>"CONSOLE"</strong> en la parte trasera del equipo.</li>
+                            <li>Conecten el cable físico original celeste (Rollover) desde ese puerto al adaptador USB-Serial de su computadora.</li>
+                            <li>Abran la herramienta <strong>PuTTY</strong> en Windows, seleccionen "Serial", averigüen qué puerto COM asignó Windows (desde el Administrador de dispositivos) e inicien la conexión. Ejecuten comandos básicos como <code>show version</code> en vivo.</li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -307,47 +330,65 @@
 
                 <!-- Ejercicios Semana 2 -->
                 <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
                         <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-code text-blue-500 mr-2"></i>Ejercicio 1: Script de Interfaces</h4>
                         <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Generar el código CLI para encender los puertos del Router.</p>
                         <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
                             <li>Abre un Bloc de notas nuevo.</li>
-                            <li>Escribe los comandos para entrar a la configuración global (<code>enable</code>, <code>configure t</code>).</li>
-                            <li>Basándote en el diagrama de arriba, escribe los comandos para entrar a la interfaz <strong>GigabitEthernet 0/0</strong>.</li>
+                            <li>Escribe los comandos para entrar a la configuración global.</li>
+                            <li>Escribe los comandos para entrar a la interfaz <strong>GigabitEthernet 0/0</strong>.</li>
                             <li>Asígnale la dirección IP <strong>192.168.10.1</strong> con máscara <strong>255.255.255.0</strong>.</li>
-                            <li>Enciéndela usando el comando correcto y sal de la interfaz con <code>exit</code>.</li>
-                            <li>Guarda tu código para revisión.</li>
+                            <li>Enciéndela usando el comando correcto y sal de la interfaz.</li>
+                            <li>Guarda tu archivo <code>.txt</code>.</li>
                         </ol>
                     </div>
-                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-200">
+
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-200 shadow-sm">
                         <h4 class="font-bold text-blue-900 mb-3"><i class="fa-solid fa-magnifying-glass-chart text-blue-500 mr-2"></i>Ejercicio 2: Comprobación de Red Local</h4>
-                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Utiliza los comandos de verificación en la computadora física de tu laboratorio.</p>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Utiliza los comandos de verificación en la computadora de tu laboratorio.</p>
                         <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
                             <li>Abre la consola de Windows (CMD).</li>
-                            <li>Ejecuta una prueba de loopback (<code>ping 127.0.0.1</code>) y anota en tu cuaderno qué mensaje te devolvió. ¿Funcionó?</li>
-                            <li>Ejecuta un ping a los servidores de Google: <code>ping 8.8.8.8</code>. Observa la estadística: ¿Cuántos paquetes se enviaron, cuántos se recibieron y cuántos se perdieron?</li>
+                            <li>Ejecuta una prueba de loopback (<code>ping 127.0.0.1</code>) y <strong>toma captura de pantalla</strong> de la respuesta exitosa.</li>
+                            <li>Ejecuta un ping a los servidores de Google: <code>ping 8.8.8.8</code>. Observa la estadística: ¿Cuántos paquetes se enviaron, recibieron y perdieron?</li>
+                            <li>Adjunta estas capturas a tu reporte de clase digital.</li>
                         </ul>
                     </div>
 
-                    <!-- NUEVO EJERCICIO SIMULADOR -->
-                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-200 md:col-span-2 shadow-sm">
-                        <h4 class="font-bold text-purple-900 mb-3 text-lg"><i class="fa-solid fa-route text-purple-600 mr-2"></i>Ejercicio 3 (Simulador): Ruteo Básico entre dos subredes</h4>
-                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Usar Packet Tracer para conectar la red de Alumnos con la red de Maestros.</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <ul class="list-decimal ml-4 text-sm text-gray-700 space-y-2">
-                                <li>En un archivo nuevo de Packet Tracer, coloca 1 Router (1941) al centro y 2 PCs (una a cada lado).</li>
-                                <li>Conecta la "PC Alumno" al puerto <strong>G0/0</strong> del router usando un Cable Directo (Copper Straight-Through). Conecta la "PC Maestro" al puerto <strong>G0/1</strong>.</li>
-                                <li>Ve a la pestaña CLI del Router y aplica la configuración de interfaces (IPs y <code>no shutdown</code>) para ambas redes según el diagrama teórico. Notarás que los triángulos rojos de los cables cambian a verde.</li>
-                                <li>Entra a la configuración IP estática de la <strong>PC Alumno</strong> y ponle la IP <code>192.168.10.10</code> y su Gateway <code>192.168.10.1</code>. Haz lo mismo con la <strong>PC Maestro</strong> pero en la red <code>192.168.20.10</code> con Gateway <code>192.168.20.1</code>.</li>
-                                <li>Abre el <em>Command Prompt</em> de la PC Alumno y haz ping a la PC Maestro (<code>ping 192.168.20.10</code>). ¡El primer paquete puede fallar, pero los demás deben responder exitosamente!</li>
-                            </ul>
-                            <div class="bg-white p-4 rounded-lg border border-purple-100 text-center flex flex-col justify-center">
-                                <i class="fa-solid fa-circle-check text-5xl text-green-500 mb-2"></i>
-                                <p class="text-sm font-bold text-gray-700">Verificación de Conectividad</p>
-                                <p class="text-xs text-gray-500 mt-2">Si el ping responde con <em>"Reply from..."</em> significa que el Router está enrutando correctamente los paquetes entre las dos redes distintas.</p>
-                            </div>
-                        </div>
+                    <div class="bg-blue-50 p-6 rounded-xl border border-blue-300 shadow-sm">
+                        <h4 class="font-bold text-blue-900 mb-3"><i class="fa-solid fa-table text-blue-600 mr-2"></i>Ejercicio 3: Matriz de Direccionamiento IP</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Estructurar y planear las IPs lógicamente en un documento digital.</p>
+                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
+                            <li><strong>Abre Excel o Google Sheets</strong> y diseña una matriz con 3 columnas: Dispositivo/Interfaz, Dirección IP, y Máscara de Subred.</li>
+                            <li>Llena la tabla para la red <code>192.168.30.0 /24</code> asignando IPs lógicas a: El Gateway (puerto G0/0), PC Alumno, PC Maestro y Servidor local.</li>
+                            <li>Aplica un formato profesional a la tabla y añádela a tus evidencias digitales.</li>
+                        </ul>
                     </div>
+
+                    <!-- EJERCICIO SIMULADOR -->
+                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-200 shadow-sm">
+                        <h4 class="font-bold text-purple-900 mb-3 text-lg"><i class="fa-solid fa-route text-purple-600 mr-2"></i>Ejercicio 4 (Simulador): Ruteo Básico</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Conectar la red de Alumnos con la red de Maestros en el software.</p>
+                        <ul class="list-decimal ml-4 text-sm text-gray-700 space-y-2">
+                            <li>En Packet Tracer, coloca 1 Router y 2 PCs.</li>
+                            <li>Conecta la PC Alumno al puerto <strong>G0/0</strong> y la PC Maestro al <strong>G0/1</strong>.</li>
+                            <li>Aplica la configuración de interfaces (IPs y <code>no shutdown</code>). Los triángulos rojos cambiarán a verde.</li>
+                            <li>Asigna IPs estáticas y Gateway a las PCs.</li>
+                            <li>Verifica con Ping entre las PCs para confirmar el enrutamiento. Guarda el archivo digital.</li>
+                        </ul>
+                    </div>
+
+                    <!-- PRÁCTICA DE LA VIDA REAL SEMANA 2 -->
+                    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-xl shadow-md md:col-span-2">
+                        <h4 class="font-bold text-indigo-900 mb-2 text-xl"><i class="fa-solid fa-network-wired text-indigo-500 mr-2"></i>Práctica en la Vida Real: Cableado y Enrutamiento Físico</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Entorno de Laboratorio:</strong> Verificaremos las conexiones de red tangibles (Capa 1 y Capa 3 OSI).</p>
+                        <ul class="list-disc ml-5 text-sm text-indigo-800 space-y-2">
+                            <li>Tomen 2 laptops del laboratorio y utilicen cables de red UTP (Patch Cords) físicos.</li>
+                            <li>Conecten cada laptop a un puerto distinto (FastEthernet o GigabitEthernet) del Switch o Router del equipo de prácticas.</li>
+                            <li>Verifiquen físicamente que los LEDs (foquitos) de los puertos del equipo enciendan en verde (enlace físico establecido).</li>
+                            <li>Entren a la configuración de red de Windows (<code>ncpa.cpl</code>) de ambas laptops, colóquenlas en subredes distintas según su diseño de Excel, y hagan pruebas de ping físico entre ellas usando la configuración real del router del laboratorio.</li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -371,12 +412,12 @@
                         <div class="space-y-4">
                             <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
                                 <h4 class="font-bold text-yellow-600"><i class="fa-solid fa-hand-holding-droplet mr-2"></i>DHCP (Protocolo de Configuración Dinámica de Host)</h4>
-                                <p class="text-sm text-gray-700 mt-1">El router crea una "alberca" (Pool) de direcciones IP. Cuando conectas tu celular a la red, el celular grita "¿Alguien me da una IP?", y el servicio DHCP del router le presta una automáticamente (IP, Máscara, Gateway y DNS) por un tiempo determinado (concesión).</p>
+                                <p class="text-sm text-gray-700 mt-1">El router crea una "alberca" (Pool) de direcciones IP. Cuando conectas tu celular a la red, el celular grita "¿Alguien me da una IP?", y el servicio DHCP del router le presta una automáticamente por un tiempo determinado.</p>
                             </div>
                             
                             <div class="bg-gray-50 p-4 rounded-lg border border-gray-200">
                                 <h4 class="font-bold text-orange-600"><i class="fa-solid fa-masks-theater mr-2"></i>NAT (Traducción de Direcciones de Red)</h4>
-                                <p class="text-sm text-gray-700 mt-1">Las IP Privadas (ej. 192.168.1.50) no existen en internet. Cuando tu celular intenta abrir YouTube, el router intercepta el paquete, le quita tu IP privada, le pone la <strong>IP Pública</strong> de Telmex/Totalplay (Traducción/Enmascaramiento) y lo manda a internet. Cuando YouTube responde, el router deshace el truco y te lo entrega.</p>
+                                <p class="text-sm text-gray-700 mt-1">Las IP Privadas no existen en internet. El router intercepta tus paquetes locales, les quita tu IP privada, les pone la <strong>IP Pública</strong> de Telmex/Totalplay y los manda a internet. Cuando internet responde, deshace el proceso y te los entrega.</p>
                             </div>
                         </div>
                     </div>
@@ -389,69 +430,80 @@
                             <div class="space-y-4">
                                 <div class="bg-gray-800 text-gray-300 px-3 py-1 rounded text-xs font-mono border border-gray-600"><i class="fa-solid fa-laptop text-blue-400 mr-2"></i>192.168.1.10</div>
                                 <div class="bg-gray-800 text-gray-300 px-3 py-1 rounded text-xs font-mono border border-gray-600"><i class="fa-solid fa-mobile text-green-400 mr-2"></i>192.168.1.11</div>
-                                <div class="bg-gray-800 text-gray-300 px-3 py-1 rounded text-xs font-mono border border-gray-600"><i class="fa-solid fa-tv text-purple-400 mr-2"></i>192.168.1.12</div>
                             </div>
                             
                             <!-- Router -->
                             <div class="relative mx-4">
-                                <div class="w-20 h-20 rounded-full border-4 border-yellow-500 bg-gray-800 flex items-center justify-center z-10 relative shadow-[0_0_15px_#eab308]">
-                                    <i class="fa-solid fa-arrows-left-right text-yellow-500 text-3xl"></i>
+                                <div class="w-16 h-16 rounded-full border-4 border-yellow-500 bg-gray-800 flex items-center justify-center z-10 relative shadow-[0_0_15px_#eab308]">
+                                    <i class="fa-solid fa-arrows-left-right text-yellow-500 text-2xl"></i>
                                 </div>
-                                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 text-yellow-500 text-xs font-bold uppercase">Router NAT</div>
+                                <div class="absolute -top-6 left-1/2 transform -translate-x-1/2 text-yellow-500 text-[10px] font-bold uppercase">Router NAT</div>
                             </div>
                             
                             <!-- Internet (IP Pública Única) -->
                             <div class="text-center">
-                                <i class="fa-solid fa-globe text-4xl text-blue-300 mb-2"></i>
-                                <div class="bg-blue-900 text-blue-100 px-3 py-1 rounded font-bold text-xs font-mono border border-blue-500">IP Pública Única<br>200.15.8.44</div>
+                                <i class="fa-solid fa-globe text-3xl text-blue-300 mb-2"></i>
+                                <div class="bg-blue-900 text-blue-100 px-2 py-1 rounded font-bold text-[10px] font-mono border border-blue-500">IP Pública Única<br>200.15.8.44</div>
                             </div>
                         </div>
-                        <p class="text-gray-400 text-xs text-center mt-6">Gracias al NAT, las 3 computadoras navegan compartiendo exactamente la misma IP Pública hacia el exterior.</p>
+                        <p class="text-gray-400 text-xs text-center mt-6">Las computadoras navegan compartiendo la misma IP Pública hacia el exterior.</p>
                     </div>
                 </div>
 
                 <!-- Ejercicios Semana 3 -->
                 <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
                         <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-code text-yellow-600 mr-2"></i>Ejercicio 1: Script de DHCP</h4>
-                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Configurar el servidor DHCP en el bloc de notas.</p>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Configurar el servidor DHCP digitalmente.</p>
                         <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
-                            <li>En tu archivo de texto, agrega la exclusión de IPs (para que el router no preste su propia IP): <br><code>ip dhcp excluded-address 192.168.10.1</code></li>
+                            <li>En tu archivo de texto (Bloc de notas), agrega la exclusión de IPs: <br><code>ip dhcp excluded-address 192.168.10.1</code></li>
                             <li>Crea el pool de IPs: <br><code>ip dhcp pool ALUMNOS</code></li>
                             <li>Declara la red que vas a repartir: <br><code>network 192.168.10.0 255.255.255.0</code></li>
-                            <li>Declara la puerta de enlace que tendrán los alumnos: <br><code>default-router 192.168.10.1</code></li>
+                            <li>Declara la puerta de enlace: <br><code>default-router 192.168.10.1</code></li>
                         </ol>
                     </div>
-                    <div class="bg-yellow-50 p-6 rounded-xl border border-yellow-200">
+
+                    <div class="bg-yellow-50 p-6 rounded-xl border border-yellow-200 shadow-sm">
                         <h4 class="font-bold text-yellow-900 mb-3"><i class="fa-solid fa-magnifying-glass-location text-yellow-600 mr-2"></i>Ejercicio 2: Auditoría NAT Real</h4>
-                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Descubre la IP Privada y la IP Pública del plantel escolar.</p>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Descubre la IP Privada y la IP Pública del plantel escolar de forma digital.</p>
                         <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
-                            <li>Abre el CMD en tu PC y escribe <code>ipconfig</code>. Anota tu <strong>Dirección IPv4</strong> (Esta es tu IP Privada).</li>
-                            <li>Abre el navegador web de tu PC y busca en Google: <em>"Cual es mi IP"</em>. Entra a cualquier página y anota la dirección que aparece grande en pantalla (Esta es tu IP Pública asignada por el proveedor).</li>
-                            <li>Pide a un compañero de otra computadora que haga lo mismo y comparen la IP Pública. ¿Son iguales o diferentes? ¿Por qué?</li>
+                            <li>Abre el CMD, ejecuta <code>ipconfig</code> y captura tu <strong>Dirección IPv4</strong> (IP Privada).</li>
+                            <li>En el navegador busca <em>"Cual es mi IP"</em> y captura la <strong>IP Pública</strong> que te asigna el proveedor.</li>
+                            <li>Compara las capturas con las de otro compañero. <strong>Documenta tus hallazgos en tu reporte digital</strong> detallando por qué la IP Pública es idéntica en ambos equipos pero la IP Privada cambia.</li>
                         </ul>
                     </div>
 
-                    <!-- NUEVO EJERCICIO SIMULADOR -->
-                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-200 md:col-span-2 shadow-sm">
-                        <h4 class="font-bold text-purple-900 mb-3 text-lg"><i class="fa-solid fa-bolt text-purple-600 mr-2"></i>Ejercicio 3 (Simulador): Implementando un Servidor DHCP en Cisco IOS</h4>
-                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Hacer que el Router asigne automáticamente direcciones IP a múltiples computadoras sin configurarlas una por una.</p>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <ul class="list-decimal ml-4 text-sm text-gray-700 space-y-2">
-                                <li>Utiliza la topología de la Semana 2. En la red de Alumnos, elimina el cable que va a la PC e inserta un <strong>Switch (ej. 2960)</strong> en medio.</li>
-                                <li>Conecta el puerto G0/0 del Router al Switch, y luego agrega 3 PCs más y conéctalas también al Switch.</li>
-                                <li>Ingresa al Router por la pestaña CLI y en el modo de configuración global, <strong>copia y pega tu Script del Ejercicio 1</strong> (el del DHCP).</li>
-                                <li>Abre cada una de las PCs, ve a <em>IP Configuration</em> y cambia el selector de "Static" a <strong>"DHCP"</strong>.</li>
-                                <li>¡Observa la magia! Verás cómo los campos de IP se llenan solos con direcciones como 192.168.10.2, 192.168.10.3, etc. Muestra el mensaje de éxito a tu profesor.</li>
-                            </ul>
-                            <div class="bg-white p-4 rounded-lg border border-purple-100 flex items-center justify-center text-center">
-                                <div>
-                                    <span class="bg-green-100 text-green-800 font-bold px-3 py-1 rounded-full text-xs uppercase border border-green-300">DHCP request successful</span>
-                                    <p class="text-xs text-gray-500 mt-4 italic">Esta es exactamente la misma tecnología que hace que tu teléfono funcione de inmediato al ponerle la contraseña del Wi-Fi en tu casa.</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="bg-yellow-50 p-6 rounded-xl border border-yellow-300 shadow-sm">
+                        <h4 class="font-bold text-yellow-900 mb-3"><i class="fa-solid fa-book-open text-yellow-600 mr-2"></i>Ejercicio 3: Diferencias de NAT</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Comprender NAT Estático vs Dinámico.</p>
+                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Investiga la diferencia entre <strong>NAT Estático</strong> y <strong>NAT con Sobrecarga (PAT)</strong>.</li>
+                            <li><strong>Crea una infografía rápida o añade la justificación a tu reporte técnico</strong> respondiendo: Si una empresa tiene un Servidor Web que necesita ser visto desde internet con una IP fija, ¿qué tipo de NAT usaría?</li>
+                        </ul>
                     </div>
+
+                    <!-- EJERCICIO SIMULADOR -->
+                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-200 shadow-sm">
+                        <h4 class="font-bold text-purple-900 mb-3 text-lg"><i class="fa-solid fa-bolt text-purple-600 mr-2"></i>Ejercicio 4 (Simulador): Servidor DHCP</h4>
+                        <ul class="list-decimal ml-4 text-sm text-gray-700 space-y-2">
+                            <li>En Packet Tracer, agrega un <strong>Switch (2960)</strong> entre el Router y las PCs. Agrega 3 PCs conectadas al Switch.</li>
+                            <li>Aplica tu script de DHCP en la CLI del Router.</li>
+                            <li>Cambia las PCs a modo <strong>DHCP</strong> y verifica cómo se llenan los campos de IP solos. <strong>Toma captura</strong> del mensaje <em>"DHCP request successful"</em> para tus evidencias.</li>
+                        </ul>
+                    </div>
+
+                    <!-- PRÁCTICA DE LA VIDA REAL SEMANA 3 -->
+                    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-xl shadow-md md:col-span-2">
+                        <h4 class="font-bold text-indigo-900 mb-2 text-xl"><i class="fa-solid fa-route text-indigo-500 mr-2"></i>Práctica en la Vida Real: Rastreo de Paquetes (Tracert / Traceroute)</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Entorno de Laboratorio:</strong> Descubriremos visualmente todos los routers por los que salta nuestra información hasta llegar a internet, evidenciando dónde ocurre el NAT de nuestra escuela.</p>
+                        <ul class="list-disc ml-5 text-sm text-indigo-800 space-y-2">
+                            <li>Abre el Símbolo del Sistema (CMD) en la computadora del laboratorio escolar conectada a internet.</li>
+                            <li>Escribe el comando de rastreo: <code>tracert google.com</code> y presiona Enter.</li>
+                            <li>Observa la salida en vivo. El "Salto #1" (Hop 1) siempre será el router local de tu escuela (tu Gateway con IP Privada).</li>
+                            <li>El "Salto #2" o "Salto #3" generalmente revelará la primera IP Pública de la infraestructura del proveedor de internet (Telmex/Totalplay). Justo entre esos saltos es donde tu paquete de datos sufrió el proceso de NAT. <strong>Toma captura del CMD completo y guárdalo.</strong></li>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -505,54 +557,84 @@
                         <ul class="list-disc ml-5 text-gray-600 space-y-3 mb-4 text-sm">
                             <li><strong>Protocolo CDP (Cisco Discovery Protocol):</strong> Es un protocolo exclusivo de Cisco que sirve para "ver" qué otros equipos Cisco están conectados directamente a nuestros puertos, sin saber sus IPs. Comando: <code>show cdp neighbors</code>.</li>
                             <li><strong>Ruteo Default (Ruta estática predeterminada):</strong> Es la salida de emergencia. Le dice al router: "Si alguien te pide una IP que no conoces, mándala por este puerto hacia el módem de internet". Comando: <code>ip route 0.0.0.0 0.0.0.0 [Interfaz_Salida]</code>.</li>
-                            <li><strong>Respaldos TFTP:</strong> Si un router se descompone, volver a escribir todo el código toma horas. Usamos un Servidor TFTP para guardar una copia exacta de la configuración. Comando: <code>copy running-config tftp</code>.</li>
+                            <li><strong>Respaldos TFTP:</strong> Usamos un Servidor TFTP para guardar una copia exacta de la configuración. Comando: <code>copy running-config tftp</code>.</li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- Ejercicios Semana 4 -->
                 <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
                         <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-code text-red-500 mr-2"></i>Ejercicio 1: Script de Ruta Predeterminada</h4>
                         <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Configurar la salida a internet del Router.</p>
                         <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
-                            <li>En tu archivo de script del bloc de notas, asegúrate de estar en el modo de configuración global.</li>
-                            <li>Supongamos que el puerto que va hacia el proveedor de internet (Telmex/Totalplay) es el <strong>GigabitEthernet 0/1</strong>.</li>
-                            <li>Escribe el comando: <code>ip route 0.0.0.0 0.0.0.0 g0/1</code>.</li>
-                            <li>Responde en tu cuaderno: ¿Por qué usamos puros ceros en ese comando?</li>
+                            <li>En tu archivo de script digital, asegúrate de estar en el modo global.</li>
+                            <li>Agrega el comando: <code>ip route 0.0.0.0 0.0.0.0 g0/1</code> (simulando la salida al proveedor de internet).</li>
+                            <li><strong>Agrega un comentario (usando el símbolo <code>!</code> en tu código)</strong> explicando brevemente por qué usamos "puros ceros" en el ruteo predeterminado.</li>
                         </ol>
                     </div>
-                    <div class="bg-red-50 p-6 rounded-xl border border-red-200">
-                        <h4 class="font-bold text-red-900 mb-3"><i class="fa-solid fa-laptop-code text-red-600 mr-2"></i>Ejercicio 2: Respaldo en Simulador</h4>
-                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Utiliza Packet Tracer para simular el guardado de configuración.</p>
+
+                    <div class="bg-red-50 p-6 rounded-xl border border-red-300 shadow-sm">
+                        <h4 class="font-bold text-red-900 mb-3"><i class="fa-solid fa-eye text-red-600 mr-2"></i>Ejercicio 2: Descubrimiento de Vecinos (CDP)</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Utiliza CDP para mapear la red sin ver físicamente los cables.</p>
                         <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
-                            <li>Abre la topología de la semana anterior. Agrega un "Servidor Genérico" al Switch y ponle la IP fija <strong>192.168.10.100</strong>.</li>
-                            <li>En el Servidor, ve a la pestaña <em>Services</em>, entra a <strong>TFTP</strong> y asegúrate de que esté encendido (ON).</li>
-                            <li>Ve a la CLI del Router (en modo privilegiado <code>Router#</code>).</li>
-                            <li>Escribe <code>copy running-config tftp</code>. Cuando te pida la IP remota, escribe <code>192.168.10.100</code>. Presiona Enter para confirmar el nombre del archivo.</li>
-                            <li>Muestra al profesor el mensaje de "OK" indicando que el archivo se copió correctamente al servidor para registrar tu actividad.</li>
+                            <li>Abre la CLI de tu Router en Packet Tracer.</li>
+                            <li>Ejecuta <code>show cdp neighbors</code>.</li>
+                            <li><strong>Captura la salida de la consola y adjúntala a tu reporte.</strong> Utiliza la herramienta "Place Note" (etiqueta de texto) dentro de Packet Tracer para anotar qué equipo descubrió y en qué puerto.</li>
                         </ul>
                     </div>
+
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-clock-rotate-left text-gray-600 mr-2"></i>Ejercicio 3: Recuperación de Contraseñas (Teoría)</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Conocer el proceso de recuperación de equipos Cisco bloqueados.</p>
+                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Investiga qué es el <strong>Registro de Configuración</strong> en un router Cisco y el valor <code>0x2142</code>.</li>
+                            <li><strong>Utiliza draw.io, Lucidchart o PowerPoint</strong> para diseñar un diagrama de flujo simple que explique los pasos para recuperar un router bloqueado. Exporétalo a PDF/Imagen.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-red-50 p-6 rounded-xl border border-red-200 shadow-sm">
+                        <h4 class="font-bold text-red-900 mb-3"><i class="fa-solid fa-laptop-code text-red-600 mr-2"></i>Ejercicio 4: Respaldo en Simulador</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Simula el guardado de configuración (Backup).</p>
+                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Agrega un Servidor a Packet Tracer con IP fija <strong>192.168.10.100</strong>. Asegúrate que el servicio <strong>TFTP</strong> esté encendido.</li>
+                            <li>En el Router ejecuta <code>copy running-config tftp</code>. Sigue las instrucciones e ingresa la IP remota.</li>
+                            <li>Documenta digitalmente el éxito de la transferencia del archivo.</li>
+                        </ul>
+                    </div>
+
+                    <!-- PRÁCTICA DE LA VIDA REAL SEMANA 4 -->
+                    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-xl shadow-md md:col-span-2">
+                        <h4 class="font-bold text-indigo-900 mb-2 text-xl"><i class="fa-solid fa-toolbox text-indigo-500 mr-2"></i>Práctica en la Vida Real: Troubleshooting Físico y ROMMON</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Entorno de Laboratorio:</strong> Simularemos la peor pesadilla de un administrador: olvidar la contraseña física del equipo (Password Recovery).</p>
+                        <ul class="list-disc ml-5 text-sm text-indigo-800 space-y-2">
+                            <li>Conéctense al Router del plantel usando el cable de consola azul e inicien PuTTY.</li>
+                            <li>Con el permiso del docente, <strong>apaguen el router desde el interruptor físico trasero</strong> y vuélvanlo a encender.</li>
+                            <li>Inmediatamente después de encenderlo, durante la descompresión de la imagen IOS, presionen la secuencia de teclas de interrupción de su teclado (generalmente <code>Ctrl + Break</code> o <code>Ctrl + Pause</code>) en PuTTY para interrumpir el arranque normal.</li>
+                            <li>Verifiquen que el prompt de la terminal cambie a <code>rommon 1 ></code>. ¡Están en el modo a prueba de fallos físico del equipo! Desde aquí, se cambiaría el registro a 0x2142 para saltarse las contraseñas perdidas.</li>
+                        </ul>
+                    </div>
+
                 </div>
 
-                <!-- Botón hacia el Proyecto Final Desplegable -->
+                <!-- Botón hacia el Ejercicio Integrador Desplegable -->
                 <div class="mt-12 bg-gradient-to-r from-gray-900 to-slate-800 p-8 md:p-10 rounded-xl border border-gray-700 text-center shadow-2xl relative overflow-hidden">
                     <i class="fa-solid fa-flag-checkered absolute -right-4 -bottom-4 text-9xl text-gray-700 opacity-20 transform -rotate-12 pointer-events-none"></i>
-                    <h4 class="text-3xl font-bold text-white mb-3 relative z-10">Evaluación del Parcial</h4>
-                    <p class="text-gray-300 mb-8 max-w-2xl mx-auto relative z-10">Has completado todos los temas de la unidad. Es hora de demostrar tus habilidades como Ingeniero de Redes en el Proyecto Integrador Final, donde aplicarás desde el esquema IP hasta el respaldo TFTP.</p>
+                    <h4 class="text-3xl font-bold text-white mb-3 relative z-10">Ejercicio Integrador Final</h4>
+                    <p class="text-gray-300 mb-8 max-w-2xl mx-auto relative z-10">Has completado todos los temas de la unidad. Es hora de unirlos en un gran Ejercicio Integrador Final, donde aplicarás de forma práctica desde el esquema IP hasta el respaldo de seguridad.</p>
                     
                     <!-- Botón que activa el despliegue -->
                     <button onclick="document.getElementById('proyecto_final_container').classList.toggle('hidden')" class="inline-flex items-center cursor-pointer bg-conalep-light hover:bg-conalep-green text-white text-lg font-bold py-4 px-10 rounded-full transition duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 relative z-10">
-                        <i class="fa-solid fa-rocket mr-3"></i> Mostrar / Ocultar Proyecto Final
+                        <i class="fa-solid fa-rocket mr-3"></i> Mostrar / Ocultar Ejercicio Integrador
                     </button>
 
-                    <!-- Contenedor Desplegable del Proyecto -->
+                    <!-- Contenedor Desplegable -->
                     <div id="proyecto_final_container" class="hidden mt-10 text-left relative z-10 transition-all">
                         <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
                             <!-- Header interno del proyecto -->
                             <div class="bg-slate-800 px-6 py-4 flex flex-col md:flex-row items-center justify-between border-b-4 border-conalep-green">
                                 <h3 class="text-2xl font-bold text-white"><i class="fa-solid fa-network-wired text-conalep-light mr-3"></i>Red Corporativa Integral</h3>
-                                <span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mt-2 md:mt-0">Valor: 50%</span>
+                                <span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mt-2 md:mt-0">Ejercicio Práctico 100% Digital</span>
                             </div>
                             
                             <div class="p-6 md:p-8">
@@ -565,7 +647,7 @@
                                         <h2 class="text-xl font-bold text-gray-900 mb-2">Escenario: "Banco del Centro"</h2>
                                         <p class="text-gray-600 text-justify mb-4">La institución financiera "Banco del Centro" abrirá una nueva sucursal. Te han contratado como Arquitecto de Redes para planificar y configurar su infraestructura desde cero. El gerente exige que la red sea segura, asigne IPs de forma automática a los cajeros, tenga salida a internet mediante una ruta predeterminada, y que toda la configuración quede respaldada en un servidor.</p>
                                         <div class="bg-yellow-50 border-l-4 border-yellow-500 p-3 rounded text-sm text-gray-700">
-                                            <strong>Instrucción:</strong> Entrega un <strong>Reporte de Ingeniería (Documento/Cuaderno)</strong> y el <strong>Archivo funcional en Cisco Packet Tracer (.pkt)</strong>.
+                                            <strong>Instrucción:</strong> Esta es la práctica final de consolidación. Entrega un <strong>Reporte de Ingeniería (PDF/Word digital)</strong> y el <strong>Archivo funcional en Cisco Packet Tracer (.pkt)</strong>. Ya no se aceptan entregas en papel o cuaderno.
                                         </div>
                                     </div>
                                 </div>
@@ -577,15 +659,14 @@
                                         <h3 class="text-lg font-bold text-gray-800 mb-3"><span class="text-conalep-green mr-2">Fase 1:</span> Arquitectura y Direccionamiento</h3>
                                         <p class="text-sm text-gray-600 mb-3">La dirección base es <strong>192.168.50.0 /24</strong>.</p>
                                         <ul class="list-decimal ml-5 text-sm text-gray-700 space-y-1">
-                                            <li>Dibuja el diagrama físico: 1 Router (1941), 1 Switch (2960), 3 PCs (Cajeros) y 1 Servidor (TFTP).</li>
-                                            <li>Identifica qué puerto del router va conectado al Switch.</li>
-                                            <li>Crea la Tabla IP: Asigna <code>192.168.50.1</code> al Router (Gateway), y <code>192.168.50.250</code> al Servidor TFTP.</li>
+                                            <li>Utiliza software digital (Packet Tracer o draw.io) para diagramar: 1 Router (1941), 1 Switch (2960), 3 PCs (Cajeros) y 1 Servidor (TFTP).</li>
+                                            <li><strong>Crea una matriz de direccionamiento en Excel</strong>: Asigna <code>192.168.50.1</code> al Router (Gateway), y <code>192.168.50.250</code> al Servidor TFTP. Exórtalo y pégalo en tu reporte.</li>
                                         </ul>
                                     </div>
                                     <!-- Fase 2 -->
                                     <div class="bg-gray-50 rounded-lg p-5 border border-gray-200">
                                         <h3 class="text-lg font-bold text-gray-800 mb-3"><span class="text-conalep-green mr-2">Fase 2:</span> Seguridad y Configuración Básica</h3>
-                                        <p class="text-sm text-gray-600 mb-3">Crea un archivo de Bloc de Notas (Script) y escribe el código para:</p>
+                                        <p class="text-sm text-gray-600 mb-3">Crea tu script maestro en formato <code>.txt</code> con el código para:</p>
                                         <ul class="list-disc ml-5 text-sm text-gray-700 space-y-1">
                                             <li>Entrar a modo global y cambiar el hostname a "RT_Banco".</li>
                                             <li>Establecer "cisco123" como contraseña secreta (<code>enable secret</code>).</li>
@@ -596,7 +677,7 @@
                                     <div class="bg-gray-50 rounded-lg p-5 border border-gray-200">
                                         <h3 class="text-lg font-bold text-gray-800 mb-3"><span class="text-conalep-green mr-2">Fase 3:</span> Interfaces y Ruteo Default</h3>
                                         <ul class="list-disc ml-5 text-sm text-gray-700 space-y-1">
-                                            <li>Entra a la interfaz de red local. Asígnale la IP Gateway y enciéndela (<code>no shutdown</code>).</li>
+                                            <li>Agrega al script la configuración de interfaz local (IP Gateway y <code>no shutdown</code>).</li>
                                             <li>Configura una Ruta Predeterminada (0.0.0.0) apuntando hacia <em>GigabitEthernet 0/1</em> (simulando la salida a internet).</li>
                                         </ul>
                                     </div>
@@ -604,8 +685,8 @@
                                     <div class="bg-gray-50 rounded-lg p-5 border border-gray-200">
                                         <h3 class="text-lg font-bold text-gray-800 mb-3"><span class="text-conalep-green mr-2">Fase 4:</span> Servicios Integrados (DHCP)</h3>
                                         <ul class="list-disc ml-5 text-sm text-gray-700 space-y-1">
-                                            <li>Excluye del préstamo las IPs <code>.1</code> hasta la <code>.10</code> y también excluye la IP del servidor <code>.250</code>.</li>
-                                            <li>Crea un pool de DHCP llamado "CAJEROS". Declara la red, máscara y el "default-router".</li>
+                                            <li>Agrega el código para excluir del préstamo las IPs <code>.1</code> hasta la <code>.10</code> y la IP del servidor <code>.250</code>.</li>
+                                            <li>Crea el pool de DHCP "CAJEROS" declarando la red, máscara y el "default-router".</li>
                                         </ul>
                                     </div>
                                     <!-- Fase 5 -->
@@ -613,44 +694,44 @@
                                         <h3 class="text-lg font-bold text-purple-900 mb-3"><span class="text-purple-600 mr-2">Fase 5:</span> Implementación en Simulador y Respaldo</h3>
                                         <ul class="list-decimal ml-5 text-sm text-gray-800 space-y-2">
                                             <li>Abre Cisco Packet Tracer, arma la topología y configura la IP estática del Servidor.</li>
-                                            <li>Pega todo tu script en la CLI del Router. Verifica que las PCs obtengan IP por DHCP.</li>
-                                            <li>Ejecuta un Ping exitoso hacia el Gateway y hacia el Servidor.</li>
-                                            <li>Usa TFTP para hacer un respaldo de la configuración (<code>copy running-config tftp</code>) hacia el Servidor.</li>
+                                            <li>Pega todo tu script digital en la CLI del Router. Verifica que las PCs obtengan IP por DHCP.</li>
+                                            <li>Usa TFTP para hacer un respaldo de la configuración (<code>copy running-config tftp</code>) hacia el Servidor. Guarda todo tu proyecto como <code>Proyecto_Banco_TuNombre.pkt</code>.</li>
                                         </ul>
                                     </div>
                                 </div>
 
-                                <!-- Rúbrica -->
-                                <h3 class="text-xl font-bold text-gray-900 mb-4"><i class="fa-solid fa-list-check text-red-500 mr-2"></i>Rúbrica de Calificación</h3>
+                                <!-- Checklist -->
+                                <h3 class="text-xl font-bold text-gray-900 mb-4"><i class="fa-solid fa-list-check text-red-500 mr-2"></i>Lista de Verificación de Competencias Digitales</h3>
+                                <p class="text-sm text-gray-600 mb-4">Revisa que cumplas con todos estos puntos antes de subir tus archivos (PDF + PKT) a la plataforma para ser evaluado.</p>
                                 <div class="overflow-x-auto">
                                     <table class="w-full text-xs md:text-sm text-left text-gray-600 bg-white shadow-sm overflow-hidden border border-gray-200">
                                         <thead class="text-white uppercase bg-slate-700">
                                             <tr>
-                                                <th scope="col" class="px-4 py-3">Criterio a Evaluar</th>
-                                                <th scope="col" class="px-4 py-3 text-center">Ponderación</th>
-                                                <th scope="col" class="px-4 py-3">Requisitos (Excelente)</th>
+                                                <th scope="col" class="px-4 py-3">Tarea Práctica y Digital</th>
+                                                <th scope="col" class="px-4 py-3">Criterios a cumplir</th>
+                                                <th scope="col" class="px-4 py-3 text-center">Estado</th>
                                             </tr>
                                         </thead>
                                         <tbody class="divide-y divide-gray-200">
                                             <tr class="hover:bg-gray-50">
-                                                <td class="px-4 py-3 font-bold text-gray-800">1. Diagrama y Tabla IP</td>
-                                                <td class="px-4 py-3 text-center text-blue-600 font-bold">20%</td>
-                                                <td class="px-4 py-3">Conexiones lógicas y tabla IP sin errores (Gateway y Servidor delimitados).</td>
+                                                <td class="px-4 py-4 font-bold text-gray-800">1. Matriz IP e Ingeniería (Digital)</td>
+                                                <td class="px-4 py-4">Tabla diseñada en Excel insertada en el reporte final. Conexiones lógicas claras.</td>
+                                                <td class="px-4 py-4 text-center"><i class="fa-regular fa-square text-xl text-gray-400 cursor-pointer hover:text-conalep-green transition"></i></td>
                                             </tr>
                                             <tr class="hover:bg-gray-50">
-                                                <td class="px-4 py-3 font-bold text-gray-800">2. Script IOS (Seguridad/Default)</td>
-                                                <td class="px-4 py-3 text-center text-blue-600 font-bold">25%</td>
-                                                <td class="px-4 py-3">Sintaxis 100% correcta en contraseñas y ruta 0.0.0.0.</td>
+                                                <td class="px-4 py-4 font-bold text-gray-800">2. Scripting Básico (.txt)</td>
+                                                <td class="px-4 py-4">El archivo cuenta con sintaxis impecable para contraseñas seguras y configuración global.</td>
+                                                <td class="px-4 py-4 text-center"><i class="fa-regular fa-square text-xl text-gray-400 cursor-pointer hover:text-conalep-green transition"></i></td>
                                             </tr>
                                             <tr class="hover:bg-gray-50">
-                                                <td class="px-4 py-3 font-bold text-gray-800">3. Script Servicios (DHCP)</td>
-                                                <td class="px-4 py-3 text-center text-blue-600 font-bold">15%</td>
-                                                <td class="px-4 py-3">Exclusión y pool declarados correctamente con network y default-router.</td>
+                                                <td class="px-4 py-4 font-bold text-gray-800">3. Programación de Servicios (DHCP/Default)</td>
+                                                <td class="px-4 py-4">Ruta 0.0.0.0 activa. Exclusiones y DHCP programados adecuadamente en CLI.</td>
+                                                <td class="px-4 py-4 text-center"><i class="fa-regular fa-square text-xl text-gray-400 cursor-pointer hover:text-conalep-green transition"></i></td>
                                             </tr>
                                             <tr class="hover:bg-purple-50 bg-purple-50/50">
-                                                <td class="px-4 py-3 font-bold text-purple-900">4. Simulación (.pkt) y TFTP</td>
-                                                <td class="px-4 py-3 text-center text-purple-600 font-bold">40%</td>
-                                                <td class="px-4 py-3">El archivo funciona, hay ping y el respaldo TFTP existe en el server.</td>
+                                                <td class="px-4 py-4 font-bold text-purple-900">4. Despliegue en Simulador (.pkt)</td>
+                                                <td class="px-4 py-4">Las PCs navegan (DHCP OK), el ping responde localmente y el backup (TFTP) se aloja en el servidor virtual.</td>
+                                                <td class="px-4 py-4 text-center"><i class="fa-regular fa-square text-xl text-gray-400 cursor-pointer hover:text-conalep-green transition"></i></td>
                                             </tr>
                                         </tbody>
                                     </table>
