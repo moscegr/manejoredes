@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcial 3 - Manejo de Redes</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        conalep: {
+                            green: '#006B54',
+                            light: '#009A7A',
+                            dark: '#004C3B'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .bg-header {
+            background-image: linear-gradient(rgba(88, 28, 135, 0.85), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        /* Para que el menú de 6 semanas sea scrolleable en móviles */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased font-sans">
+
+    <!-- Navegación -->
+    <nav class="bg-white shadow-md fixed w-full z-50 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-14 items-center">
+                <div class="flex items-center min-w-max">
+                    <i class="fa-solid fa-layer-group text-purple-600 text-2xl mr-3"></i>
+                    <div>
+                        <span class="font-bold text-lg text-purple-700 block leading-tight">Parcial 3</span>
+                        <span class="text-[10px] text-gray-500 font-semibold tracking-wider">VLANs Y RUTEO AVANZADO</span>
+                    </div>
+                </div>
+                <!-- Menú scrolleable en móvil, normal en desktop -->
+                <div class="flex items-center space-x-4 lg:space-x-6 text-sm overflow-x-auto hide-scrollbar ml-4">
+                    <a href="#semana1" class="text-gray-600 hover:text-purple-600 transition font-medium whitespace-nowrap">Sem. 1</a>
+                    <a href="#semana2" class="text-gray-600 hover:text-purple-600 transition font-medium whitespace-nowrap">Sem. 2</a>
+                    <a href="#semana3" class="text-gray-600 hover:text-purple-600 transition font-medium whitespace-nowrap">Sem. 3</a>
+                    <a href="#semana4" class="text-gray-600 hover:text-purple-600 transition font-medium whitespace-nowrap">Sem. 4</a>
+                    <a href="#semana5" class="text-gray-600 hover:text-purple-600 transition font-medium whitespace-nowrap">Sem. 5</a>
+                    <a href="#semana6" class="text-gray-600 hover:text-red-500 transition font-medium whitespace-nowrap">Sem. 6</a>
+                    <a href="index.html" class="bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full hover:bg-gray-200 transition font-medium flex items-center shadow-sm whitespace-nowrap border border-gray-200">
+                        <i class="fa-solid fa-arrow-left mr-2"></i> Inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-header pt-24 pb-8 text-center text-white mt-10">
+        <div class="max-w-4xl mx-auto px-4">
+            <span class="bg-purple-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-4 inline-block shadow-lg">Módulo MRDE-20</span>
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">Redes de Áreas Locales Virtuales</h1>
+            <p class="text-xl font-light text-purple-100">Segmentación, VTP y Enrutamiento Inter-VLAN en 6 semanas de inmersión práctica.</p>
+            
+            <!-- Botones de navegación rápida -->
+            <div class="flex flex-wrap justify-center gap-3 mt-8">
+                <a href="#semana1" class="bg-white/10 hover:bg-purple-600 text-white font-semibold py-2 px-5 rounded-full transition duration-300 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl text-sm">
+                    <i class="fa-solid fa-scissors mr-2"></i>Semana 1
+                </a>
+                <a href="#semana2" class="bg-white/10 hover:bg-purple-600 text-white font-semibold py-2 px-5 rounded-full transition duration-300 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl text-sm">
+                    <i class="fa-solid fa-bridge mr-2"></i>Semana 2
+                </a>
+                <a href="#semana3" class="bg-white/10 hover:bg-purple-600 text-white font-semibold py-2 px-5 rounded-full transition duration-300 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl text-sm">
+                    <i class="fa-solid fa-tower-broadcast mr-2"></i>Semana 3
+                </a>
+                <a href="#semana4" class="bg-white/10 hover:bg-purple-600 text-white font-semibold py-2 px-5 rounded-full transition duration-300 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl text-sm">
+                    <i class="fa-solid fa-shield-virus mr-2"></i>Semana 4
+                </a>
+                <a href="#semana5" class="bg-white/10 hover:bg-purple-600 text-white font-semibold py-2 px-5 rounded-full transition duration-300 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl text-sm">
+                    <i class="fa-solid fa-route mr-2"></i>Semana 5
+                </a>
+                <a href="#semana6" class="bg-white/10 hover:bg-red-500 text-white font-semibold py-2 px-5 rounded-full transition duration-300 backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl text-sm">
+                    <i class="fa-solid fa-flag-checkered mr-2"></i>Semana 6
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal -->
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 space-y-20">
+
+        <!-- SEMANA 1 -->
+        <section id="semana1" class="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-purple-500">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-purple-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mr-4">1</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Semana 1: Conceptos Básicos y Creación de VLANs</h2>
+                        <p class="text-purple-600 font-semibold">Temas: Identificación, Beneficios, y Configuración de Puertos de Acceso.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div>
+                        <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">1. Divide y Vencerás (Segmentación Lógica)</h3>
+                        <p class="text-gray-600 mb-4 text-justify">Una <strong>VLAN (Virtual Local Area Network)</strong> permite dividir un Switch físico en múltiples "switches virtuales". Esto significa que podemos agrupar computadoras lógicamente según su departamento (ej. Ventas, RH, Sistemas) sin importar dónde estén conectadas físicamente.</p>
+                        
+                        <h4 class="font-bold text-purple-900 mb-2">Comandos de Configuración (En el Switch):</h4>
+                        <ul class="space-y-3 mb-4">
+                            <li class="bg-gray-50 p-3 rounded border border-gray-200">
+                                <span class="font-mono text-purple-700 font-bold">Crear VLAN:</span> <code>vlan 10</code> <br>
+                                <span class="font-mono text-purple-700 font-bold">Nombrar:</span> <code>name ALUMNOS</code>
+                            </li>
+                            <li class="bg-gray-50 p-3 rounded border border-gray-200">
+                                <span class="font-mono text-blue-700 font-bold">Asignar un puerto a la VLAN:</span> <br>
+                                <code>interface f0/1</code> <br>
+                                <code>switchport mode access</code> (Modo acceso para PCs) <br>
+                                <code>switchport access vlan 10</code>
+                            </li>
+                        </ul>
+                        
+                        <div class="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded mt-6">
+                            <h4 class="font-bold text-indigo-800"><i class="fa-solid fa-lightbulb text-indigo-500 mr-2"></i>Beneficios de las VLANs</h4>
+                            <p class="text-sm text-indigo-900 mt-1">Mejoran la <strong>seguridad</strong> (Alumnos no pueden ver las PCs de los Maestros), reducen el tamaño del dominio de <strong>Broadcast</strong> (menos "ruido" en la red, mayor velocidad) y facilitan la <strong>administración</strong>.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- SVG Visual -->
+                    <div class="relative rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800 flex flex-col items-center justify-center p-6">
+                        <h4 class="text-white font-bold mb-4">Un Switch, Tres Redes Aisladas</h4>
+                        <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+                            <!-- Switch -->
+                            <rect x="100" y="100" width="200" height="50" rx="5" fill="#334155" stroke="#475569" stroke-width="2"/>
+                            <text x="200" y="130" fill="#f8fafc" font-size="16" text-anchor="middle" font-weight="bold">Switch Principal</text>
+                            
+                            <!-- VLAN 10 (Red) -->
+                            <path d="M 60 50 L 130 100" stroke="#ef4444" stroke-width="3" stroke-dasharray="5,5"/>
+                            <rect x="20" y="20" width="40" height="30" rx="3" fill="#ef4444"/>
+                            <text x="40" y="40" fill="white" font-size="12" text-anchor="middle">PC 1</text>
+                            <text x="40" y="15" fill="#ef4444" font-size="10" text-anchor="middle" font-weight="bold">VLAN 10</text>
+                            
+                            <!-- VLAN 20 (Blue) -->
+                            <path d="M 200 40 L 200 100" stroke="#3b82f6" stroke-width="3" stroke-dasharray="5,5"/>
+                            <rect x="180" y="10" width="40" height="30" rx="3" fill="#3b82f6"/>
+                            <text x="200" y="30" fill="white" font-size="12" text-anchor="middle">PC 2</text>
+                            <text x="200" y="5" fill="#3b82f6" font-size="10" text-anchor="middle" font-weight="bold">VLAN 20</text>
+
+                            <!-- VLAN 30 (Green) -->
+                            <path d="M 340 50 L 270 100" stroke="#10b981" stroke-width="3" stroke-dasharray="5,5"/>
+                            <rect x="340" y="20" width="40" height="30" rx="3" fill="#10b981"/>
+                            <text x="360" y="40" fill="white" font-size="12" text-anchor="middle">PC 3</text>
+                            <text x="360" y="15" fill="#10b981" font-size="10" text-anchor="middle" font-weight="bold">VLAN 30</text>
+                            
+                            <!-- Barrier / Isolation lines -->
+                            <line x1="140" y1="150" x2="140" y2="200" stroke="#64748b" stroke-width="2"/>
+                            <line x1="260" y1="150" x2="260" y2="200" stroke="#64748b" stroke-width="2"/>
+                            <text x="200" y="190" fill="#94a3b8" font-size="12" text-anchor="middle" font-style="italic">Totalmente Aisladas</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Ejercicios Semana 1 -->
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-magnifying-glass text-purple-600 mr-2"></i>Ejercicio 1: Investigación de Conceptos</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Comprender los tipos de VLANs.</p>
+                        <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Abre un documento digital (Word/Docs).</li>
+                            <li>Investiga y define los siguientes términos técnicos de Cisco:
+                                <ul class="list-[circle] ml-4 mt-1 font-mono text-xs font-bold text-purple-800">
+                                    <li>VLAN de Datos</li>
+                                    <li>VLAN Predeterminada (Default VLAN 1)</li>
+                                    <li>VLAN Nativa</li>
+                                    <li>VLAN de Administración</li>
+                                    <li>VLAN de Voz</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-200 shadow-sm">
+                        <h4 class="font-bold text-purple-900 mb-3"><i class="fa-solid fa-code text-purple-600 mr-2"></i>Ejercicio 2: Scripting de Creación</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Crea el código para dar de alta las redes virtuales.</p>
+                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
+                            <li>En un Bloc de notas, escribe los comandos para entrar al modo de configuración global del <strong>Switch</strong>.</li>
+                            <li>Crea la VLAN 10 (Nombre: DIRECCION), VLAN 20 (Nombre: DOCENTES) y VLAN 30 (Nombre: ESTUDIANTES).</li>
+                            <li>Asigna el puerto <code>FastEthernet 0/1</code> a la VLAN 10, el puerto <code>F0/2</code> a la 20, y el puerto <code>F0/3</code> a la 30. Guarda tu archivo <code>.txt</code>.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-purple-50 p-6 rounded-xl border border-purple-200 md:col-span-2 shadow-sm">
+                        <h4 class="font-bold text-purple-900 mb-3 text-lg"><i class="fa-solid fa-laptop-code text-purple-600 mr-2"></i>Ejercicio 3 (Simulador): Implementando VLANs</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <ul class="list-decimal ml-4 text-sm text-gray-700 space-y-2">
+                                <li>Abre <strong>Cisco Packet Tracer</strong>. Agrega 1 Switch (2960) y 3 PCs.</li>
+                                <li>Conecta la PC0 al puerto F0/1, la PC1 al F0/2 y la PC2 al F0/3.</li>
+                                <li>Pega tu script del Ejercicio 2 en la CLI del Switch.</li>
+                                <li>Verifica el estado con el comando: <code>show vlan brief</code> (Anota los resultados en tu documento).</li>
+                                <li><strong>Prueba de Aislamiento:</strong> Ponle IP a las PCs (ej. 192.168.1.1, 1.2 y 1.3). Intenta hacer ping entre ellas. ¿Qué ocurre? Documenta por qué el ping falla aunque estén en el mismo Switch y la misma subred IP.</li>
+                            </ul>
+                            <div class="bg-white p-4 rounded-lg border border-purple-100 flex items-center justify-center">
+                                <div class="text-center">
+                                    <i class="fa-solid fa-eye-slash text-4xl text-gray-400 mb-2"></i>
+                                    <p class="text-sm font-bold text-red-600">Ping Fails (Request timed out)</p>
+                                    <p class="text-xs text-gray-500 mt-1">Es correcto. Las VLANs aíslan el tráfico a nivel Capa 2.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-xl shadow-md md:col-span-2">
+                        <h4 class="font-bold text-indigo-900 mb-2 text-xl"><i class="fa-solid fa-screwdriver-wrench text-indigo-500 mr-2"></i>Práctica en la Vida Real: Inspección del Switch</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Entorno de Laboratorio:</strong> Identifiquemos la configuración actual del equipo físico.</p>
+                        <ul class="list-disc ml-5 text-sm text-indigo-800 space-y-2">
+                            <li>Conéctense al Switch Cisco del rack usando el cable de consola.</li>
+                            <li>Abran PuTTY y ejecuten <code>show vlan brief</code>.</li>
+                            <li>Observen: ¿Existen VLANs ya creadas por otras clases? ¿A qué VLAN pertenecen todos los puertos por defecto? (Pista: VLAN 1). Tomen captura o fotografía de la consola física.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMANA 2 -->
+        <section id="semana2" class="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-indigo-500">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-indigo-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mr-4">2</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Semana 2: Enlaces Troncales (Trunks)</h2>
+                        <p class="text-indigo-600 font-semibold">Temas: Etiquetado IEEE 802.1Q, Puertos Trunk y VLAN Nativa.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="order-2 lg:order-1">
+                        <!-- Diagrama Trunk SVG -->
+                        <div class="relative rounded-xl overflow-hidden shadow-lg bg-slate-800 border border-slate-700 flex flex-col items-center justify-center p-6 h-full">
+                            <h4 class="text-white font-bold mb-4">Enlace Troncal (Múltiples VLANs en 1 cable)</h4>
+                            <svg viewBox="0 0 400 150" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+                                <!-- Switch 1 -->
+                                <rect x="20" y="50" width="80" height="50" rx="4" fill="#475569"/>
+                                <text x="60" y="80" fill="white" font-size="12" text-anchor="middle">Switch 1</text>
+                                
+                                <!-- Switch 2 -->
+                                <rect x="300" y="50" width="80" height="50" rx="4" fill="#475569"/>
+                                <text x="340" y="80" fill="white" font-size="12" text-anchor="middle">Switch 2</text>
+
+                                <!-- Trunk Cable -->
+                                <line x1="100" y1="75" x2="300" y2="75" stroke="#f59e0b" stroke-width="8"/>
+                                <text x="200" y="65" fill="#fcd34d" font-size="12" text-anchor="middle" font-weight="bold">Trunk 802.1Q</text>
+
+                                <!-- Tags flowing -->
+                                <rect x="130" y="85" width="20" height="15" fill="#ef4444" rx="2"/>
+                                <text x="140" y="96" fill="white" font-size="8" text-anchor="middle">V10</text>
+
+                                <rect x="170" y="85" width="20" height="15" fill="#3b82f6" rx="2"/>
+                                <text x="180" y="96" fill="white" font-size="8" text-anchor="middle">V20</text>
+                                
+                                <rect x="210" y="85" width="20" height="15" fill="#10b981" rx="2"/>
+                                <text x="220" y="96" fill="white" font-size="8" text-anchor="middle">V30</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">2. El Puente entre Edificios</h3>
+                        <p class="text-gray-600 mb-4 text-justify">Si tenemos un Switch en el Edificio A y otro en el Edificio B, y ambos tienen alumnos de las mismas VLANs, necesitamos conectarlos. Un puerto de <strong>Acceso</strong> solo transporta 1 VLAN. Un puerto <strong>Troncal (Trunk)</strong> transporta el tráfico de TODAS las VLANs por un solo cable.</p>
+                        
+                        <ul class="list-disc ml-5 text-gray-600 space-y-2 mb-4 text-sm">
+                            <li><strong>Etiquetado 802.1Q:</strong> Cuando una trama entra al trunk, el switch le pega una "etiqueta" invisible para saber a qué VLAN pertenece y evitar que se mezclen.</li>
+                            <li><strong>Configuración:</strong> <code>interface g0/1</code> -> <code>switchport mode trunk</code>.</li>
+                            <li><strong>VLAN Nativa:</strong> Es la única VLAN que viaja por el trunk <em>sin etiqueta</em>. Por seguridad, se suele cambiar de la VLAN 1 a otra (ej. VLAN 99). Comando: <code>switchport trunk native vlan 99</code>.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Ejercicios Semana 2 -->
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-diagram-project text-indigo-500 mr-2"></i>Ejercicio 1: Arquitectura Troncal</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Documenta la estructura lógica.</p>
+                        <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
+                            <li>En tu documento digital, dibuja (con draw.io o formas de Word) dos switches conectados por un cable central.</li>
+                            <li>Coloca 2 PCs conectadas a cada switch (una VLAN 10, otra VLAN 20).</li>
+                            <li>Etiqueta claramente cuáles cables son <strong>Modo Acceso</strong> (van a las PCs) y cuál es <strong>Modo Troncal</strong> (va entre switches).</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-200 shadow-sm">
+                        <h4 class="font-bold text-indigo-900 mb-3"><i class="fa-solid fa-code text-indigo-600 mr-2"></i>Ejercicio 2: Scripting Trunk</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Configurar el enlace entre switches.</p>
+                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
+                            <li>En tu Bloc de notas, agrega los comandos para configurar el puerto <code>GigabitEthernet 0/1</code> del switch.</li>
+                            <li>Conviértelo a modo trunk.</li>
+                            <li>Crea la VLAN 99 y asígnala como la VLAN nativa de ese enlace troncal. Guárdalo.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-200 md:col-span-2 shadow-sm">
+                        <h4 class="font-bold text-indigo-900 mb-3 text-lg"><i class="fa-solid fa-laptop-code text-indigo-600 mr-2"></i>Ejercicio 3 (Simulador): Expansión de la Red</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <ul class="list-decimal ml-4 text-sm text-gray-700 space-y-2">
+                                <li>En Packet Tracer, duplica el escenario de la semana pasada (agrega un 2do Switch y más PCs).</li>
+                                <li>Conecta los dos Switches a través del puerto GigabitEthernet 0/1 usando un <strong>Cable Cruzado</strong>.</li>
+                                <li>Aplica tu script del Ejercicio 2 en AMBOS switches.</li>
+                                <li>Para verificar, ejecuta <code>show interfaces trunk</code> en la consola. Toma captura donde se vea que el puerto está en modo "on" (trunking).</li>
+                                <li><strong>Prueba Final:</strong> Haz ping desde la PC de Ventas (Switch 1) a la PC de Ventas (Switch 2). ¡Debe ser exitoso a través del Trunk!</li>
+                            </ul>
+                            <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200 flex flex-col justify-center text-center shadow-inner">
+                                <i class="fa-solid fa-lightbulb text-3xl text-yellow-500 mb-2"></i>
+                                <h4 class="font-bold text-yellow-900 text-sm">Troubleshooting Tip</h4>
+                                <p class="text-xs text-gray-700 mt-1">Si recibes un error en consola que dice <em>"%CDP-4-NATIVE_VLAN_MISMATCH"</em>, significa que configuraste la VLAN nativa 99 en un switch, pero el otro sigue en la VLAN 1. ¡Ambos deben coincidir!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMANA 3 -->
+        <section id="semana3" class="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-fuchsia-500">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-fuchsia-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mr-4">3</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Semana 3: Protocolo VTP</h2>
+                        <p class="text-fuchsia-600 font-semibold">Temas: Dominios VTP, Modos Server/Client, Sincronización Automática.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div>
+                        <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">3. Automatizando la creación de VLANs</h3>
+                        <p class="text-gray-600 mb-4 text-justify">Imaginen crear las VLANs 10, 20 y 30 en 50 switches diferentes uno por uno. El <strong>VLAN Trunking Protocol (VTP)</strong> resuelve esto: permite configurar las VLANs en un solo switch (Servidor) y este las "propaga" automáticamente a todos los demás switches (Clientes) a través de los enlaces troncales.</p>
+                        
+                        <h4 class="font-bold text-fuchsia-900 mb-2">Modos de Operación VTP:</h4>
+                        <ul class="space-y-3 mb-4">
+                            <li class="bg-gray-50 p-3 rounded border border-gray-200 text-sm">
+                                <span class="font-bold text-fuchsia-600">Server (Servidor):</span> Puede crear, modificar y eliminar VLANs. Es el jefe. (Todos los switches vienen en este modo por defecto).
+                            </li>
+                            <li class="bg-gray-50 p-3 rounded border border-gray-200 text-sm">
+                                <span class="font-bold text-blue-600">Client (Cliente):</span> No puede crear VLANs. Solo escucha al servidor, actualiza su tabla y repite el mensaje.
+                            </li>
+                            <li class="bg-gray-50 p-3 rounded border border-gray-200 text-sm">
+                                <span class="font-bold text-gray-600">Transparent (Transparente):</span> Ignora las actualizaciones para sí mismo, pero deja pasar el mensaje a otros. Crea sus propias VLANs locales.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- SVG VTP -->
+                    <div class="relative rounded-xl overflow-hidden shadow-lg bg-gray-900 border border-gray-800 flex flex-col items-center justify-center p-6 h-full">
+                        <h4 class="text-white font-bold mb-4">Sincronización VTP (Número de Revisión)</h4>
+                        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+                            <!-- Server -->
+                            <rect x="150" y="20" width="100" height="50" rx="4" fill="#a21caf"/>
+                            <text x="200" y="40" fill="white" font-size="12" text-anchor="middle" font-weight="bold">VTP SERVER</text>
+                            <text x="200" y="55" fill="#f8fafc" font-size="10" text-anchor="middle">Rev: 5</text>
+                            
+                            <!-- Links -->
+                            <line x1="200" y1="70" x2="100" y2="130" stroke="#f59e0b" stroke-width="4" stroke-dasharray="4"/>
+                            <line x1="200" y1="70" x2="300" y2="130" stroke="#f59e0b" stroke-width="4" stroke-dasharray="4"/>
+                            
+                            <!-- Updates -->
+                            <circle cx="150" cy="100" r="5" fill="white" class="animate-ping"/>
+                            <circle cx="250" cy="100" r="5" fill="white" class="animate-ping"/>
+                            <text x="200" y="105" fill="#fcd34d" font-size="10" text-anchor="middle" font-weight="bold">"VLAN 40 Creada"</text>
+
+                            <!-- Clients -->
+                            <rect x="50" y="130" width="100" height="50" rx="4" fill="#2563eb"/>
+                            <text x="100" y="150" fill="white" font-size="12" text-anchor="middle" font-weight="bold">VTP CLIENT</text>
+                            <text x="100" y="165" fill="#f8fafc" font-size="10" text-anchor="middle">Actualizando a Rev: 5</text>
+
+                            <rect x="250" y="130" width="100" height="50" rx="4" fill="#2563eb"/>
+                            <text x="300" y="150" fill="white" font-size="12" text-anchor="middle" font-weight="bold">VTP CLIENT</text>
+                            <text x="300" y="165" fill="#f8fafc" font-size="10" text-anchor="middle">Actualizando a Rev: 5</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Ejercicios Semana 3 -->
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-code text-fuchsia-600 mr-2"></i>Ejercicio 1: Scripting VTP</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Configurar el dominio y contraseñas VTP.</p>
+                        <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
+                            <li>En tu Bloc de notas, crea dos secciones: "Switch 1" y "Switch 2".</li>
+                            <li>Para el S1 escribe los comandos: <code>vtp domain CONALEP</code>, <code>vtp mode server</code>, <code>vtp password secreta123</code>.</li>
+                            <li>Para el S2 escribe los comandos para ponerlo en modo <strong>client</strong>, asignando el mismo dominio y contraseña.</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-fuchsia-50 p-6 rounded-xl border border-fuchsia-200 shadow-sm">
+                        <h4 class="font-bold text-fuchsia-900 mb-3"><i class="fa-solid fa-magnifying-glass-location text-fuchsia-600 mr-2"></i>Ejercicio 2: Verificación y Número de Revisión</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Instrucciones:</strong> Investiga cómo verificar el estado de VTP.</p>
+                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
+                            <li>El comando clave es <code>show vtp status</code>.</li>
+                            <li>Investiga y explica en tu reporte digital qué es el <strong>Configuration Revision Number</strong> (Número de revisión de configuración) y por qué es peligroso conectar a la red un switch viejo que tenga un número de revisión muy alto.</li>
+                        </ul>
+                    </div>
+
+                    <!-- EJERCICIO SIMULADOR -->
+                    <div class="bg-fuchsia-50 p-6 rounded-xl border border-fuchsia-200 md:col-span-2 shadow-sm">
+                        <h4 class="font-bold text-fuchsia-900 mb-3 text-lg"><i class="fa-solid fa-bolt text-fuchsia-600 mr-2"></i>Ejercicio 3 (Simulador): Magia de Propagación</h4>
+                        <ul class="list-decimal ml-4 text-sm text-gray-700 space-y-2">
+                            <li>En tu archivo de Packet Tracer, aplica tu script VTP (El S1 como Servidor, el S2 y un nuevo S3 como Clientes). <em>Nota: Los enlaces entre ellos deben estar en modo Trunk para que VTP funcione.</em></li>
+                            <li>Abre la consola del S2 y del S3 y usa <code>show vlan brief</code>. (Estarán vacíos de VLANs nuevas).</li>
+                            <li>Ve al <strong>S1 (Server)</strong> y crea 5 VLANs nuevas rápidamente (VLAN 100, 200, 300, 400, 500).</li>
+                            <li>Regresa a los Clientes, vuelve a ejecutar <code>show vlan brief</code> y toma una captura asombrosa donde se demuestre que las 5 VLANs aparecieron solas sin que tú las configuraras allí.</li>
+                        </ul>
+                    </div>
+
+                    <!-- PRÁCTICA DE LA VIDA REAL SEMANA 3 -->
+                    <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-xl shadow-md md:col-span-2">
+                        <h4 class="font-bold text-indigo-900 mb-2 text-xl"><i class="fa-solid fa-bomb text-indigo-500 mr-2"></i>Práctica en la Vida Real: Borrado Seguro (VTP Bomb)</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Contexto:</strong> Si traen un switch del laboratorio B al laboratorio A, podría sobrescribir la base de datos de VLANs de toda la escuela si no se limpia correctamente (Efecto "VTP Bomb").</p>
+                        <ul class="list-disc ml-5 text-sm text-indigo-800 space-y-2">
+                            <li>Conéctense al switch físico del laboratorio.</li>
+                            <li>Ejecuten el comando para ver el archivo flash: <code>dir flash:</code> o simplemente <code>dir</code>.</li>
+                            <li>Localicen un archivo llamado <code>vlan.dat</code>. Este archivo guarda todas las VLANs y el número de revisión VTP.</li>
+                            <li>Escriban (sin presionar Enter, solo como simulación si no tienen permiso del profesor): <code>delete vlan.dat</code>. Expliquen en su reporte por qué este comando, seguido de un reinicio (<code>reload</code>), es obligatorio antes de instalar un switch reciclado en la red.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMANA 4 -->
+        <section id="semana4" class="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-teal-500">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-teal-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mr-4">4</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Semana 4: Aislamiento y El Problema del Ruteo</h2>
+                        <p class="text-teal-600 font-semibold">Temas: Limitaciones de Capa 2 y necesidad de enrutamiento Inter-VLAN.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="order-2 lg:order-1 relative rounded-xl overflow-hidden shadow-xl border border-gray-200 bg-gray-900 flex items-center justify-center min-h-[250px] p-6">
+                        <!-- Diseño: Pared entre VLANs SVG -->
+                        <div class="absolute inset-0 opacity-20">
+                            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#14b8a6" stroke-width="0.5"/>
+                                    </pattern>
+                                </defs>
+                                <rect width="100%" height="100%" fill="url(#grid)" />
+                            </svg>
+                        </div>
+                        <div class="z-10 text-center flex flex-col items-center w-full">
+                            <h4 class="text-white font-bold mb-4">El Muro Infranqueable</h4>
+                            <div class="flex justify-between items-center w-full max-w-[300px]">
+                                <div class="text-center">
+                                    <i class="fa-solid fa-laptop text-4xl text-blue-400"></i>
+                                    <p class="text-xs text-gray-300 mt-2 font-mono">VLAN 10</p>
+                                </div>
+                                <div class="flex flex-col items-center relative">
+                                    <!-- Muro -->
+                                    <div class="w-4 h-24 bg-red-500 rounded border-2 border-red-700 z-10 flex items-center justify-center">
+                                        <i class="fa-solid fa-ban text-white text-xs"></i>
+                                    </div>
+                                    <!-- Ping line chocando -->
+                                    <path d="M -40 12 L -5 12" stroke="#94a3b8" stroke-width="2" stroke-dasharray="2" class="absolute"/>
+                                </div>
+                                <div class="text-center">
+                                    <i class="fa-solid fa-laptop text-4xl text-green-400"></i>
+                                    <p class="text-xs text-gray-300 mt-2 font-mono">VLAN 20</p>
+                                </div>
+                            </div>
+                            <p class="text-xs text-gray-400 mt-4 max-w-[200px]">Un Switch de Capa 2 NO PUEDE pasar tráfico de una VLAN a otra por sí solo.</p>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">4. Rompiendo las barreras</h3>
+                        <p class="text-gray-600 mb-4 text-justify">Hasta ahora, hemos aislado exitosamente a los departamentos usando VLANs. Sin embargo, ¿qué pasa si el gerente (VLAN Ventas) necesita imprimir un documento en la impresora del pasillo (VLAN Administrativa)? Como las VLANs dividen los dominios de broadcast, no se pueden "ver" entre sí.</p>
+                        
+                        <p class="text-gray-600 mb-4 text-justify">Para permitir que se comuniquen, necesitamos <strong>Enrutamiento (Capa 3 OSI)</strong>. Un Router debe actuar como traductor/puente entre ellas. Existen tres métodos históricos para hacer esto:</p>
+                        <ol class="list-decimal ml-5 text-gray-600 space-y-2 mb-4 text-sm">
+                            <li><strong>Ruteo Tradicional:</strong> Usar un cable físico distinto desde el router hacia el switch por CADA VLAN. (Poco práctico y caro si tienes 20 VLANs).</li>
+                            <li><strong>Router-on-a-Stick:</strong> Usar UN SOLO cable configurado como Troncal y crear "subinterfaces" virtuales en el router. (El método que aprenderemos la próxima semana).</li>
+                            <li><strong>Switches Multicapa (Capa 3):</strong> Equipos avanzados (y costosos) que pueden rutear internamente usando interfaces SVI.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Ejercicios Semana 4 -->
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-file-lines text-teal-600 mr-2"></i>Ejercicio 1: Análisis de Métodos</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Comprender la evolución del diseño de redes.</p>
+                        <ul class="list-disc ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Investiga y redacta en tu documento digital las ventajas y desventajas de usar un <strong>Switch Multicapa (Switch Layer 3)</strong> comparado con usar un Router y Switch normales.</li>
+                            <li>Busca en internet el precio de un "Switch Cisco Catalyst 2960" (Capa 2) vs un "Switch Cisco Catalyst 3850 o 3650" (Capa 3). Añade la comparativa a tus apuntes.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-teal-50 p-6 rounded-xl border border-teal-200 md:col-span-1 shadow-sm">
+                        <h4 class="font-bold text-teal-900 mb-3 text-lg"><i class="fa-solid fa-laptop-code text-teal-600 mr-2"></i>Ejercicio 2: Demostración de Aislamiento</h4>
+                        <ul class="list-decimal ml-4 text-sm text-gray-700 space-y-2">
+                            <li>En Packet Tracer, abre el archivo de la Semana 3.</li>
+                            <li>Asegúrate de que la PC de Ventas (VLAN 10, IP 192.168.10.2) y la PC de RH (VLAN 20, IP 192.168.20.2) estén en puertos configurados correctamente.</li>
+                            <li>Realiza un ping prolongado desde Ventas a RH (<code>ping 192.168.20.2 -t</code>).</li>
+                            <li>Toma captura de pantalla de los "Request Timed Out" para documentar físicamente en tu reporte que el aislamiento funciona perfectamente.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMANA 5 -->
+        <section id="semana5" class="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-orange-500">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-orange-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mr-4">5</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Semana 5: Router-on-a-Stick</h2>
+                        <p class="text-orange-600 font-semibold">Temas: Subinterfaces lógicas, Encapsulación Dot1Q.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="order-2 lg:order-1">
+                        <!-- Diagrama ROAS -->
+                        <div class="relative rounded-xl overflow-hidden shadow-lg bg-slate-800 border border-slate-700 flex flex-col items-center justify-center p-6 h-full">
+                            <h4 class="text-white font-bold mb-4 text-center">Router-on-a-Stick<br><span class="text-xs font-normal text-gray-400">Subinterfaces en G0/0</span></h4>
+                            <svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+                                <!-- Router -->
+                                <circle cx="150" cy="50" r="25" fill="#334155" stroke="#94a3b8" stroke-width="2"/>
+                                <text x="150" y="55" fill="white" font-size="16" text-anchor="middle">R1</text>
+
+                                <!-- Subinterfaces (Logical) -->
+                                <path d="M 140 75 L 140 100" stroke="#ef4444" stroke-width="2" stroke-dasharray="3"/>
+                                <text x="110" y="90" fill="#ef4444" font-size="10" font-family="mono">G0/0.10</text>
+
+                                <path d="M 160 75 L 160 100" stroke="#3b82f6" stroke-width="2" stroke-dasharray="3"/>
+                                <text x="190" y="90" fill="#3b82f6" font-size="10" font-family="mono">G0/0.20</text>
+
+                                <!-- Physical Trunk Link -->
+                                <line x1="150" y1="100" x2="150" y2="150" stroke="#f59e0b" stroke-width="6"/>
+                                <text x="190" y="130" fill="#fcd34d" font-size="10" font-weight="bold">TRUNK</text>
+
+                                <!-- Switch -->
+                                <rect x="100" y="150" width="100" height="30" rx="4" fill="#475569"/>
+                                <text x="150" y="170" fill="white" font-size="12" text-anchor="middle">Switch</text>
+
+                                <!-- PCs -->
+                                <line x1="120" y1="180" x2="100" y2="210" stroke="#ef4444" stroke-width="2"/>
+                                <rect x="80" y="210" width="40" height="20" fill="#ef4444" rx="2"/>
+                                <text x="100" y="224" fill="white" font-size="10" text-anchor="middle">VLAN 10</text>
+
+                                <line x1="180" y1="180" x2="200" y2="210" stroke="#3b82f6" stroke-width="2"/>
+                                <rect x="180" y="210" width="40" height="20" fill="#3b82f6" rx="2"/>
+                                <text x="200" y="224" fill="white" font-size="10" text-anchor="middle">VLAN 20</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">5. Magia en un solo puerto</h3>
+                        <p class="text-gray-600 mb-4 text-justify">La solución más utilizada para enrutar VLANs en empresas medianas es "Router on a stick". Consiste en conectar el Switch y el Router con un solo cable Troncal. Como el cable lleva etiquetas de varias VLANs, el router debe dividirse lógicamente en <strong>Subinterfaces</strong> para escuchar cada etiqueta por separado.</p>
+                        
+                        <h4 class="font-bold text-orange-900 mb-2">Comandos Clave en el Router:</h4>
+                        <ul class="space-y-3 mb-4 text-sm font-mono">
+                            <li class="bg-gray-50 p-2 rounded border border-gray-200">
+                                <span class="text-gray-500">! Entrar al puerto físico y encenderlo (sin IP):</span><br>
+                                <span class="text-gray-800">interface g0/0</span><br>
+                                <span class="text-gray-800">no shutdown</span>
+                            </li>
+                            <li class="bg-gray-50 p-2 rounded border border-gray-200">
+                                <span class="text-gray-500">! Crear la subinterfaz para VLAN 10:</span><br>
+                                <span class="text-orange-700 font-bold">interface g0/0.10</span><br>
+                                <span class="text-gray-500">! Decirle que escuche las etiquetas 802.1Q de la VLAN 10:</span><br>
+                                <span class="text-blue-600 font-bold">encapsulation dot1Q 10</span><br>
+                                <span class="text-gray-500">! Asignar el Gateway de esa VLAN:</span><br>
+                                <span class="text-gray-800">ip address 192.168.10.1 255.255.255.0</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Ejercicios Semana 5 -->
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 shadow-sm">
+                        <h4 class="font-bold text-gray-900 mb-3"><i class="fa-solid fa-code text-orange-600 mr-2"></i>Ejercicio 1: Scripting ROAS</h4>
+                        <p class="text-sm text-gray-700 mb-3"><strong>Objetivo:</strong> Crear el código de subinterfaces en tu Bloc de Notas.</p>
+                        <ol class="list-decimal ml-4 text-sm text-gray-600 space-y-2">
+                            <li>Basándote en el ejemplo anterior, escribe el código completo para encender la interfaz física <code>G0/0</code>.</li>
+                            <li>Escribe el código para crear la subinterfaz de la <strong>VLAN 20</strong>, aplicarle la encapsulación correspondiente y asignarle la IP <code>192.168.20.1</code> con máscara de 24 bits.</li>
+                            <li>Añade el código para la <strong>VLAN 30</strong> (IP <code>192.168.30.1</code>).</li>
+                            <li>Guarda tu script digitalmente.</li>
+                        </ol>
+                    </div>
+
+                    <div class="bg-orange-50 p-6 rounded-xl border border-orange-200 md:col-span-1 shadow-sm">
+                        <h4 class="font-bold text-orange-900 mb-3 text-lg"><i class="fa-solid fa-laptop-code text-orange-600 mr-2"></i>Ejercicio 2 (Simulador): Conectando VLANs</h4>
+                        <ul class="list-decimal ml-4 text-sm text-gray-700 space-y-2">
+                            <li>En Packet Tracer, agrega un Router a tu topología de la Semana 4.</li>
+                            <li>Conecta el Router al puerto Gigabit del Switch.</li>
+                            <li><strong>Muy importante:</strong> Entra al switch y configura el puerto que va hacia el router en modo TRUNK (<code>switchport mode trunk</code>).</li>
+                            <li>Pega tu script de subinterfaces en el Router.</li>
+                            <li>Repite la prueba de Ping del Ejercicio 2 de la Semana 4. ¡Ahora los paquetes viajarán de la PC Ventas al Switch, subirán al Router por el Trunk, el Router los enrutará a la otra subinterfaz, bajarán por el Trunk y llegarán a RH exitosamente! Documenta este éxito.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEMANA 6 (PROYECTO FINAL DESPLEGABLE) -->
+        <section id="semana6" class="bg-white rounded-2xl shadow-xl overflow-hidden border-t-4 border-red-600">
+            <div class="p-8 md:p-12">
+                <div class="flex items-center mb-6">
+                    <div class="bg-red-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mr-4">6</div>
+                    <div>
+                        <h2 class="text-3xl font-bold text-gray-900">Semana 6: Proyecto Integrador Final</h2>
+                        <p class="text-red-600 font-semibold">Duración: 8 horas | Síntesis Total: VLANs, VTP, Trunks y Enrutamiento Inter-VLAN.</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-gradient-to-r from-gray-900 to-slate-800 p-8 md:p-10 rounded-xl border border-gray-700 text-center shadow-2xl relative overflow-hidden">
+                    <i class="fa-solid fa-flag-checkered absolute -right-4 -bottom-4 text-9xl text-gray-700 opacity-20 transform -rotate-12 pointer-events-none"></i>
+                    <h4 class="text-3xl font-bold text-white mb-3 relative z-10">Evaluación Parcial 3</h4>
+                    <p class="text-gray-300 mb-8 max-w-2xl mx-auto relative z-10">Has completado el núcleo de la ingeniería de redes LAN. Es hora de consolidarlo todo diseñando la red completa de un hospital mediante segmentación avanzada.</p>
+                    
+                    <!-- Botón que activa el despliegue -->
+                    <button onclick="document.getElementById('proyecto_final_container').classList.toggle('hidden')" class="inline-flex items-center cursor-pointer bg-red-600 hover:bg-red-700 text-white text-lg font-bold py-4 px-10 rounded-full transition duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 relative z-10">
+                        <i class="fa-solid fa-rocket mr-3"></i> Mostrar / Ocultar Proyecto Final
+                    </button>
+
+                    <!-- Contenedor Desplegable -->
+                    <div id="proyecto_final_container" class="hidden mt-10 text-left relative z-10 transition-all">
+                        <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
+                            <!-- Header interno del proyecto -->
+                            <div class="bg-slate-800 px-6 py-4 flex flex-col md:flex-row items-center justify-between border-b-4 border-red-600">
+                                <h3 class="text-2xl font-bold text-white"><i class="fa-solid fa-hospital text-red-500 mr-3"></i>Red Hospitalaria Segura</h3>
+                                <span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mt-2 md:mt-0">Proyecto de Síntesis</span>
+                            </div>
+                            
+                            <div class="p-6 md:p-8">
+                                <!-- Contexto -->
+                                <div class="flex items-start mb-8 border-b border-gray-100 pb-6">
+                                    <div class="bg-red-100 p-4 rounded-lg mr-6 hidden md:block">
+                                        <i class="fa-solid fa-heart-pulse text-4xl text-red-600"></i>
+                                    </div>
+                                    <div>
+                                        <h2 class="text-xl font-bold text-gray-900 mb-2">Escenario: "Hospital Regional"</h2>
+                                        <p class="text-gray-600 text-justify mb-4">El Hospital Regional acaba de inaugurar un nuevo piso. Por regulaciones de salud y seguridad, el tráfico de los Doctores, los Pacientes (Wi-Fi) y los Dispositivos Médicos (IoT) no debe mezclarse a nivel de switch. Sin embargo, todos requieren salida a los servidores centrales a través del Router principal.</p>
+                                        <div class="bg-yellow-50 border-l-4 border-yellow-500 p-3 rounded text-sm text-gray-700">
+                                            <strong>Entregables Digitales:</strong> 1 Reporte de Ingeniería (PDF) y 1 archivo de Cisco Packet Tracer (.pkt).
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Fases del Proyecto -->
+                                <div class="space-y-6 mb-10">
+                                    <!-- Fase 1 -->
+                                    <div class="bg-gray-50 rounded-lg p-5 border border-gray-200">
+                                        <h3 class="text-lg font-bold text-gray-800 mb-3"><span class="text-red-600 mr-2">Fase 1:</span> Diseño y VTP</h3>
+                                        <ul class="list-decimal ml-5 text-sm text-gray-700 space-y-1">
+                                            <li>En Packet Tracer coloca: 1 Router, 1 Switch (Core/Server) y 2 Switches (Pisos/Clients).</li>
+                                            <li>Conecta los 3 switches entre sí usando puertos Gigabit y configúralos como <strong>Troncales (Trunks)</strong>.</li>
+                                            <li>Configura el Switch Core en modo VTP Server (Dominio: HOSPITAL) y los de piso como VTP Clients.</li>
+                                            <li>Crea las VLANs 10 (DOCTORES), 20 (PACIENTES) y 30 (IOT) en el servidor y verifica que se propaguen.</li>
+                                        </ul>
+                                    </div>
+                                    <!-- Fase 2 -->
+                                    <div class="bg-gray-50 rounded-lg p-5 border border-gray-200">
+                                        <h3 class="text-lg font-bold text-gray-800 mb-3"><span class="text-red-600 mr-2">Fase 2:</span> Asignación de Puertos</h3>
+                                        <ul class="list-disc ml-5 text-sm text-gray-700 space-y-1">
+                                            <li>Conecta 3 PCs a cada Switch Cliente (1 PC por cada VLAN).</li>
+                                            <li>Configura los puertos conectados a las PCs como <strong>Modo Acceso</strong> y asígnales su VLAN correspondiente.</li>
+                                        </ul>
+                                    </div>
+                                    <!-- Fase 3 -->
+                                    <div class="bg-gray-50 rounded-lg p-5 border border-gray-200">
+                                        <h3 class="text-lg font-bold text-gray-800 mb-3"><span class="text-red-600 mr-2">Fase 3:</span> Router-on-a-Stick</h3>
+                                        <ul class="list-disc ml-5 text-sm text-gray-700 space-y-1">
+                                            <li>Conecta el Router al Switch Core usando un enlace Troncal.</li>
+                                            <li>Crea subinterfaces (G0/0.10, G0/0.20, G0/0.30) en el router y aplica la encapsulación dot1Q para cada VLAN.</li>
+                                            <li>Asigna a las subinterfaces los Gateways: 192.168.10.1, 192.168.20.1 y 192.168.30.1.</li>
+                                        </ul>
+                                    </div>
+                                    <!-- Fase 4 -->
+                                    <div class="bg-purple-50 rounded-lg p-5 border border-purple-200">
+                                        <h3 class="text-lg font-bold text-purple-900 mb-3"><span class="text-purple-600 mr-2">Fase 4:</span> Pruebas y Reporte</h3>
+                                        <ul class="list-decimal ml-5 text-sm text-gray-800 space-y-2">
+                                            <li>Asigna IPs estáticas correspondientes a las PCs de prueba.</li>
+                                            <li>Toma captura de un <strong>Ping Exitoso</strong> cruzando de la red Doctores a la red IoT (demostrando que el ruteo Inter-VLAN funciona).</li>
+                                            <li>Anexa en tu reporte todos los scripts usados, el diagrama de red diseñado y las conclusiones sobre la seguridad obtenida al segmentar el hospital.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Checklist -->
+                                <h3 class="text-xl font-bold text-gray-900 mb-4"><i class="fa-solid fa-list-check text-red-500 mr-2"></i>Lista de Verificación Final</h3>
+                                <div class="overflow-x-auto">
+                                    <table class="w-full text-xs md:text-sm text-left text-gray-600 bg-white shadow-sm overflow-hidden border border-gray-200">
+                                        <thead class="text-white uppercase bg-slate-700">
+                                            <tr>
+                                                <th scope="col" class="px-4 py-3">Criterios de Evaluación</th>
+                                                <th scope="col" class="px-4 py-3 text-center">Estado</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-200">
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-4 py-4 font-bold text-gray-800">1. VTP y Trunks operativos (Las VLANs se sincronizaron solas en los clientes).</td>
+                                                <td class="px-4 py-4 text-center"><i class="fa-regular fa-square text-xl text-gray-400 cursor-pointer hover:text-red-600 transition"></i></td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-4 py-4 font-bold text-gray-800">2. Puertos de acceso asignados correctamente (Comando `switchport access vlan`).</td>
+                                                <td class="px-4 py-4 text-center"><i class="fa-regular fa-square text-xl text-gray-400 cursor-pointer hover:text-red-600 transition"></i></td>
+                                            </tr>
+                                            <tr class="hover:bg-gray-50">
+                                                <td class="px-4 py-4 font-bold text-gray-800">3. Encapsulación Dot1Q y subinterfaces configuradas sin errores de sintaxis en el Router.</td>
+                                                <td class="px-4 py-4 text-center"><i class="fa-regular fa-square text-xl text-gray-400 cursor-pointer hover:text-red-600 transition"></i></td>
+                                            </tr>
+                                            <tr class="hover:bg-purple-50 bg-purple-50/50">
+                                                <td class="px-4 py-4 font-bold text-purple-900">4. Hay conectividad total (Ping exitoso entre PCs de diferentes VLANs a través del Router).</td>
+                                                <td class="px-4 py-4 text-center"><i class="fa-regular fa-square text-xl text-gray-400 cursor-pointer hover:text-red-600 transition"></i></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 text-gray-400 py-8 text-center mt-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="mb-2">&copy; 2026 CONALEP Chilpancingo. Educación Técnica para la Equidad.</p>
+            <p class="text-sm">Módulo MRDE-20 - Parcial 3</p>
+        </div>
+    </footer>
+
+    <!-- Script sencillo para que la navbar se mantenga limpia si hacemos click en móviles -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
