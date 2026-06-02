@@ -451,27 +451,43 @@
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                     <div class="order-2 lg:order-1 relative rounded-xl overflow-hidden shadow-lg bg-slate-800 border border-slate-700 flex flex-col items-center justify-center p-6 h-full">
-                        <h4 class="text-white font-bold mb-4 text-center">Servicios Empresariales Diarios</h4>
-                        <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" class="w-full h-auto">
+                        <h4 class="text-white font-bold mb-6 text-center">Servicios Empresariales Diarios</h4>
+                        
+                        <!-- Nuevo Diseño HTML/CSS en lugar del SVG para los servicios -->
+                        <div class="flex flex-col space-y-4 w-full max-w-sm">
                             <!-- WEB -->
-                            <circle cx="80" cy="60" r="25" fill="#f97316"/>
-                            <i class="fa-brands fa-html5 absolute" style="color:white; top: 50px; left: 70px; font-size: 20px;"></i>
-                            <text x="80" y="105" fill="white" font-size="10" text-anchor="middle" font-weight="bold">HTTP (Web)</text>
+                            <div class="flex items-center p-4 bg-gray-900 rounded-xl border border-gray-700 shadow-inner">
+                                <div class="w-14 h-14 rounded-full bg-orange-500 flex items-center justify-center text-white text-3xl shadow-lg border-2 border-orange-400 shrink-0">
+                                    <i class="fa-brands fa-html5"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h5 class="text-white font-bold text-lg">HTTP / HTTPS (Web)</h5>
+                                    <p class="text-xs text-gray-400">Intranet corporativa y Portales</p>
+                                </div>
+                            </div>
                             
                             <!-- FTP -->
-                            <circle cx="150" cy="140" r="25" fill="#3b82f6"/>
-                            <i class="fa-solid fa-folder-open absolute" style="color:white; top: 130px; left: 140px; font-size: 20px;"></i>
-                            <text x="150" y="185" fill="white" font-size="10" text-anchor="middle" font-weight="bold">FTP (Archivos)</text>
+                            <div class="flex items-center p-4 bg-gray-900 rounded-xl border border-gray-700 shadow-inner">
+                                <div class="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center text-white text-2xl shadow-lg border-2 border-blue-400 shrink-0">
+                                    <i class="fa-solid fa-folder-open"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h5 class="text-white font-bold text-lg">FTP (Archivos)</h5>
+                                    <p class="text-xs text-gray-400">Transferencia de archivos masivos</p>
+                                </div>
+                            </div>
 
                             <!-- EMAIL -->
-                            <circle cx="220" cy="60" r="25" fill="#10b981"/>
-                            <i class="fa-solid fa-envelope absolute" style="color:white; top: 50px; left: 210px; font-size: 20px;"></i>
-                            <text x="220" y="105" fill="white" font-size="10" text-anchor="middle" font-weight="bold">SMTP/POP3</text>
-                            
-                            <!-- Connectors -->
-                            <path d="M 100 75 L 135 120" stroke="#64748b" stroke-width="2" stroke-dasharray="2"/>
-                            <path d="M 200 75 L 165 120" stroke="#64748b" stroke-width="2" stroke-dasharray="2"/>
-                        </svg>
+                            <div class="flex items-center p-4 bg-gray-900 rounded-xl border border-gray-700 shadow-inner">
+                                <div class="w-14 h-14 rounded-full bg-emerald-500 flex items-center justify-center text-white text-2xl shadow-lg border-2 border-emerald-400 shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h5 class="text-white font-bold text-lg">SMTP / POP3 (Correo)</h5>
+                                    <p class="text-xs text-gray-400">Comunicación oficial interna</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="order-1 lg:order-2">
                         <h3 class="text-xl font-bold mb-3 border-b-2 border-gray-100 pb-2">5. Colaboración en la Red</h3>
@@ -533,14 +549,14 @@
                     <div class="bg-red-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg mr-4">6</div>
                     <div>
                         <h2 class="text-3xl font-bold text-gray-900">Semana 6: Proyecto Integrador Final</h2>
-                        <p class="text-red-600 font-semibold">Duración: 8 horas | Síntesis Total: VLANs, ROAS, DHCP, DNS y Servidores Web Empresariales.</p>
+                        <p class="text-red-600 font-semibold">Duración: 8 horas | Síntesis Total: Granja de Servidores (DHCP, DNS, WEB, FTP y Correo).</p>
                     </div>
                 </div>
 
                 <div class="mt-8 bg-gradient-to-r from-gray-900 to-slate-800 p-8 md:p-10 rounded-xl border border-gray-700 text-center shadow-2xl relative overflow-hidden">
                     <i class="fa-solid fa-flag-checkered absolute -right-4 -bottom-4 text-9xl text-gray-700 opacity-20 transform -rotate-12 pointer-events-none"></i>
                     <h4 class="text-3xl font-bold text-white mb-3 relative z-10">Evaluación Parcial 3</h4>
-                    <p class="text-gray-300 mb-8 max-w-2xl mx-auto relative z-10">Has completado el núcleo de la ingeniería de redes LAN empresariales. Es hora de consolidarlo todo diseñando una infraestructura corporativa completa con un Data Center funcional.</p>
+                    <p class="text-gray-300 mb-8 max-w-2xl mx-auto relative z-10">Has completado el núcleo de la ingeniería de servicios de red. Es hora de consolidarlo todo diseñando una infraestructura corporativa descentralizada con una Granja de Servidores funcionales.</p>
                     
                     <!-- Botón que activa el despliegue -->
                     <button onclick="document.getElementById('proyecto_final_container').classList.toggle('hidden')" class="inline-flex items-center cursor-pointer bg-red-600 hover:bg-red-700 text-white text-lg font-bold py-4 px-10 rounded-full transition duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 relative z-10">
@@ -552,7 +568,7 @@
                         <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
                             <!-- Header interno del proyecto -->
                             <div class="bg-slate-800 px-6 py-4 flex flex-col md:flex-row items-center justify-between border-b-4 border-red-600">
-                                <h3 class="text-2xl font-bold text-white"><i class="fa-solid fa-building text-red-500 mr-3"></i>Red Corporativa y Data Center</h3>
+                                <h3 class="text-2xl font-bold text-white"><i class="fa-solid fa-server text-red-500 mr-3"></i>Data Center Streaming</h3>
                                 <span class="bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mt-2 md:mt-0">Proyecto de Síntesis</span>
                             </div>
                             
@@ -560,14 +576,28 @@
                                 <!-- Contexto -->
                                 <div class="flex items-start mb-8 border-b border-gray-100 pb-6">
                                     <div class="bg-red-100 p-4 rounded-lg mr-6 hidden md:block">
-                                        <i class="fa-solid fa-server text-4xl text-red-600"></i>
+                                        <i class="fa-solid fa-video text-4xl text-red-600"></i>
                                     </div>
                                     <div>
-                                        <h2 class="text-xl font-bold text-gray-900 mb-2">Escenario: "Corporativo TechNova"</h2>
-                                        <p class="text-gray-600 text-justify mb-4">La empresa TechNova necesita rediseñar su red. Tienen dos departamentos: Desarrolladores (VLAN 10) y Finanzas (VLAN 20). Por seguridad operativa, exigen que la red principal esté gobernada por un "Data Center" que contiene un servidor robusto encargado de repartir IPs a ambos departamentos, traducir nombres de dominio, y alojar la Intranet web de la empresa (VLAN 99 de Administración).</p>
+                                        <h2 class="text-xl font-bold text-gray-900 mb-2">Escenario: "Agencia Global de Medios StreamCast"</h2>
+                                        <p class="text-gray-600 text-justify mb-4"><strong>Problemática Real:</strong> La productora de contenidos en vivo "StreamCast" ha ampliado sus operaciones. Los editores manejan videos extremadamente pesados y el director exige una plataforma interna robusta. Para ello, han adquirido <strong>5 Servidores Dedicados</strong> de última generación. Tu reto como Arquitecto de Redes es armar la topología utilizando el nuevo esquema de Direccionamiento Clase B, encender el servicio correspondiente en cada servidor y garantizar que los empleados (Director, Editor 1 y Editor 2) puedan descargar archivos y enviarse correos usando nombres de dominio amigables.</p>
                                         <div class="bg-yellow-50 border-l-4 border-yellow-500 p-3 rounded text-sm text-gray-700">
-                                            <strong>Entregables Digitales:</strong> 1 Reporte de Ingeniería (PDF/Word) y 1 archivo funcional de Cisco Packet Tracer (.pkt).
+                                            <strong>Entregables Digitales:</strong> 1 Reporte de Ingeniería (PDF/Word) documentando las configuraciones con capturas y 1 archivo funcional de Cisco Packet Tracer (.pkt).
                                         </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tabla de Datos Requerida -->
+                                <div class="mb-8">
+                                    <h4 class="font-bold text-gray-800 mb-3"><i class="fa-solid fa-clipboard-list text-gray-500 mr-2"></i>Ficha Técnica del Proyecto (Datos Obligatorios)</h4>
+                                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-gray-50 p-4 rounded-lg border border-gray-200 text-sm font-mono text-gray-700">
+                                        <div><strong>Gateway / Router:</strong><br><span class="text-blue-600">172.16.20.1</span></div>
+                                        <div><strong>Servidor DHCP:</strong><br><span class="text-blue-600">172.16.20.10</span></div>
+                                        <div><strong>Servidor DNS:</strong><br><span class="text-blue-600">172.16.20.11</span></div>
+                                        <div><strong>Servidor PORTAL:</strong><br><span class="text-blue-600">172.16.20.12</span></div>
+                                        <div><strong>Servidor CORREO:</strong><br><span class="text-blue-600">172.16.20.13</span></div>
+                                        <div><strong>Servidor VIDEOS (FTP):</strong><br><span class="text-blue-600">172.16.20.14</span></div>
+                                        <div class="col-span-2"><strong>Máscara de Subred:</strong><br><span class="text-gray-500">255.255.255.0</span></div>
                                     </div>
                                 </div>
 
@@ -575,39 +605,44 @@
                                 <div class="space-y-6 mb-10">
                                     <!-- Fase 1 -->
                                     <div class="bg-gray-50 rounded-lg p-5 border border-gray-200">
-                                        <h3 class="text-lg font-bold text-gray-800 mb-3"><span class="text-red-600 mr-2">Fase 1:</span> Diseño Base y VLANs</h3>
+                                        <h3 class="text-lg font-bold text-gray-800 mb-3"><span class="text-red-600 mr-2">Fase 1:</span> Topología y Nomenclatura Estática</h3>
                                         <ul class="list-decimal ml-5 text-sm text-gray-700 space-y-1">
-                                            <li>En Packet Tracer coloca: 1 Router (1941), 1 Switch Central y 1 Servidor PT. Conecta 2 PCs a distintos puertos del Switch.</li>
-                                            <li>Configura el Switch: Crea la VLAN 10 (DEV), VLAN 20 (FINANZAS) y VLAN 99 (SERVER).</li>
-                                            <li>Asigna el puerto del servidor a la VLAN 99. Asigna la PC1 a la VLAN 10 y la PC2 a la VLAN 20 (<code>switchport mode access</code>).</li>
-                                            <li>Conecta el Router al Switch y configura el puerto del Switch en modo <strong>Trunk</strong>.</li>
+                                            <li>En Packet Tracer coloca: 1 Switch principal (modelo <strong>2960-24TT</strong>).</li>
+                                            <li>Conecta 3 PCs del lado izquierdo y nómbralas: <strong>DIRECTOR</strong>, <strong>EDITOR1</strong> y <strong>EDITOR2</strong>.</li>
+                                            <li>Conecta 5 Servidores Genéricos del lado derecho y renómbralos según la tabla: <strong>SRV_DHCP</strong>, <strong>SRV_DNS</strong>, <strong>SRV_PORTAL</strong>, <strong>SRV_CORREO</strong> y <strong>SRV_VIDEOS</strong>.</li>
+                                            <li>Configura manualmente la pestaña <em>IP Configuration</em> de los 5 servidores utilizando estrictamente las IPs estáticas de la ficha técnica. A todos debes asignarles el Gateway <code>172.16.20.1</code> y el DNS Server <code>172.16.20.11</code>.</li>
                                         </ul>
                                     </div>
                                     <!-- Fase 2 -->
                                     <div class="bg-gray-50 rounded-lg p-5 border border-gray-200">
-                                        <h3 class="text-lg font-bold text-gray-800 mb-3"><span class="text-red-600 mr-2">Fase 2:</span> Router-on-a-Stick (El Puente)</h3>
+                                        <h3 class="text-lg font-bold text-gray-800 mb-3"><span class="text-red-600 mr-2">Fase 2:</span> DHCP y Resolución de Dominio (DNS)</h3>
                                         <ul class="list-disc ml-5 text-sm text-gray-700 space-y-1">
-                                            <li>Enciende el puerto físico del Router.</li>
-                                            <li>Crea subinterfaces para cada VLAN (G0/0.10, G0/0.20, G0/0.99) y aplica su encapsulación (<code>encapsulation dot1Q</code>).</li>
-                                            <li>Asigna a las subinterfaces los Gateways: 192.168.10.1 (VLAN10), 192.168.20.1 (VLAN20) y 192.168.99.1 (VLAN99).</li>
+                                            <li>En el <strong>SRV_DHCP (.10)</strong>, enciende el servicio. Configura el "Default Gateway" a <code>.1</code>, el "DNS Server" a <code>.11</code> y haz que empiece a repartir IPs a partir de la <code>172.16.20.50</code>. Guarda y enciende el servicio.</li>
+                                            <li>En el <strong>SRV_DNS (.11)</strong>, enciende el servicio. Agrega 3 registros (A Records) usando el dominio de la empresa:
+                                                <ul class="list-[circle] ml-4 mt-1">
+                                                    <li>Nombre: <code>www.streamcast.tv</code> -> Address: <code>172.16.20.12</code></li>
+                                                    <li>Nombre: <code>ftp.streamcast.tv</code> -> Address: <code>172.16.20.14</code></li>
+                                                    <li>Nombre: <code>mail.streamcast.tv</code> -> Address: <code>172.16.20.13</code></li>
+                                                </ul>
+                                            </li>
                                         </ul>
                                     </div>
                                     <!-- Fase 3 -->
                                     <div class="bg-gray-50 rounded-lg p-5 border border-gray-200">
-                                        <h3 class="text-lg font-bold text-gray-800 mb-3"><span class="text-red-600 mr-2">Fase 3:</span> Configuración del Data Center (Servidor)</h3>
+                                        <h3 class="text-lg font-bold text-gray-800 mb-3"><span class="text-red-600 mr-2">Fase 3:</span> Plataforma Web y Almacenamiento (FTP)</h3>
                                         <ul class="list-disc ml-5 text-sm text-gray-700 space-y-1">
-                                            <li>Asigna al Servidor PT la IP estática `192.168.99.10` y su respectivo Gateway.</li>
-                                            <li><strong>DHCP:</strong> En el servidor, crea dos "Pools" diferentes. Uno que entregue IPs para la red de la VLAN 10 y otro para la red de la VLAN 20.</li>
-                                            <li><em>Reto del Ingeniero (IP Helper):</em> Como el servidor y las PCs están en VLANs diferentes, las PCs no escucharán al DHCP. Debes ingresar al Router, entrar a la subinterfaz 10 y 20, y aplicar el comando <code>ip helper-address 192.168.99.10</code> para que el router reenvíe las peticiones de IP al servidor central.</li>
+                                            <li>En el <strong>SRV_PORTAL (.12)</strong>, asegúrate de que el servicio HTTP esté en ON y edita el archivo <code>index.html</code> para darle la bienvenida a los empleados de "StreamCast".</li>
+                                            <li>En el <strong>SRV_VIDEOS (.14)</strong>, asegúrate de que FTP esté en ON. Crea 3 cuentas de usuario (<code>director</code>, <code>editor1</code>, <code>editor2</code>) y asígnales los 5 permisos completos para que puedan gestionar las pistas de video.</li>
                                         </ul>
                                     </div>
                                     <!-- Fase 4 -->
                                     <div class="bg-purple-50 rounded-lg p-5 border border-purple-200">
-                                        <h3 class="text-lg font-bold text-purple-900 mb-3"><span class="text-purple-600 mr-2">Fase 4:</span> Intranet y Pruebas Finales</h3>
+                                        <h3 class="text-lg font-bold text-purple-900 mb-3"><span class="text-purple-600 mr-2">Fase 4:</span> Comunicación (Correo) y Pruebas Cliente</h3>
                                         <ul class="list-decimal ml-5 text-sm text-gray-800 space-y-2">
-                                            <li>Enciende el servicio HTTP en el Servidor y edita la página index con el nombre de tu empresa.</li>
-                                            <li>Enciende el servicio DNS y asocia `www.technova.com` a la IP del servidor (`192.168.99.10`). (Asegúrate de agregar este DNS en la configuración de tus pools de DHCP).</li>
-                                            <li>Ve a las PCs, ponlas en modo DHCP, asegúrate de que reciban su IP, y entra al navegador web usando el nombre de dominio `www.technova.com`. ¡Toma captura de este gran logro!</li>
+                                            <li>En el <strong>SRV_CORREO (.13)</strong>, ve al servicio EMAIL. Activa SMTP y POP3. Configura el Domain Name como <code>streamcast.tv</code> (y presiona Set). Luego crea los usuarios <code>director</code>, <code>editor1</code> y <code>editor2</code> con sus contraseñas.</li>
+                                            <li><strong>Prueba Final:</strong> Ve a las 3 PCs. Ponlas en modo <strong>DHCP</strong> y verifica que obtengan una IP en el rango `.50` en adelante y el DNS correcto.</li>
+                                            <li>Desde la PC del DIRECTOR, abre el Web Browser y entra a <code>www.streamcast.tv</code>. Luego, desde la PC de EDITOR1, abre el Command Prompt y conéctate al servidor de archivos con <code>ftp ftp.streamcast.tv</code>.</li>
+                                            <li>Finalmente, configura el cliente de correo (Email) en la PC de EDITOR2 y en la del DIRECTOR, y envíense un mensaje reportando que la red está lista usando sus cuentas `@streamcast.tv`.</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -624,19 +659,19 @@
                                         </thead>
                                         <tbody class="divide-y divide-gray-200">
                                             <tr class="hover:bg-gray-50">
-                                                <td class="px-4 py-4 font-bold text-gray-800">1. VLANs de Acceso y Puertos Troncales configurados correctamente en el Switch.</td>
+                                                <td class="px-4 py-4 font-bold text-gray-800">1. Topología y Red 172.16.20.0: Las IPs fijas de los 5 servidores coinciden 100% con la tabla solicitada.</td>
                                                 <td class="px-4 py-4 text-center"><i class="fa-regular fa-square text-xl text-gray-400 cursor-pointer hover:text-red-600 transition"></i></td>
                                             </tr>
                                             <tr class="hover:bg-gray-50">
-                                                <td class="px-4 py-4 font-bold text-gray-800">2. Enrutamiento Inter-VLAN: Subinterfaces y `encapsulation dot1q` activas sin errores.</td>
+                                                <td class="px-4 py-4 font-bold text-gray-800">2. Servicio DHCP: Las PCs (DIRECTOR, EDITOR1, EDITOR2) reciben la IP `172.16.20.50+`, Gateway y el DNS (.11).</td>
                                                 <td class="px-4 py-4 text-center"><i class="fa-regular fa-square text-xl text-gray-400 cursor-pointer hover:text-red-600 transition"></i></td>
                                             </tr>
                                             <tr class="hover:bg-gray-50">
-                                                <td class="px-4 py-4 font-bold text-gray-800">3. El comando "ip helper-address" está aplicado en el router y el DHCP central entrega IPs a todas las VLANs.</td>
+                                                <td class="px-4 py-4 font-bold text-gray-800">3. Resolución DNS (.tv): Se puede acceder a la Intranet y al FTP desde las PCs utilizando los nombres de dominio de StreamCast en lugar de números.</td>
                                                 <td class="px-4 py-4 text-center"><i class="fa-regular fa-square text-xl text-gray-400 cursor-pointer hover:text-red-600 transition"></i></td>
                                             </tr>
                                             <tr class="hover:bg-purple-50 bg-purple-50/50">
-                                                <td class="px-4 py-4 font-bold text-purple-900">4. Resolución DNS y Servicio Web: Las PCs abren la página web mediante el nombre de dominio.</td>
+                                                <td class="px-4 py-4 font-bold text-purple-900">4. Comunicación de Correo: El servidor SMTP rutea exitosamente un mensaje entre 2 empleados distintos.</td>
                                                 <td class="px-4 py-4 text-center"><i class="fa-regular fa-square text-xl text-gray-400 cursor-pointer hover:text-red-600 transition"></i></td>
                                             </tr>
                                         </tbody>
